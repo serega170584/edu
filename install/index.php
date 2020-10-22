@@ -43,9 +43,7 @@ class educational_organization extends CModule
         /**
          * \CDatabase $DB
          */
-        global $DOCUMENT_ROOT, $APPLICATION, $DB, $step;
-        var_dump($step);
-        die('asd');
+        global $DOCUMENT_ROOT, $APPLICATION, $DB;
         try {
             $DB->StartTransaction();
 //            $this->InstallFiles();
