@@ -43,7 +43,8 @@ class educational_organization extends CModule
         /**
          * \CDatabase $DB
          */
-        global $DOCUMENT_ROOT, $APPLICATION, $DB, $step;
+        global $DOCUMENT_ROOT, $APPLICATION, $DB, $step, $test;
+        var_dump($test);
         var_dump($step);
         die('asd');
         try {
