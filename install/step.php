@@ -3,6 +3,6 @@
  * @var \CMain $APPLICATION
  * @var string $DOCUMENT_ROOT
  */
-$APPLICATION->IncludeAdminFile("Добавление типа инфоблока образовательной организации", $DOCUMENT_ROOT . "/local/modules/educational_organization/install/add_infoblock_type_step.php");
-echo CAdminMessage::ShowNote("Модуль educational_organization установлен");
+//$APPLICATION->IncludeAdminFile("Добавление типа инфоблока образовательной организации", $DOCUMENT_ROOT . "/local/modules/educational_organization/install/add_infoblock_type_step.php");
+echo \CAdminMessage::ShowNote("Модуль educational_organization установлен");
 ?>
