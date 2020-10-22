@@ -25,3 +25,4 @@ $res = $obBlocktype->Add($arFields);
 if (!$res) {
     throw new \Bitrix\Main\DB\Exception($obBlocktype->LAST_ERROR);
 }
+echo \CAdminMessage::ShowNote("Модуль educational_organization установлен");
