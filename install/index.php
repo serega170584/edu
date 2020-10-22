@@ -67,7 +67,7 @@ class educational_organization extends CModule
             UnRegisterModule("educational_organization");
             $APPLICATION->IncludeAdminFile("Деинсталляция модуля educational_organization", $DOCUMENT_ROOT . "/local/modules/educational_organization/install/unstep.php");
         } catch (Exception $e) {
-            $APPLICATION->IncludeAdminFile("Установка модуля educational_organization", $DOCUMENT_ROOT . "/local/modules/educational_organization/install/error_unstep.php");
+            $APPLICATION->IncludeAdminFile($e->getMessage(), $DOCUMENT_ROOT . "/local/modules/educational_organization/install/error_unstep.php");
         }
     }
 }
