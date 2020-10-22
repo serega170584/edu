@@ -44,6 +44,7 @@ class educational_organization extends CModule
          * \CDatabase $DB
          */
         global $DOCUMENT_ROOT, $APPLICATION, $DB;
+        die('asd');
         try {
             $DB->StartTransaction();
             $APPLICATION->IncludeAdminFile("Установка модуля educational_organization", $DOCUMENT_ROOT . "/local/modules/educational_organization/install/step.php");
