@@ -1,6 +1,6 @@
 <?php
 /**
- * @var \Exception $e
+ * @var string $strTitle
  */
 if (!check_bitrix_sessid()) return;
-echo \CAdminMessage::ShowMessage($e->getMessage());
+echo \CAdminMessage::ShowMessage($strTitle);
