@@ -42,42 +42,59 @@ class educational_organization extends CModule
          * \CDatabase $DB
          */
         global $DOCUMENT_ROOT, $APPLICATION, $DB;
-        $arFields = [
-            'ID' => 'educational_organization',
-            'SECTIONS' => 'Y',
-            'IN_RSS' => 'N',
-            'SORT' => 100,
-            'LANG' => [
-                'en' => [
-                    'NAME' => 'Educational organization',
-                    'SECTION_NAME' => 'Sections',
-                    'ELEMENT_NAME' => 'Elements'
-                ],
-                'ru' => [
-                    'NAME' => 'Образовательная организация',
-                    'SECTION_NAME' => 'Разделы',
-                    'ELEMENT_NAME' => 'Элементы'
+        try {
+            $arFields = [
+                'ID' => 'educational_organization',
+                'SECTIONS' => 'Y',
+                'IN_RSS' => 'N',
+                'SORT' => 100,
+                'LANG' => [
+                    'en' => [
+                        'NAME' => 'Educational organization',
+                        'SECTION_NAME' => 'Sections',
+                        'ELEMENT_NAME' => 'Elements'
+                    ],
+                    'ru' => [
+                        'NAME' => 'Образовательная организация',
+                        'SECTION_NAME' => 'Разделы',
+                        'ELEMENT_NAME' => 'Элементы'
+                    ]
                 ]
-            ]
-        ];
-        $obBlocktype = new \CIBlockType;
-        $DB->StartTransaction();
-        $res = $obBlocktype->Add($arFields);
-        if (!$res) {
-            $DB->Rollback();
-            \CAdminMessage::ShowMessage($obBlocktype->LAST_ERROR);
-        } else
-            $DB->Commit();
-        $this->InstallFiles();
-        RegisterModule("educational_organization");
+            ];
+            $obBlocktype = new \CIBlockType;
+            $DB->StartTransaction();
+            $res = $obBlocktype->Add($arFields);
+            if (!$res) {
+                $DB->Rollback();
+                throw new \Bitrix\Main\DB\Exception($obBlocktype->LAST_ERROR);
+            } else
+                $DB->Commit();
+            $this->InstallFiles();
+            RegisterModule("educational_organization");
+        } catch (\Exception $e) {
+            \CAdminMessage::ShowMessage($e->getMessage());
+        }
         $APPLICATION->IncludeAdminFile("Установка модуля educational_organization", $DOCUMENT_ROOT . "/local/modules/educational_organization/install/step.php");
     }
 
     function DoUninstall()
     {
-        global $DOCUMENT_ROOT, $APPLICATION;
-        $this->UnInstallFiles();
-        UnRegisterModule("educational_organization");
+        /**
+         * @var \CDatabase $DB
+         */
+        global $DOCUMENT_ROOT, $APPLICATION, $DB;
+        try {
+            $DB->StartTransaction();
+            if (!CIBlockType::Delete('catalog')) {
+                $DB->Rollback();
+                throw new \Bitrix\Main\DB\Exception('Delete error!');
+            }
+            $DB->Commit();
+            $this->UnInstallFiles();
+            UnRegisterModule("educational_organization");
+        } catch (Exception $e) {
+            \CAdminMessage::ShowMessage($e->getMessage());
+        }
         $APPLICATION->IncludeAdminFile("Деинсталляция модуля educational_organization", $DOCUMENT_ROOT . "/local/modules/educational_organization/install/unstep.php");
     }
 }
