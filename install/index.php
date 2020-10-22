@@ -45,14 +45,13 @@ class educational_organization extends CModule
          */
         global $DOCUMENT_ROOT, $APPLICATION, $DB;
         try {
-            $DB->StartTransaction();
-            $APPLICATION->IncludeAdminFile("Установка модуля educational_organization", $DOCUMENT_ROOT . "/local/modules/educational_organization/install/step.php");
-            $this->InstallFiles();
+//            $DB->StartTransaction();
+//            $APPLICATION->IncludeAdminFile("Установка модуля educational_organization", $DOCUMENT_ROOT . "/local/modules/educational_organization/install/step.php");
+//            $this->InstallFiles();
             RegisterModule("educational_organization");
-            $DB->Commit();
+//            $DB->Commit();
         } catch (\Exception $e) {
-            die($e->getMessage());
-            $DB->Rollback();
+//            $DB->Rollback();
             echo \CAdminMessage::ShowMessage($e->getMessage());
         }
     }
@@ -64,13 +63,13 @@ class educational_organization extends CModule
          */
         global $DOCUMENT_ROOT, $APPLICATION, $DB;
         try {
-            $DB->StartTransaction();
-            $APPLICATION->IncludeAdminFile("Деинсталляция модуля educational_organization", $DOCUMENT_ROOT . "/local/modules/educational_organization/install/unstep.php");
-            $this->UnInstallFiles();
+//            $DB->StartTransaction();
+//            $APPLICATION->IncludeAdminFile("Деинсталляция модуля educational_organization", $DOCUMENT_ROOT . "/local/modules/educational_organization/install/unstep.php");
+//            $this->UnInstallFiles();
             UnRegisterModule("educational_organization");
-            $DB->Commit();
+//            $DB->Commit();
         } catch (Exception $e) {
-            $DB->Rollback();
+//            $DB->Rollback();
             echo \CAdminMessage::ShowMessage($e->getMessage());
         }
     }
