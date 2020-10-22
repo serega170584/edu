@@ -61,7 +61,6 @@ class educational_organization extends CModule
          */
         global $DOCUMENT_ROOT, $APPLICATION, $DB;
         try {
-            throw new \Exception('Ошибка');
             $DB->StartTransaction();
 //            $this->UnInstallFiles();
             UnRegisterModule("educational_organization");
