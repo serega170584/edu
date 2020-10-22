@@ -23,6 +23,8 @@ $arFields = [
 $obBlocktype = new \CIBlockType;
 $res = $obBlocktype->Add($arFields);
 if (!$res) {
+    $DB->Rollback();
     throw new \Bitrix\Main\DB\Exception($obBlocktype->LAST_ERROR);
 }
+$DB->Commit();
 echo \CAdminMessage::ShowNote("Модуль educational_organization установлен");
