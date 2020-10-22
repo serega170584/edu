@@ -24,6 +24,8 @@ class educational_organization extends CModule
 
         $this->MODULE_NAME = "educational_organization – модуль образовательной организации";
         $this->MODULE_DESCRIPTION = "После установки вы сможете пользоваться модулем образовательной организации";
+
+        \CModule::IncludeModule('iblock');
     }
 
     function InstallFiles()
