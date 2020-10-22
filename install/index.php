@@ -51,7 +51,6 @@ class educational_organization extends CModule
             $APPLICATION->IncludeAdminFile("Установка модуля educational_organization", $DOCUMENT_ROOT . "/local/modules/educational_organization/install/step.php");
         } catch (\Exception $e) {
             echo \CAdminMessage::ShowMessage($e->getMessage());
-            die('asd');
         }
     }
 
