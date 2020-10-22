@@ -52,7 +52,7 @@ class educational_organization extends CModule
             $DB->Commit();
         } catch (\Exception $e) {
             $DB->Rollback();
-            \CAdminMessage::ShowMessage($e->getMessage());
+            echo \CAdminMessage::ShowMessage($e->getMessage());
         }
     }
 
@@ -70,7 +70,7 @@ class educational_organization extends CModule
             $DB->Commit();
         } catch (Exception $e) {
             $DB->Rollback();
-            \CAdminMessage::ShowMessage($e->getMessage());
+            echo \CAdminMessage::ShowMessage($e->getMessage());
         }
     }
 }
