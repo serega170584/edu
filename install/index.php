@@ -85,7 +85,7 @@ class educational_organization extends CModule
         global $DOCUMENT_ROOT, $APPLICATION, $DB;
         try {
             $DB->StartTransaction();
-            if (!CIBlockType::Delete('catalog')) {
+            if (!\CIBlockType::Delete('educational_organization')) {
                 $DB->Rollback();
                 throw new \Bitrix\Main\DB\Exception('Delete error!');
             }
