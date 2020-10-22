@@ -38,7 +38,36 @@ class educational_organization extends CModule
 
     function DoInstall()
     {
-        global $DOCUMENT_ROOT, $APPLICATION;
+        /**
+         * \CDatabase $DB
+         */
+        global $DOCUMENT_ROOT, $APPLICATION, $DB;
+        $arFields = [
+            'ID' => 'educational_organization',
+            'SECTIONS' => 'Y',
+            'IN_RSS' => 'N',
+            'SORT' => 100,
+            'LANG' => [
+                'en' => [
+                    'NAME' => 'Educational organization',
+                    'SECTION_NAME' => 'Sections',
+                    'ELEMENT_NAME' => 'Elements'
+                ],
+                'ru' => [
+                    'NAME' => 'Образовательная организация',
+                    'SECTION_NAME' => 'Разделы',
+                    'ELEMENT_NAME' => 'Элементы'
+                ]
+            ]
+        ];
+        $obBlocktype = new \CIBlockType;
+        $DB->StartTransaction();
+        $res = $obBlocktype->Add($arFields);
+        if (!$res) {
+            $DB->Rollback();
+            \CAdminMessage::ShowMessage($obBlocktype->LAST_ERROR);
+        } else
+            $DB->Commit();
         $this->InstallFiles();
         RegisterModule("educational_organization");
         $APPLICATION->IncludeAdminFile("Установка модуля educational_organization", $DOCUMENT_ROOT . "/local/modules/educational_organization/install/step.php");
