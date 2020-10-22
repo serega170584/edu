@@ -21,10 +21,7 @@ $arFields = [
     ]
 ];
 $obBlocktype = new \CIBlockType;
-$DB->StartTransaction();
 $res = $obBlocktype->Add($arFields);
 if (!$res) {
-    $DB->Rollback();
     throw new \Bitrix\Main\DB\Exception($obBlocktype->LAST_ERROR);
-} else
-    $DB->Commit();
+}
