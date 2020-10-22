@@ -45,13 +45,13 @@ class educational_organization extends CModule
          */
         global $DOCUMENT_ROOT, $APPLICATION, $DB;
         try {
-//            $DB->StartTransaction();
+            $DB->StartTransaction();
 //            $this->InstallFiles();
             RegisterModule("educational_organization");
             $APPLICATION->IncludeAdminFile("Установка модуля educational_organization", $DOCUMENT_ROOT . "/local/modules/educational_organization/install/step.php");
-//            $DB->Commit();
+            $DB->Commit();
         } catch (\Exception $e) {
-//            $DB->Rollback();
+            $DB->Rollback();
             echo \CAdminMessage::ShowMessage($e->getMessage());
         }
     }
@@ -63,13 +63,13 @@ class educational_organization extends CModule
          */
         global $DOCUMENT_ROOT, $APPLICATION, $DB;
         try {
-//            $DB->StartTransaction();
+            $DB->StartTransaction();
 //            $this->UnInstallFiles();
             UnRegisterModule("educational_organization");
             $APPLICATION->IncludeAdminFile("Деинсталляция модуля educational_organization", $DOCUMENT_ROOT . "/local/modules/educational_organization/install/unstep.php");
-//            $DB->Commit();
+            $DB->Commit();
         } catch (Exception $e) {
-//            $DB->Rollback();
+            $DB->Rollback();
             echo \CAdminMessage::ShowMessage($e->getMessage());
         }
     }
