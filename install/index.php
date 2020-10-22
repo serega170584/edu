@@ -64,9 +64,9 @@ class educational_organization extends CModule
         global $DOCUMENT_ROOT, $APPLICATION, $DB;
         try {
 //            $DB->StartTransaction();
-//            $APPLICATION->IncludeAdminFile("Деинсталляция модуля educational_organization", $DOCUMENT_ROOT . "/local/modules/educational_organization/install/unstep.php");
 //            $this->UnInstallFiles();
             UnRegisterModule("educational_organization");
+            $APPLICATION->IncludeAdminFile("Деинсталляция модуля educational_organization", $DOCUMENT_ROOT . "/local/modules/educational_organization/install/unstep.php");
 //            $DB->Commit();
         } catch (Exception $e) {
 //            $DB->Rollback();
