@@ -27,5 +27,4 @@ if (!$res) {
     throw new \Bitrix\Main\DB\Exception($obBlocktype->LAST_ERROR);
 }
 $DB->Commit();
-die('asd');
 echo \CAdminMessage::ShowNote("Модуль educational_organization установлен");
