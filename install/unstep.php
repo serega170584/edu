@@ -1,8 +1,14 @@
-<?php if(!check_bitrix_sessid()) return;?>
+<?php if (!check_bitrix_sessid()) return; ?>
 <?php
 /**
  * @var \CMain $APPLICATION
  * @var string $DOCUMENT_ROOT
+ * @var \CDatabase $DB
  */
-$APPLICATION->IncludeAdminFile("Удаление типа инфоблока образовательной организации", $DOCUMENT_ROOT . "/local/modules/educational_organization/install/add_infoblock_type_unstep.php");
+if (!\CIBlockType::Delete('educational_organization')) {
+    $DB->Rollback();
+    throw new \Bitrix\Main\DB\Exception('Delete error!');
+}
+$DB->Commit();
+echo \CAdminMessage::ShowNote("Тип инфоблока образовательной организации успешно удален из системы");
 ?>
