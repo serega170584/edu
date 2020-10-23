@@ -3,6 +3,7 @@
 class educational_organization extends CModule
 {
     const DIRECTORY = 'local/modules/educational_organization/install';
+    const ID = 'educational_organization';
 
     var $MODULE_ID = "educational_organization";
     var $MODULE_VERSION;
@@ -24,7 +25,7 @@ class educational_organization extends CModule
             $this->MODULE_VERSION_DATE = $arModuleVersion["VERSION_DATE"];
         }
 
-        $this->MODULE_NAME = "educational_organization – модуль образовательной организации";
+        $this->MODULE_NAME = self::ID . " – модуль образовательной организации";
         $this->MODULE_DESCRIPTION = "После установки вы сможете пользоваться модулем образовательной организации";
 
         \CModule::IncludeModule('iblock');
@@ -45,11 +46,12 @@ class educational_organization extends CModule
         /**
          * \CDatabase $DB
          */
-        global $DOCUMENT_ROOT, $APPLICATION, $DB;
+        global $DOCUMENT_ROOT, $APPLICATION, $DB, $moduleId;
         try {
             $DB->StartTransaction();
-            RegisterModule("educational_organization");
-            $APPLICATION->IncludeAdminFile("Установка модуля educational_organization", $DOCUMENT_ROOT . "/" . self::DIRECTORY . "/step.php");
+            RegisterModule(self::ID);
+            $moduleId = self::ID;
+            $APPLICATION->IncludeAdminFile("Установка модуля " . self::ID, $DOCUMENT_ROOT . "/" . self::DIRECTORY . "/step.php");
         } catch (\Exception $e) {
             $APPLICATION->IncludeAdminFile($e->getMessage(), $DOCUMENT_ROOT . "/" . self::DIRECTORY . "/error_step.php");
         }
@@ -60,11 +62,12 @@ class educational_organization extends CModule
         /**
          * @var \CDatabase $DB
          */
-        global $DOCUMENT_ROOT, $APPLICATION, $DB;
+        global $DOCUMENT_ROOT, $APPLICATION, $DB, $moduleId;
         try {
             $DB->StartTransaction();
-            UnRegisterModule("educational_organization");
-            $APPLICATION->IncludeAdminFile("Деинсталляция модуля educational_organization", $DOCUMENT_ROOT . "/" . self::DIRECTORY . "/unstep.php");
+            UnRegisterModule(self::ID);
+            $moduleId = self::ID;
+            $APPLICATION->IncludeAdminFile("Деинсталляция модуля " . self::ID, $DOCUMENT_ROOT . "/" . self::DIRECTORY . "/unstep.php");
         } catch (Exception $e) {
             $APPLICATION->IncludeAdminFile($e->getMessage(), $DOCUMENT_ROOT . "/" . self::DIRECTORY . "/error_unstep.php");
         }

@@ -4,8 +4,10 @@
  * @var \CMain $APPLICATION
  * @var string $DOCUMENT_ROOT
  * @var \CDatabase $DB
+ * @var string $moduleId
  */
-if (!\CIBlockType::Delete('educational_organization')) {
+global $moduleId;
+if (!\CIBlockType::Delete($moduleId)) {
     $DB->Rollback();
     throw new \Bitrix\Main\DB\Exception('Delete error!');
 }

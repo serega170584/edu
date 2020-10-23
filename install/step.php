@@ -3,9 +3,11 @@
  * @var \CMain $APPLICATION
  * @var string $DOCUMENT_ROOT
  * @var \CDatabase $DB
+ * @var string $moduleId
  */
+global $moduleId;
 $arFields = [
-    'ID' => 'educational_organization',
+    'ID' => $moduleId,
     'SECTIONS' => 'Y',
     'IN_RSS' => 'N',
     'SORT' => 100,
