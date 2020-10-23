@@ -2,6 +2,8 @@
 
 class educational_organization extends CModule
 {
+    const DIRECTORY = 'local/modules/educational_organization/install';
+
     var $MODULE_ID = "educational_organization";
     var $MODULE_VERSION;
     var $MODULE_VERSION_DATE;
@@ -46,11 +48,10 @@ class educational_organization extends CModule
         global $DOCUMENT_ROOT, $APPLICATION, $DB;
         try {
             $DB->StartTransaction();
-//            $this->InstallFiles();
             RegisterModule("educational_organization");
-            $APPLICATION->IncludeAdminFile("Установка модуля educational_organization", $DOCUMENT_ROOT . "/local/modules/educational_organization/install/step.php");
+            $APPLICATION->IncludeAdminFile("Установка модуля educational_organization", $DOCUMENT_ROOT . "/" . self::DIRECTORY . "/step.php");
         } catch (\Exception $e) {
-            $APPLICATION->IncludeAdminFile($e->getMessage(), $DOCUMENT_ROOT . "/local/modules/educational_organization/install/error_step.php");
+            $APPLICATION->IncludeAdminFile($e->getMessage(), $DOCUMENT_ROOT . "/" . self::DIRECTORY . "/error_step.php");
         }
     }
 
@@ -62,11 +63,10 @@ class educational_organization extends CModule
         global $DOCUMENT_ROOT, $APPLICATION, $DB;
         try {
             $DB->StartTransaction();
-//            $this->UnInstallFiles();
             UnRegisterModule("educational_organization");
-            $APPLICATION->IncludeAdminFile("Деинсталляция модуля educational_organization", $DOCUMENT_ROOT . "/local/modules/educational_organization/install/unstep.php");
+            $APPLICATION->IncludeAdminFile("Деинсталляция модуля educational_organization", $DOCUMENT_ROOT . "/" . self::DIRECTORY . "/unstep.php");
         } catch (Exception $e) {
-            $APPLICATION->IncludeAdminFile($e->getMessage(), $DOCUMENT_ROOT . "/local/modules/educational_organization/install/error_unstep.php");
+            $APPLICATION->IncludeAdminFile($e->getMessage(), $DOCUMENT_ROOT . "/" . self::DIRECTORY . "/error_unstep.php");
         }
     }
 }
