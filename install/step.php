@@ -186,6 +186,22 @@ if (strlen($group->LAST_ERROR)>0) {
     throw new \Bitrix\Main\DB\Exception('Ошибка добавления группы пользователя');
 }
 
+$group = new \CGroup;
+$arFields = Array(
+    "ACTIVE"       => "Y",
+    "C_SORT"       => 100,
+    "NAME"         => "Отдел",
+    "DESCRIPTION"  => "Отдел",
+    "USER_ID"      => [],
+    "STRING_ID"      => "DEPARTMENT"
+);
+$id = $group->Add($arFields);
+if (strlen($group->LAST_ERROR)>0) {
+    $DB->Rollback();
+    throw new \Bitrix\Main\DB\Exception('Ошибка добавления группы пользователя');
+}
+
+
 echo \CAdminMessage::ShowNote("Группы пользователей добавлены");
 
 $DB->Commit();
