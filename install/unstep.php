@@ -39,6 +39,12 @@ $oUserTypeEntity->Delete(CUserTypeEntity::GetList([
     'ENTITY_ID' => 'USER',
     'FIELD_NAME' => 'UF_DOCUMENT'
 ])->Fetch()['ID']);
+$oUserTypeEntity->Delete(CUserTypeEntity::GetList([
+    'ID' => 'ASC'
+], [
+    'ENTITY_ID' => 'USER',
+    'FIELD_NAME' => 'UF_TIME_ADDITION'
+])->Fetch()['ID']);
 echo \CAdminMessage::ShowNote("Свойства пользователя удалены");
 
 echo \CAdminMessage::ShowNote("Удаление групп пользователей");
