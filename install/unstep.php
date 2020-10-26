@@ -15,6 +15,18 @@ $oUserTypeEntity->Delete(CUserTypeEntity::GetList([
     'ENTITY_ID' => 'USER',
     'FIELD_NAME' => 'UF_BEGIN_TIME'
 ])->Fetch()['ID']);
+$oUserTypeEntity->Delete(CUserTypeEntity::GetList([
+    'ID' => 'ASC'
+], [
+    'ENTITY_ID' => 'USER',
+    'FIELD_NAME' => 'UF_END_TIME'
+])->Fetch()['ID']);
+$oUserTypeEntity->Delete(CUserTypeEntity::GetList([
+    'ID' => 'ASC'
+], [
+    'ENTITY_ID' => 'USER',
+    'FIELD_NAME' => 'UF_SITE'
+])->Fetch()['ID']);
 echo \CAdminMessage::ShowNote("Свойства пользователя удалены");
 
 echo \CAdminMessage::ShowNote("Удаление типа инфоблока образовательной организации");

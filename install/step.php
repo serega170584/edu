@@ -39,7 +39,7 @@ $aUserFields = [
     'ENTITY_ID' => 'USER',
     'FIELD_NAME' => 'UF_BEGIN_TIME',
     'USER_TYPE_ID' => 'datetime',
-    'XML_ID' => 'BEGIN_DATE',
+    'XML_ID' => 'BEGIN_TIME',
     'SORT' => 500,
     'MULTIPLE' => 'N',
     'MANDATORY' => 'N',
@@ -73,6 +73,85 @@ if (!$res) {
     $DB->Rollback();
     throw new \Bitrix\Main\DB\Exception('Ошибка добавления пользовательского свойства');
 }
+
+$aUserFields = [
+    'ENTITY_ID' => 'USER',
+    'FIELD_NAME' => 'UF_END_TIME',
+    'USER_TYPE_ID' => 'datetime',
+    'XML_ID' => 'BEGIN_TIME',
+    'SORT' => 500,
+    'MULTIPLE' => 'N',
+    'MANDATORY' => 'N',
+    'SHOW_FILTER' => 'N',
+    'SHOW_IN_LIST' => '',
+    'EDIT_IN_LIST' => '',
+    'IS_SEARCHABLE' => 'N',
+    'EDIT_FORM_LABEL' => [
+        'ru' => 'Время окончания',
+        'en' => 'End time'
+    ],
+    'LIST_COLUMN_LABEL' => [
+        'ru' => 'Время окончания',
+        'en' => 'End time',
+    ],
+    'LIST_FILTER_LABEL' => [
+        'ru' => 'Время окончания',
+        'en' => 'End time',
+    ],
+    'ERROR_MESSAGE' => [
+        'ru' => 'Ошибка при заполнении',
+        'en' => 'An error in completing',
+    ],
+    'HELP_MESSAGE' => [
+        'ru' => '',
+        'en' => '',
+    ]
+];
+$res = $oUserTypeEntity->Add($aUserFields);
+if (!$res) {
+    $DB->Rollback();
+    throw new \Bitrix\Main\DB\Exception('Ошибка добавления пользовательского свойства');
+}
+
+$aUserFields = [
+    'ENTITY_ID' => 'USER',
+    'FIELD_NAME' => 'UF_SITE',
+    'USER_TYPE_ID' => 'string',
+    'XML_ID' => 'SITE',
+    'SORT' => 500,
+    'MULTIPLE' => 'N',
+    'MANDATORY' => 'N',
+    'SHOW_FILTER' => 'N',
+    'SHOW_IN_LIST' => '',
+    'EDIT_IN_LIST' => '',
+    'IS_SEARCHABLE' => 'N',
+    'EDIT_FORM_LABEL' => [
+        'ru' => 'Сайт',
+        'en' => 'Site'
+    ],
+    'LIST_COLUMN_LABEL' => [
+        'ru' => 'Сайт',
+        'en' => 'Site',
+    ],
+    'LIST_FILTER_LABEL' => [
+        'ru' => 'Сайт',
+        'en' => 'Site',
+    ],
+    'ERROR_MESSAGE' => [
+        'ru' => 'Ошибка при заполнении',
+        'en' => 'An error in completing',
+    ],
+    'HELP_MESSAGE' => [
+        'ru' => '',
+        'en' => '',
+    ]
+];
+$res = $oUserTypeEntity->Add($aUserFields);
+if (!$res) {
+    $DB->Rollback();
+    throw new \Bitrix\Main\DB\Exception('Ошибка добавления пользовательского свойства');
+}
+
 echo \CAdminMessage::ShowNote("Свойства пользователя добавлены");
 
 $DB->Commit();
