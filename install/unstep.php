@@ -8,7 +8,7 @@
  */
 global $moduleId;
 $oUserTypeEntity = new CUserTypeEntity();
-echo \CAdminMessage::ShowNote("Удаление свойств: время начала работы, время окончания работы, сайт пользователя");
+echo \CAdminMessage::ShowNote("Удаление свойств");
 $oUserTypeEntity->Delete(CUserTypeEntity::GetList([
     'ID' => 'ASC'
 ], [
@@ -26,6 +26,12 @@ $oUserTypeEntity->Delete(CUserTypeEntity::GetList([
 ], [
     'ENTITY_ID' => 'USER',
     'FIELD_NAME' => 'UF_SITE'
+])->Fetch()['ID']);
+$oUserTypeEntity->Delete(CUserTypeEntity::GetList([
+    'ID' => 'ASC'
+], [
+    'ENTITY_ID' => 'USER',
+    'FIELD_NAME' => 'UF_PHOTO'
 ])->Fetch()['ID']);
 echo \CAdminMessage::ShowNote("Свойства пользователя удалены");
 
