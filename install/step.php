@@ -191,6 +191,45 @@ if (!$res) {
     throw new \Bitrix\Main\DB\Exception('Ошибка добавления пользовательского свойства');
 }
 
+$aUserFields = [
+    'ENTITY_ID' => 'USER',
+    'FIELD_NAME' => 'UF_DOCUMENT',
+    'USER_TYPE_ID' => 'file',
+    'XML_ID' => 'DOCUMENT',
+    'SORT' => 500,
+    'MULTIPLE' => 'N',
+    'MANDATORY' => 'N',
+    'SHOW_FILTER' => 'N',
+    'SHOW_IN_LIST' => '',
+    'EDIT_IN_LIST' => '',
+    'IS_SEARCHABLE' => 'N',
+    'EDIT_FORM_LABEL' => [
+        'ru' => 'Документ',
+        'en' => 'Document'
+    ],
+    'LIST_COLUMN_LABEL' => [
+        'ru' => 'Документ',
+        'en' => 'Document',
+    ],
+    'LIST_FILTER_LABEL' => [
+        'ru' => 'Документ',
+        'en' => 'Document',
+    ],
+    'ERROR_MESSAGE' => [
+        'ru' => 'Ошибка при заполнении',
+        'en' => 'An error in completing',
+    ],
+    'HELP_MESSAGE' => [
+        'ru' => '',
+        'en' => '',
+    ]
+];
+$res = $oUserTypeEntity->Add($aUserFields);
+if (!$res) {
+    $DB->Rollback();
+    throw new \Bitrix\Main\DB\Exception('Ошибка добавления пользовательского свойства');
+}
+
 echo \CAdminMessage::ShowNote("Свойства пользователя добавлены");
 
 echo \CAdminMessage::ShowNote("Добавление групп пользователей");
