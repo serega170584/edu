@@ -36,7 +36,7 @@ $order = 'asc';
 $filter = [
     'STRING_ID' => 'FOUNDERS'
 ];
-if (!\CGroup::Delete(\CGroup::GetList($by, $order, $filter)->Fetch()['id'])) {
+if (!\CGroup::Delete(\CGroup::GetList($by, $order, $filter)->Fetch()['ID'])) {
     $DB->Rollback();
     throw new \Bitrix\Main\DB\Exception('Delete error!');
 }
@@ -44,7 +44,7 @@ if (!\CGroup::Delete(\CGroup::GetList($by, $order, $filter)->Fetch()['id'])) {
 $filter = [
     'STRING_ID' => 'BRANCHES'
 ];
-if (!\CGroup::Delete(\CGroup::GetList($by, $order, $filter)->Fetch()['id'])) {
+if (!\CGroup::Delete(\CGroup::GetList($by, $order, $filter)->Fetch()['ID'])) {
     $DB->Rollback();
     throw new \Bitrix\Main\DB\Exception('Delete error!');
 }
