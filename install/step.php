@@ -154,5 +154,39 @@ if (!$res) {
 
 echo \CAdminMessage::ShowNote("Свойства пользователя добавлены");
 
+echo \CAdminMessage::ShowNote("Добавление групп пользователей: филиалы, учредители");
+
+$group = new \CGroup;
+$arFields = Array(
+    "ACTIVE"       => "Y",
+    "C_SORT"       => 100,
+    "NAME"         => "Учредители",
+    "DESCRIPTION"  => "Учредители",
+    "USER_ID"      => [],
+    "STRING_ID"      => "FOUNDERS"
+);
+$id = $group->Add($arFields);
+if (strlen($group->LAST_ERROR)>0) {
+    $DB->Rollback();
+    throw new \Bitrix\Main\DB\Exception('Ошибка добавления группы пользователя');
+}
+
+$group = new \CGroup;
+$arFields = Array(
+    "ACTIVE"       => "Y",
+    "C_SORT"       => 100,
+    "NAME"         => "Филиалы",
+    "DESCRIPTION"  => "Филиалы",
+    "USER_ID"      => [],
+    "STRING_ID"      => "BRANCHES"
+);
+$id = $group->Add($arFields);
+if (strlen($group->LAST_ERROR)>0) {
+    $DB->Rollback();
+    throw new \Bitrix\Main\DB\Exception('Ошибка добавления группы пользователя');
+}
+
+echo \CAdminMessage::ShowNote("Группы пользователей добавлены");
+
 $DB->Commit();
 ?>

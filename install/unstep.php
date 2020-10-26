@@ -29,6 +29,28 @@ $oUserTypeEntity->Delete(CUserTypeEntity::GetList([
 ])->Fetch()['ID']);
 echo \CAdminMessage::ShowNote("Свойства пользователя удалены");
 
+echo \CAdminMessage::ShowNote("Удаление групп пользователей");
+
+$by = 'id';
+$order = 'asc';
+$filter = [
+    'STRING_ID' => 'FOUNDERS'
+];
+if (!\CGroup::Delete(\CGroup::GetList($by, $order, $filter)->Fetch()['id'])) {
+    $DB->Rollback();
+    throw new \Bitrix\Main\DB\Exception('Delete error!');
+}
+
+$filter = [
+    'STRING_ID' => 'BRANCHES'
+];
+if (!\CGroup::Delete(\CGroup::GetList($by, $order, $filter)->Fetch()['id'])) {
+    $DB->Rollback();
+    throw new \Bitrix\Main\DB\Exception('Delete error!');
+}
+
+echo \CAdminMessage::ShowNote("Группы пользователя удалены");
+
 echo \CAdminMessage::ShowNote("Удаление типа инфоблока образовательной организации");
 if (!\CIBlockType::Delete($moduleId)) {
     $DB->Rollback();
