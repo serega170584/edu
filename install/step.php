@@ -233,7 +233,7 @@ if (!$res) {
 $aUserFields = [
     'ENTITY_ID' => 'USER',
     'FIELD_NAME' => 'UF_TIME_ADDITION',
-    'USER_TYPE_ID' => 'file',
+    'USER_TYPE_ID' => 'string',
     'XML_ID' => 'TIME_ADDITION',
     'SORT' => 500,
     'MULTIPLE' => 'N',
