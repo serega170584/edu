@@ -1,18 +1,25 @@
 <?php
 
-class educational_organization extends CModule
+/**
+ * Class Edu
+ */
+class Edu extends CModule
 {
-    const DIRECTORY = 'local/modules/educational_organization/install';
-    const ID = 'educational_organization';
+    const DIRECTORY = 'local/modules/edu/install';
+    const ID = 'edu';
+    const ALL_USERS_GROUP_ID = 2;
+    const READ_PERMISSION = 'R';
+    const DOCUMENTS_INFOBLOCK_CODE = 'DOCUMENTS';
+    const SITE_ID = 's1';
 
-    var $MODULE_ID = "educational_organization";
+    var $MODULE_ID = "edu";
     var $MODULE_VERSION;
     var $MODULE_VERSION_DATE;
     var $MODULE_NAME;
     var $MODULE_DESCRIPTION;
     var $MODULE_CSS;
 
-    function educational_organization()
+    function __construct()
     {
         $arModuleVersion = array();
 

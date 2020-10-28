@@ -7,6 +7,15 @@
  * @var string $moduleId
  */
 global $moduleId;
+
+$documentsIblockId = \CIBlock::GetList([
+    'ID' => 'ASC',
+    [
+        'TYPE' => $moduleId,
+        'CODE' => Edu::DOCUMENTS_INFOBLOCK_CODE,
+    ]
+])->Fetch()['ID'];
+
 $oUserTypeEntity = new CUserTypeEntity();
 echo \CAdminMessage::ShowNote("Удаление свойств");
 $oUserTypeEntity->Delete(CUserTypeEntity::GetList([
@@ -84,6 +93,14 @@ if (!\CGroup::Delete(\CGroup::GetList($by, $order, $filter)->Fetch()['ID'])) {
 }
 
 echo \CAdminMessage::ShowNote("Группы пользователя удалены");
+
+echo \CAdminMessage::ShowNote("Удаление инфоблоков");
+if (!\CIBlock::Delete($documentsIblockId)) {
+    $DB->Rollback();
+    throw new \Bitrix\Main\DB\Exception('Delete error!');
+}
+echo \CAdminMessage::ShowNote("Инфоблоки удалены");
+
 
 echo \CAdminMessage::ShowNote("Удаление типа инфоблока образовательной организации");
 if (!\CIBlockType::Delete($moduleId)) {

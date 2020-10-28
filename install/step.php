@@ -6,6 +6,7 @@
  * @var string $moduleId
  */
 global $moduleId;
+
 echo \CAdminMessage::ShowNote("Добавление типа инфоблока образовательной организации");
 $arFields = [
     'ID' => $moduleId,
@@ -274,64 +275,85 @@ echo \CAdminMessage::ShowNote("Свойства пользователя доб�
 echo \CAdminMessage::ShowNote("Добавление групп пользователей");
 
 $group = new \CGroup;
-$arFields = Array(
-    "ACTIVE"       => "Y",
-    "C_SORT"       => 100,
-    "NAME"         => "Учредители",
-    "DESCRIPTION"  => "Учредители",
-    "USER_ID"      => [],
-    "STRING_ID"      => "FOUNDERS"
-);
+$arFields = [
+    "ACTIVE" => "Y",
+    "C_SORT" => 100,
+    "NAME" => "Учредители",
+    "DESCRIPTION" => "Учредители",
+    "USER_ID" => [],
+    "STRING_ID" => "FOUNDERS"
+];
 $id = $group->Add($arFields);
-if (strlen($group->LAST_ERROR)>0) {
+if (strlen($group->LAST_ERROR) > 0) {
     $DB->Rollback();
     throw new \Bitrix\Main\DB\Exception('Ошибка добавления группы пользователя');
 }
 
-$arFields = Array(
-    "ACTIVE"       => "Y",
-    "C_SORT"       => 100,
-    "NAME"         => "Филиалы",
-    "DESCRIPTION"  => "Филиалы",
-    "USER_ID"      => [],
-    "STRING_ID"      => "BRANCHES"
-);
+$arFields = [
+    "ACTIVE" => "Y",
+    "C_SORT" => 100,
+    "NAME" => "Филиалы",
+    "DESCRIPTION" => "Филиалы",
+    "USER_ID" => [],
+    "STRING_ID" => "BRANCHES"
+];
 $id = $group->Add($arFields);
-if (strlen($group->LAST_ERROR)>0) {
+if (strlen($group->LAST_ERROR) > 0) {
     $DB->Rollback();
     throw new \Bitrix\Main\DB\Exception('Ошибка добавления группы пользователя');
 }
 
-$arFields = Array(
-    "ACTIVE"       => "Y",
-    "C_SORT"       => 100,
-    "NAME"         => "Главный корпус",
-    "DESCRIPTION"  => "Главный корпус",
-    "USER_ID"      => [],
-    "STRING_ID"      => "MAIN"
-);
+$arFields = [
+    "ACTIVE" => "Y",
+    "C_SORT" => 100,
+    "NAME" => "Главный корпус",
+    "DESCRIPTION" => "Главный корпус",
+    "USER_ID" => [],
+    "STRING_ID" => "MAIN"
+];
 $id = $group->Add($arFields);
-if (strlen($group->LAST_ERROR)>0) {
+if (strlen($group->LAST_ERROR) > 0) {
     $DB->Rollback();
     throw new \Bitrix\Main\DB\Exception('Ошибка добавления группы пользователя');
 }
 
-$arFields = Array(
-    "ACTIVE"       => "Y",
-    "C_SORT"       => 100,
-    "NAME"         => "Отдел",
-    "DESCRIPTION"  => "Отдел",
-    "USER_ID"      => [],
-    "STRING_ID"      => "DEPARTMENT"
-);
+$arFields = [
+    "ACTIVE" => "Y",
+    "C_SORT" => 100,
+    "NAME" => "Отдел",
+    "DESCRIPTION" => "Отдел",
+    "USER_ID" => [],
+    "STRING_ID" => "DEPARTMENT"
+];
 $id = $group->Add($arFields);
-if (strlen($group->LAST_ERROR)>0) {
+if (strlen($group->LAST_ERROR) > 0) {
     $DB->Rollback();
     throw new \Bitrix\Main\DB\Exception('Ошибка добавления группы пользователя');
 }
 
 
 echo \CAdminMessage::ShowNote("Группы пользователей добавлены");
+
+echo \CAdminMessage::ShowNote("Добавление инфомационных блоков");
+
+$ib = new \CIBlock;
+$arFields = [
+    "NAME" => 'Документы',
+    "CODE" => Edu::DOCUMENTS_INFOBLOCK_CODE,
+    "LIST_PAGE_URL" => '',
+    "DETAIL_PAGE_URL" => '',
+    "IBLOCK_TYPE_ID" => $moduleId,
+    "SITE_ID" => [Edu::SITE_ID],
+    'LID' => Edu::SITE_ID,
+    "GROUP_ID" => [Edu::ALL_USERS_GROUP_ID => Edu::READ_PERMISSION]
+];
+$id = $ib->Add($arFields);
+if (!($id > 0)) {
+    $DB->Rollback();
+    throw new \Bitrix\Main\DB\Exception('Ошибка добавления инфоблока');
+}
+
+echo \CAdminMessage::ShowNote("Информационные блоки добавлены");
 
 $DB->Commit();
 ?>
