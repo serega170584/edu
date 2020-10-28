@@ -356,7 +356,7 @@ if (!($documentsIblockId > 0)) {
 echo \CAdminMessage::ShowNote("Информационные блоки добавлены");
 
 echo \CAdminMessage::ShowNote("Добавление свойств инфомационных блоков");
-var_dump($documentsIblockId);
+//var_dump($documentsIblockId);
 //$ib = new \CIBlock;
 //$arFields = [
 //    "NAME" => 'Файл',
