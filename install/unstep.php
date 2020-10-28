@@ -9,14 +9,11 @@
 global $moduleId;
 
 $documentsIblockId = \CIBlock::GetList([
-    'ID' => 'ASC',
-    [
-        'TYPE' => $moduleId,
-        'CODE' => Edu::DOCUMENTS_INFOBLOCK_CODE,
-    ]
+    'ID' => 'ASC'
+], [
+    'TYPE' => $moduleId,
+    'CODE' => Edu::DOCUMENTS_INFOBLOCK_CODE,
 ])->Fetch()['ID'];
-var_dump($moduleId);
-var_dump(Edu::DOCUMENTS_INFOBLOCK_CODE);
 
 $oUserTypeEntity = new CUserTypeEntity();
 echo \CAdminMessage::ShowNote("Удаление свойств");
