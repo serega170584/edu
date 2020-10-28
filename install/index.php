@@ -77,7 +77,6 @@ class Edu extends CModule
                 'ID' => 'ASC',
                 [
                     'TYPE' => $moduleId,
-                    'CODE' => Edu::DOCUMENTS_INFOBLOCK_CODE,
                 ]
             ]);
             while ($row=$db->Fetch()){
