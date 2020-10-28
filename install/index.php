@@ -76,7 +76,7 @@ class Edu extends CModule
             $db=\CIBlock::GetList([
                 'ID' => 'ASC',
                 [
-                    'TYPE' => $moduleId,
+                    'IBLOCK_TYPE_ID' => $moduleId,
                 ]
             ]);
             while ($row=$db->Fetch()){
