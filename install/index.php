@@ -82,7 +82,7 @@ class Edu extends CModule
             while ($row = $db->Fetch()) {
                 var_dump($row);
             }
-            die('asd')
+            die('asd');
             $DB->StartTransaction();
             UnRegisterModule(self::ID);
             $moduleId = self::ID;
