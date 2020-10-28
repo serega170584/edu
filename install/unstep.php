@@ -105,13 +105,14 @@ echo \CAdminMessage::ShowNote("Группы пользователя удале�
 //    throw new \Bitrix\Main\DB\Exception('Delete error!');
 //}
 //echo \CAdminMessage::ShowNote("Свойства инфоблоков удалены");
-//
-//echo \CAdminMessage::ShowNote("Удаление инфоблоков");
-//if (!\CIBlock::Delete($documentsIblockId)) {
-//    $DB->Rollback();
-//    throw new \Bitrix\Main\DB\Exception('Delete error!');
-//}
-//echo \CAdminMessage::ShowNote("Инфоблоки удалены");
+
+echo \CAdminMessage::ShowNote("Удаление инфоблоков");
+var_dump($documentsIblockId);
+if (!\CIBlock::Delete($documentsIblockId)) {
+    $DB->Rollback();
+    throw new \Bitrix\Main\DB\Exception('Delete error!');
+}
+echo \CAdminMessage::ShowNote("Инфоблоки удалены");
 
 
 echo \CAdminMessage::ShowNote("Удаление типа инфоблока образовательной организации");
