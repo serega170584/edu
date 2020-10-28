@@ -15,12 +15,12 @@ $documentsIblockId = \CIBlock::GetList([
     'CODE' => Edu::DOCUMENTS_INFOBLOCK_CODE,
 ])->Fetch()['ID'];
 
-//$professionsIblockId = \CIBlock::GetList([
-//    'ID' => 'ASC'
-//], [
-//    'TYPE' => $moduleId,
-//    'CODE' => Edu::PROFESSIONS_INFOBLOCK_CODE,
-//])->Fetch()['ID'];
+$professionsIblockId = \CIBlock::GetList([
+    'ID' => 'ASC'
+], [
+    'TYPE' => $moduleId,
+    'CODE' => Edu::PROFESSIONS_INFOBLOCK_CODE,
+])->Fetch()['ID'];
 
 $oUserTypeEntity = new CUserTypeEntity();
 echo \CAdminMessage::ShowNote("Удаление свойств");
@@ -111,175 +111,175 @@ if (!\CIBlockProperty::Delete(\CIBlockProperty::GetList([
     throw new \Bitrix\Main\DB\Exception('Delete error!');
 }
 
-//if (!\CIBlockProperty::Delete(\CIBlockProperty::GetList([
-//    'ID' => 'ASC'
-//], [
-//    'CODE' => EDU::PROFESSIONS_INFOBLOCK_FORM_OF_EDUCATION_PROPERTY_CODE,
-//    'IBLOCK_ID' => $professionsIblockId
-//])->Fetch()['ID'])) {
-//    $DB->Rollback();
-//    throw new \Bitrix\Main\DB\Exception('Delete error!');
-//}
-//
-//if (!\CIBlockProperty::Delete(\CIBlockProperty::GetList([
-//    'ID' => 'ASC'
-//], [
-//    'CODE' => EDU::PROFESSIONS_INFOBLOCK_PERIOD_PROPERTY_CODE,
-//    'IBLOCK_ID' => $professionsIblockId
-//])->Fetch()['ID'])) {
-//    $DB->Rollback();
-//    throw new \Bitrix\Main\DB\Exception('Delete error!');
-//}
-//
-//if (!\CIBlockProperty::Delete(\CIBlockProperty::GetList([
-//    'ID' => 'ASC'
-//], [
-//    'CODE' => EDU::PROFESSIONS_INFOBLOCK_ACCREDITATION_PERIOD_PROPERTY_CODE,
-//    'IBLOCK_ID' => $professionsIblockId
-//])->Fetch()['ID'])) {
-//    $DB->Rollback();
-//    throw new \Bitrix\Main\DB\Exception('Delete error!');
-//}
-//
-//if (!\CIBlockProperty::Delete(\CIBlockProperty::GetList([
-//    'ID' => 'ASC'
-//], [
-//    'CODE' => EDU::PROFESSIONS_INFOBLOCK_LEVEL_PROPERTY_CODE,
-//    'IBLOCK_ID' => $professionsIblockId
-//])->Fetch()['ID'])) {
-//    $DB->Rollback();
-//    throw new \Bitrix\Main\DB\Exception('Delete error!');
-//}
-//
-//if (!\CIBlockProperty::Delete(\CIBlockProperty::GetList([
-//    'ID' => 'ASC'
-//], [
-//    'CODE' => EDU::PROFESSIONS_INFOBLOCK_CODE_PROPERTY_CODE,
-//    'IBLOCK_ID' => $professionsIblockId
-//])->Fetch()['ID'])) {
-//    $DB->Rollback();
-//    throw new \Bitrix\Main\DB\Exception('Delete error!');
-//}
-//
-//if (!\CIBlockProperty::Delete(\CIBlockProperty::GetList([
-//    'ID' => 'ASC'
-//], [
-//    'CODE' => EDU::PROFESSIONS_INFOBLOCK_DESCRIPTION_PROPERTY_CODE,
-//    'IBLOCK_ID' => $professionsIblockId
-//])->Fetch()['ID'])) {
-//    $DB->Rollback();
-//    throw new \Bitrix\Main\DB\Exception('Delete error!');
-//}
-//
-//if (!\CIBlockProperty::Delete(\CIBlockProperty::GetList([
-//    'ID' => 'ASC'
-//], [
-//    'CODE' => EDU::PROFESSIONS_INFOBLOCK_PLAN_PROPERTY_CODE,
-//    'IBLOCK_ID' => $professionsIblockId
-//])->Fetch()['ID'])) {
-//    $DB->Rollback();
-//    throw new \Bitrix\Main\DB\Exception('Delete error!');
-//}
-//
-//if (!\CIBlockProperty::Delete(\CIBlockProperty::GetList([
-//    'ID' => 'ASC'
-//], [
-//    'CODE' => EDU::PROFESSIONS_INFOBLOCK_ANNOTATIONS_PROPERTY_CODE,
-//    'IBLOCK_ID' => $professionsIblockId
-//])->Fetch()['ID'])) {
-//    $DB->Rollback();
-//    throw new \Bitrix\Main\DB\Exception('Delete error!');
-//}
-//
-//if (!\CIBlockProperty::Delete(\CIBlockProperty::GetList([
-//    'ID' => 'ASC'
-//], [
-//    'CODE' => EDU::PROFESSIONS_INFOBLOCK_SCHEDULE_PROPERTY_CODE,
-//    'IBLOCK_ID' => $professionsIblockId
-//])->Fetch()['ID'])) {
-//    $DB->Rollback();
-//    throw new \Bitrix\Main\DB\Exception('Delete error!');
-//}
-//
-//if (!\CIBlockProperty::Delete(\CIBlockProperty::GetList([
-//    'ID' => 'ASC'
-//], [
-//    'CODE' => EDU::PROFESSIONS_INFOBLOCK_METHODOLOGICAL_DOCUMENTS_PROPERTY_CODE,
-//    'IBLOCK_ID' => $professionsIblockId
-//])->Fetch()['ID'])) {
-//    $DB->Rollback();
-//    throw new \Bitrix\Main\DB\Exception('Delete error!');
-//}
-//
-//if (!\CIBlockProperty::Delete(\CIBlockProperty::GetList([
-//    'ID' => 'ASC'
-//], [
-//    'CODE' => EDU::PROFESSIONS_INFOBLOCK_PRACTICES_PROPERTY_CODE,
-//    'IBLOCK_ID' => $professionsIblockId
-//])->Fetch()['ID'])) {
-//    $DB->Rollback();
-//    throw new \Bitrix\Main\DB\Exception('Delete error!');
-//}
-//
-//if (!\CIBlockProperty::Delete(\CIBlockProperty::GetList([
-//    'ID' => 'ASC'
-//], [
-//    'CODE' => EDU::PROFESSIONS_INFOBLOCK_BUDGET_COUNT_PROPERTY_CODE,
-//    'IBLOCK_ID' => $professionsIblockId
-//])->Fetch()['ID'])) {
-//    $DB->Rollback();
-//    throw new \Bitrix\Main\DB\Exception('Delete error!');
-//}
-//
-//if (!\CIBlockProperty::Delete(\CIBlockProperty::GetList([
-//    'ID' => 'ASC'
-//], [
-//    'CODE' => EDU::PROFESSIONS_INFOBLOCK_PAYED_COUNT_PROPERTY_CODE,
-//    'IBLOCK_ID' => $professionsIblockId
-//])->Fetch()['ID'])) {
-//    $DB->Rollback();
-//    throw new \Bitrix\Main\DB\Exception('Delete error!');
-//}
-//
-//if (!\CIBlockProperty::Delete(\CIBlockProperty::GetList([
-//    'ID' => 'ASC'
-//], [
-//    'CODE' => EDU::PROFESSIONS_INFOBLOCK_LANGUAGES_PROPERTY_CODE,
-//    'IBLOCK_ID' => $professionsIblockId
-//])->Fetch()['ID'])) {
-//    $DB->Rollback();
-//    throw new \Bitrix\Main\DB\Exception('Delete error!');
-//}
-//
-//if (!\CIBlockProperty::Delete(\CIBlockProperty::GetList([
-//    'ID' => 'ASC'
-//], [
-//    'CODE' => EDU::PROFESSIONS_INFOBLOCK_RESEARCHES_PROPERTY_CODE,
-//    'IBLOCK_ID' => $professionsIblockId
-//])->Fetch()['ID'])) {
-//    $DB->Rollback();
-//    throw new \Bitrix\Main\DB\Exception('Delete error!');
-//}
-//
-//if (!\CIBlockProperty::Delete(\CIBlockProperty::GetList([
-//    'ID' => 'ASC'
-//], [
-//    'CODE' => EDU::PROFESSIONS_INFOBLOCK_RESULTS_PROPERTY_CODE,
-//    'IBLOCK_ID' => $professionsIblockId
-//])->Fetch()['ID'])) {
-//    $DB->Rollback();
-//    throw new \Bitrix\Main\DB\Exception('Delete error!');
-//}
-//
-//if (!\CIBlockProperty::Delete(\CIBlockProperty::GetList([
-//    'ID' => 'ASC'
-//], [
-//    'CODE' => EDU::PROFESSIONS_INFOBLOCK_REPLACED_RESULTS_PROPERTY_CODE,
-//    'IBLOCK_ID' => $professionsIblockId
-//])->Fetch()['ID'])) {
-//    $DB->Rollback();
-//    throw new \Bitrix\Main\DB\Exception('Delete error!');
-//}
+if (!\CIBlockProperty::Delete(\CIBlockProperty::GetList([
+    'ID' => 'ASC'
+], [
+    'CODE' => EDU::PROFESSIONS_INFOBLOCK_FORM_OF_EDUCATION_PROPERTY_CODE,
+    'IBLOCK_ID' => $professionsIblockId
+])->Fetch()['ID'])) {
+    $DB->Rollback();
+    throw new \Bitrix\Main\DB\Exception('Delete error!');
+}
+
+if (!\CIBlockProperty::Delete(\CIBlockProperty::GetList([
+    'ID' => 'ASC'
+], [
+    'CODE' => EDU::PROFESSIONS_INFOBLOCK_PERIOD_PROPERTY_CODE,
+    'IBLOCK_ID' => $professionsIblockId
+])->Fetch()['ID'])) {
+    $DB->Rollback();
+    throw new \Bitrix\Main\DB\Exception('Delete error!');
+}
+
+if (!\CIBlockProperty::Delete(\CIBlockProperty::GetList([
+    'ID' => 'ASC'
+], [
+    'CODE' => EDU::PROFESSIONS_INFOBLOCK_ACCREDITATION_PERIOD_PROPERTY_CODE,
+    'IBLOCK_ID' => $professionsIblockId
+])->Fetch()['ID'])) {
+    $DB->Rollback();
+    throw new \Bitrix\Main\DB\Exception('Delete error!');
+}
+
+if (!\CIBlockProperty::Delete(\CIBlockProperty::GetList([
+    'ID' => 'ASC'
+], [
+    'CODE' => EDU::PROFESSIONS_INFOBLOCK_LEVEL_PROPERTY_CODE,
+    'IBLOCK_ID' => $professionsIblockId
+])->Fetch()['ID'])) {
+    $DB->Rollback();
+    throw new \Bitrix\Main\DB\Exception('Delete error!');
+}
+
+if (!\CIBlockProperty::Delete(\CIBlockProperty::GetList([
+    'ID' => 'ASC'
+], [
+    'CODE' => EDU::PROFESSIONS_INFOBLOCK_CODE_PROPERTY_CODE,
+    'IBLOCK_ID' => $professionsIblockId
+])->Fetch()['ID'])) {
+    $DB->Rollback();
+    throw new \Bitrix\Main\DB\Exception('Delete error!');
+}
+
+if (!\CIBlockProperty::Delete(\CIBlockProperty::GetList([
+    'ID' => 'ASC'
+], [
+    'CODE' => EDU::PROFESSIONS_INFOBLOCK_DESCRIPTION_PROPERTY_CODE,
+    'IBLOCK_ID' => $professionsIblockId
+])->Fetch()['ID'])) {
+    $DB->Rollback();
+    throw new \Bitrix\Main\DB\Exception('Delete error!');
+}
+
+if (!\CIBlockProperty::Delete(\CIBlockProperty::GetList([
+    'ID' => 'ASC'
+], [
+    'CODE' => EDU::PROFESSIONS_INFOBLOCK_PLAN_PROPERTY_CODE,
+    'IBLOCK_ID' => $professionsIblockId
+])->Fetch()['ID'])) {
+    $DB->Rollback();
+    throw new \Bitrix\Main\DB\Exception('Delete error!');
+}
+
+if (!\CIBlockProperty::Delete(\CIBlockProperty::GetList([
+    'ID' => 'ASC'
+], [
+    'CODE' => EDU::PROFESSIONS_INFOBLOCK_ANNOTATIONS_PROPERTY_CODE,
+    'IBLOCK_ID' => $professionsIblockId
+])->Fetch()['ID'])) {
+    $DB->Rollback();
+    throw new \Bitrix\Main\DB\Exception('Delete error!');
+}
+
+if (!\CIBlockProperty::Delete(\CIBlockProperty::GetList([
+    'ID' => 'ASC'
+], [
+    'CODE' => EDU::PROFESSIONS_INFOBLOCK_SCHEDULE_PROPERTY_CODE,
+    'IBLOCK_ID' => $professionsIblockId
+])->Fetch()['ID'])) {
+    $DB->Rollback();
+    throw new \Bitrix\Main\DB\Exception('Delete error!');
+}
+
+if (!\CIBlockProperty::Delete(\CIBlockProperty::GetList([
+    'ID' => 'ASC'
+], [
+    'CODE' => EDU::PROFESSIONS_INFOBLOCK_METHODOLOGICAL_DOCUMENTS_PROPERTY_CODE,
+    'IBLOCK_ID' => $professionsIblockId
+])->Fetch()['ID'])) {
+    $DB->Rollback();
+    throw new \Bitrix\Main\DB\Exception('Delete error!');
+}
+
+if (!\CIBlockProperty::Delete(\CIBlockProperty::GetList([
+    'ID' => 'ASC'
+], [
+    'CODE' => EDU::PROFESSIONS_INFOBLOCK_PRACTICES_PROPERTY_CODE,
+    'IBLOCK_ID' => $professionsIblockId
+])->Fetch()['ID'])) {
+    $DB->Rollback();
+    throw new \Bitrix\Main\DB\Exception('Delete error!');
+}
+
+if (!\CIBlockProperty::Delete(\CIBlockProperty::GetList([
+    'ID' => 'ASC'
+], [
+    'CODE' => EDU::PROFESSIONS_INFOBLOCK_BUDGET_COUNT_PROPERTY_CODE,
+    'IBLOCK_ID' => $professionsIblockId
+])->Fetch()['ID'])) {
+    $DB->Rollback();
+    throw new \Bitrix\Main\DB\Exception('Delete error!');
+}
+
+if (!\CIBlockProperty::Delete(\CIBlockProperty::GetList([
+    'ID' => 'ASC'
+], [
+    'CODE' => EDU::PROFESSIONS_INFOBLOCK_PAYED_COUNT_PROPERTY_CODE,
+    'IBLOCK_ID' => $professionsIblockId
+])->Fetch()['ID'])) {
+    $DB->Rollback();
+    throw new \Bitrix\Main\DB\Exception('Delete error!');
+}
+
+if (!\CIBlockProperty::Delete(\CIBlockProperty::GetList([
+    'ID' => 'ASC'
+], [
+    'CODE' => EDU::PROFESSIONS_INFOBLOCK_LANGUAGES_PROPERTY_CODE,
+    'IBLOCK_ID' => $professionsIblockId
+])->Fetch()['ID'])) {
+    $DB->Rollback();
+    throw new \Bitrix\Main\DB\Exception('Delete error!');
+}
+
+if (!\CIBlockProperty::Delete(\CIBlockProperty::GetList([
+    'ID' => 'ASC'
+], [
+    'CODE' => EDU::PROFESSIONS_INFOBLOCK_RESEARCHES_PROPERTY_CODE,
+    'IBLOCK_ID' => $professionsIblockId
+])->Fetch()['ID'])) {
+    $DB->Rollback();
+    throw new \Bitrix\Main\DB\Exception('Delete error!');
+}
+
+if (!\CIBlockProperty::Delete(\CIBlockProperty::GetList([
+    'ID' => 'ASC'
+], [
+    'CODE' => EDU::PROFESSIONS_INFOBLOCK_RESULTS_PROPERTY_CODE,
+    'IBLOCK_ID' => $professionsIblockId
+])->Fetch()['ID'])) {
+    $DB->Rollback();
+    throw new \Bitrix\Main\DB\Exception('Delete error!');
+}
+
+if (!\CIBlockProperty::Delete(\CIBlockProperty::GetList([
+    'ID' => 'ASC'
+], [
+    'CODE' => EDU::PROFESSIONS_INFOBLOCK_REPLACED_RESULTS_PROPERTY_CODE,
+    'IBLOCK_ID' => $professionsIblockId
+])->Fetch()['ID'])) {
+    $DB->Rollback();
+    throw new \Bitrix\Main\DB\Exception('Delete error!');
+}
 
 echo \CAdminMessage::ShowNote("Свойства инфоблоков удалены");
 
@@ -288,10 +288,10 @@ if (!\CIBlock::Delete($documentsIblockId)) {
     $DB->Rollback();
     throw new \Bitrix\Main\DB\Exception('Delete error!');
 }
-//if (!\CIBlock::Delete($professionsIblockId)) {
-//    $DB->Rollback();
-//    throw new \Bitrix\Main\DB\Exception('Delete error!');
-//}
+if (!\CIBlock::Delete($professionsIblockId)) {
+    $DB->Rollback();
+    throw new \Bitrix\Main\DB\Exception('Delete error!');
+}
 echo \CAdminMessage::ShowNote("Инфоблоки удалены");
 
 
