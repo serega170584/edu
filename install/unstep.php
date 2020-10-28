@@ -15,6 +15,8 @@ $documentsIblockId = \CIBlock::GetList([
         'CODE' => Edu::DOCUMENTS_INFOBLOCK_CODE,
     ]
 ])->Fetch()['ID'];
+var_dump($moduleId);
+var_dump(Edu::DOCUMENTS_INFOBLOCK_CODE);
 
 $oUserTypeEntity = new CUserTypeEntity();
 echo \CAdminMessage::ShowNote("Удаление свойств");
@@ -107,7 +109,6 @@ if (!\CIBlockProperty::Delete(\CIBlockProperty::GetList([
 echo \CAdminMessage::ShowNote("Свойства инфоблоков удалены");
 
 echo \CAdminMessage::ShowNote("Удаление инфоблоков");
-var_dump($documentsIblockId);
 if (!\CIBlock::Delete($documentsIblockId)) {
     $DB->Rollback();
     throw new \Bitrix\Main\DB\Exception('Delete error!');
