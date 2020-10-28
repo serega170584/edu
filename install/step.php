@@ -347,13 +347,31 @@ $arFields = [
     'LID' => Edu::SITE_ID,
     "GROUP_ID" => [Edu::ALL_USERS_GROUP_ID => Edu::READ_PERMISSION]
 ];
-$id = $ib->Add($arFields);
-if (!($id > 0)) {
+$documentsIblockId = $ib->Add($arFields);
+if (!($documentsIblockId > 0)) {
     $DB->Rollback();
     throw new \Bitrix\Main\DB\Exception('Ошибка добавления инфоблока');
 }
 
 echo \CAdminMessage::ShowNote("Информационные блоки добавлены");
+
+echo \CAdminMessage::ShowNote("Добавление свойств инфомационных блоков");
+
+$ib = new \CIBlock;
+$arFields = [
+    "NAME" => 'Файл',
+    "CODE" => Edu::DOCUMENT_INFOBLOCK_FILE_PROPERTY_CODE,
+    "PROPERTY_TYPE" => Edu::FILE_INFOBLOCK_PROPERTY_TYPE,
+    "IBLOCK_ID" => $documentsIblockId,
+];
+$id = $ib->Add($arFields);
+if (!($id > 0)) {
+    $DB->Rollback();
+    throw new \Bitrix\Main\DB\Exception('Ошибка добавления свойства инфоблока');
+}
+
+echo \CAdminMessage::ShowNote("Свойства информационных блоков добавлены");
+
 
 $DB->Commit();
 ?>

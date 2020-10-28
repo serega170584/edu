@@ -94,6 +94,18 @@ if (!\CGroup::Delete(\CGroup::GetList($by, $order, $filter)->Fetch()['ID'])) {
 
 echo \CAdminMessage::ShowNote("Группы пользователя удалены");
 
+echo \CAdminMessage::ShowNote("Удаление свойств инфоблоков");
+if (!\CIBlockProperty::Delete(\CIBlockProperty::GetList([
+    'ID' => 'ASC'
+], [
+    'CODE' => EDU::DOCUMENT_INFOBLOCK_FILE_PROPERTY_CODE,
+    'IBLOCK_ID' => $documentsIblockId
+])->Fetch()['ID'])) {
+    $DB->Rollback();
+    throw new \Bitrix\Main\DB\Exception('Delete error!');
+}
+echo \CAdminMessage::ShowNote("Свойства инфоблоков удалены");
+
 echo \CAdminMessage::ShowNote("Удаление инфоблоков");
 if (!\CIBlock::Delete($documentsIblockId)) {
     $DB->Rollback();

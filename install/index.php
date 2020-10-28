@@ -11,6 +11,8 @@ class Edu extends CModule
     const READ_PERMISSION = 'R';
     const DOCUMENTS_INFOBLOCK_CODE = 'DOCUMENTS';
     const SITE_ID = 's1';
+    const DOCUMENT_INFOBLOCK_FILE_PROPERTY_CODE = 'FILE';
+    const FILE_INFOBLOCK_PROPERTY_TYPE = 'F';
 
     var $MODULE_ID = "edu";
     var $MODULE_VERSION;
