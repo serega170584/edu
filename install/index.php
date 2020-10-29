@@ -93,6 +93,20 @@ class Edu extends CModule
          * @var \CDatabase $DB
          */
         global $DOCUMENT_ROOT, $APPLICATION, $DB, $moduleId;
+        $db = CIBlockPropertyEnum::GetList([
+            'ID' => 'ASC',
+        ], [
+            'IBLOCK_ID' => \CIBlock::GetList([
+                'ID' => 'ASC'
+            ], [
+                'TYPE' => $moduleId,
+                'CODE' => Edu::PROFESSIONS_INFOBLOCK_CODE,
+            ])->Fetch()['ID']
+        ]);
+        while ($row = $db->Fetch()) {
+            var_dump($row);
+        }
+        die('asd');
         try {
             $DB->StartTransaction();
             UnRegisterModule(self::ID);

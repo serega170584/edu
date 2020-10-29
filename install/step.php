@@ -437,7 +437,7 @@ if (!($levelId > 0)) {
 $arFields = [
     "NAME" => 'Код специальности, направления подготовки',
     "CODE" => Edu::PROFESSIONS_INFOBLOCK_CODE_PROPERTY_CODE,
-    "PROPERTY_TYPE" => Edu::LIST_INFOBLOCK_PROPERTY_TYPE,
+    "PROPERTY_TYPE" => Edu::STRING_INFOBLOCK_PROPERTY_TYPE,
     "IBLOCK_ID" => $professionsIblockId,
 ];
 $id = $property->Add($arFields);
@@ -548,6 +548,7 @@ $arFields = [
     "CODE" => Edu::PROFESSIONS_INFOBLOCK_LANGUAGES_PROPERTY_CODE,
     "PROPERTY_TYPE" => Edu::LIST_INFOBLOCK_PROPERTY_TYPE,
     "IBLOCK_ID" => $professionsIblockId,
+    'MULTIPLE' => 'Y'
 ];
 $languagesId = $property->Add($arFields);
 if (!($languagesId > 0)) {
@@ -593,5 +594,44 @@ if (!($id > 0)) {
 
 echo \CAdminMessage::ShowNote("Свойства информационных блоков добавлены");
 
+echo \CAdminMessage::ShowNote("Добавление значений свойств инфомационных блоков");
+$iBPEnum = new CIBlockPropertyEnum;
+if (!($iBPEnum->Add(array('PROPERTY_ID' => $formOfEducationid, 'VALUE' => 'заочная')))){
+    $DB->Rollback();
+    throw new \Bitrix\Main\DB\Exception('Ошибка добавления значения свойства инфоблока');
+}
+if (!($iBPEnum->Add(array('PROPERTY_ID' => $formOfEducationid, 'VALUE' => 'очная')))){
+    $DB->Rollback();
+    throw new \Bitrix\Main\DB\Exception('Ошибка добавления значения свойства инфоблока');
+}
+if (!($iBPEnum->Add(array('PROPERTY_ID' => $levelId, 'VALUE' => 'Бакалавриат')))){
+    $DB->Rollback();
+    throw new \Bitrix\Main\DB\Exception('Ошибка добавления значения свойства инфоблока');
+}
+if (!($iBPEnum->Add(array('PROPERTY_ID' => $levelId, 'VALUE' => 'Магистратура')))){
+    $DB->Rollback();
+    throw new \Bitrix\Main\DB\Exception('Ошибка добавления значения свойства инфоблока');
+}
+if (!($iBPEnum->Add(array('PROPERTY_ID' => $levelId, 'VALUE' => 'Специалист')))){
+    $DB->Rollback();
+    throw new \Bitrix\Main\DB\Exception('Ошибка добавления значения свойства инфоблока');
+}
+if (!($iBPEnum->Add(array('PROPERTY_ID' => $levelId, 'VALUE' => 'Аспирантура')))){
+    $DB->Rollback();
+    throw new \Bitrix\Main\DB\Exception('Ошибка добавления значения свойства инфоблока');
+}
+if (!($iBPEnum->Add(array('PROPERTY_ID' => $languagesId, 'VALUE' => 'Русский')))){
+    $DB->Rollback();
+    throw new \Bitrix\Main\DB\Exception('Ошибка добавления значения свойства инфоблока');
+}
+if (!($iBPEnum->Add(array('PROPERTY_ID' => $languagesId, 'VALUE' => 'Итальянский')))){
+    $DB->Rollback();
+    throw new \Bitrix\Main\DB\Exception('Ошибка добавления значения свойства инфоблока');
+}
+if (!($iBPEnum->Add(array('PROPERTY_ID' => $languagesId, 'VALUE' => 'Английский')))){
+    $DB->Rollback();
+    throw new \Bitrix\Main\DB\Exception('Ошибка добавления значения свойства инфоблока');
+}
+echo \CAdminMessage::ShowNote("Значения свойств информационных блоков добавлены");
 $DB->Commit();
 ?>

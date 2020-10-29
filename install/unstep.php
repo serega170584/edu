@@ -22,6 +22,17 @@ $professionsIblockId = \CIBlock::GetList([
     'CODE' => Edu::PROFESSIONS_INFOBLOCK_CODE,
 ])->Fetch()['ID'];
 
+echo \CAdminMessage::ShowNote("Удаление значений свойств инфоблоков");
+$db = CIBlockPropertyEnum::GetList([
+    'ID' => 'ASC',
+], [
+    'IBLOCK_ID' => $professionsIblockId
+]);
+while ($row = $db->Fetch()) {
+    CIBlockPropertyEnum::Delete($row['ID']);
+}
+echo \CAdminMessage::ShowNote("Значения свойств инфоблока удалены");
+
 $oUserTypeEntity = new CUserTypeEntity();
 echo \CAdminMessage::ShowNote("Удаление свойств");
 $oUserTypeEntity->Delete(CUserTypeEntity::GetList([
