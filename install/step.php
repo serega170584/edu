@@ -648,6 +648,22 @@ if (!($subjectsIblockId > 0)) {
     throw new \Bitrix\Main\DB\Exception('Ошибка добавления инфоблока');
 }
 
+$arFields = [
+    "NAME" => 'Кафедры',
+    "CODE" => Edu::DEPARTMENTS_INFOBLOCK_CODE,
+    "LIST_PAGE_URL" => '',
+    "DETAIL_PAGE_URL" => '',
+    "IBLOCK_TYPE_ID" => $moduleId,
+    "SITE_ID" => [Edu::SITE_ID],
+    'LID' => Edu::SITE_ID,
+    "GROUP_ID" => [Edu::ALL_USERS_GROUP_ID => Edu::READ_PERMISSION]
+];
+$departmentIblockId = $ib->Add($arFields);
+if (!($departmentIblockId > 0)) {
+    $DB->Rollback();
+    throw new \Bitrix\Main\DB\Exception('Ошибка добавления инфоблока');
+}
+
 echo \CAdminMessage::ShowNote("Информационные блоки добавлены");
 
 echo \CAdminMessage::ShowNote("Добавление пользовательских свойств-привязок к элементам инфомационных блоков");
@@ -687,6 +703,49 @@ $aUserFields = [
     'SETTINGS' => [
         'IBLOCK_TYPE_ID' => $moduleId,
         'IBLOCK_ID' => $professionsIblockId
+    ]
+];
+$res = $oUserTypeEntity->Add($aUserFields);
+if (!$res) {
+    $DB->Rollback();
+    throw new \Bitrix\Main\DB\Exception('Ошибка добавления пользовательского свойства');
+}
+
+$aUserFields = [
+    'ENTITY_ID' => 'USER',
+    'FIELD_NAME' => 'UF_DEPARTMENT',
+    'USER_TYPE_ID' => 'iblock_element',
+    'XML_ID' => 'DEPARTMENT',
+    'SORT' => 500,
+    'MULTIPLE' => 'N',
+    'MANDATORY' => 'N',
+    'SHOW_FILTER' => 'N',
+    'SHOW_IN_LIST' => '',
+    'EDIT_IN_LIST' => '',
+    'IS_SEARCHABLE' => 'N',
+    'EDIT_FORM_LABEL' => [
+        'ru' => 'Кафедра',
+        'en' => 'Department'
+    ],
+    'LIST_COLUMN_LABEL' => [
+        'ru' => 'Кафедра',
+        'en' => 'Department',
+    ],
+    'LIST_FILTER_LABEL' => [
+        'ru' => 'Кафедра',
+        'en' => 'Department',
+    ],
+    'ERROR_MESSAGE' => [
+        'ru' => 'Ошибка при заполнении',
+        'en' => 'An error in completing',
+    ],
+    'HELP_MESSAGE' => [
+        'ru' => '',
+        'en' => '',
+    ],
+    'SETTINGS' => [
+        'IBLOCK_TYPE_ID' => $moduleId,
+        'IBLOCK_ID' => $departmentIblockId
     ]
 ];
 $res = $oUserTypeEntity->Add($aUserFields);
@@ -955,7 +1014,7 @@ if (!($id > 0)) {
 }
 $arFields = [
     "NAME" => 'Факультет',
-    "CODE" => Edu::PROFESSIONS_INFOBLOCK_FACULTY_PROPERTY_CODE,
+    "CODE" => Edu::INFOBLOCK_FACULTY_PROPERTY_CODE,
     "PROPERTY_TYPE" => Edu::ELEMENT_INFOBLOCK_PROPERTY_TYPE,
     "IBLOCK_ID" => $professionsIblockId,
     "LINK_IBLOCK_ID" => $facultiesIblockId
@@ -975,6 +1034,19 @@ $arFields = [
 ];
 $preliminaryTestId = $property->Add($arFields);
 if (!($preliminaryTestId > 0)) {
+    $DB->Rollback();
+    throw new \Bitrix\Main\DB\Exception('Ошибка добавления свойства инфоблока');
+}
+
+$arFields = [
+    "NAME" => 'Факультет',
+    "CODE" => Edu::INFOBLOCK_FACULTY_PROPERTY_CODE,
+    "PROPERTY_TYPE" => Edu::ELEMENT_INFOBLOCK_PROPERTY_TYPE,
+    "IBLOCK_ID" => $departmentIblockId,
+    "LINK_IBLOCK_ID" => $facultiesIblockId
+];
+$id = $property->Add($arFields);
+if (!($id > 0)) {
     $DB->Rollback();
     throw new \Bitrix\Main\DB\Exception('Ошибка добавления свойства инфоблока');
 }

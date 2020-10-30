@@ -36,6 +36,14 @@ $subjectsInfoblockId = \CIBlock::GetList([
     'CODE' => Edu::SUBJECTS_INFOBLOCK_CODE,
 ])->Fetch()['ID'];
 
+$departmentsInfoblockId = \CIBlock::GetList([
+    'ID' => 'ASC'
+], [
+    'TYPE' => $moduleId,
+    'CODE' => Edu::DEPARTMENTS_INFOBLOCK_CODE,
+])->Fetch()['ID'];
+
+
 echo \CAdminMessage::ShowNote("Удаление значений свойств инфоблоков");
 $db = CIBlockPropertyEnum::GetList([
     'ID' => 'ASC',
@@ -127,7 +135,12 @@ $oUserTypeEntity->Delete(CUserTypeEntity::GetList([
     'ENTITY_ID' => 'USER',
     'FIELD_NAME' => 'UF_PROFESSION'
 ])->Fetch()['ID']);
-
+$oUserTypeEntity->Delete(CUserTypeEntity::GetList([
+    'ID' => 'ASC'
+], [
+    'ENTITY_ID' => 'USER',
+    'FIELD_NAME' => 'UF_DEPARTMENT'
+])->Fetch()['ID']);
 echo \CAdminMessage::ShowNote("Свойства пользователя удалены");
 
 echo \CAdminMessage::ShowNote("Удаление групп пользователей");
@@ -390,7 +403,7 @@ if (!\CIBlockProperty::Delete(\CIBlockProperty::GetList([
 if (!\CIBlockProperty::Delete(\CIBlockProperty::GetList([
     'ID' => 'ASC'
 ], [
-    'CODE' => EDU::PROFESSIONS_INFOBLOCK_FACULTY_PROPERTY_CODE,
+    'CODE' => EDU::INFOBLOCK_FACULTY_PROPERTY_CODE,
     'IBLOCK_ID' => $professionsIblockId
 ])->Fetch()['ID'])) {
     $DB->Rollback();
@@ -402,6 +415,16 @@ if (!\CIBlockProperty::Delete(\CIBlockProperty::GetList([
 ], [
     'CODE' => EDU::PROFESSIONS_INFOBLOCK_PRELIMINARY_TESTS_PROPERTY_CODE,
     'IBLOCK_ID' => $professionsIblockId
+])->Fetch()['ID'])) {
+    $DB->Rollback();
+    throw new \Bitrix\Main\DB\Exception('Delete error!');
+}
+
+if (!\CIBlockProperty::Delete(\CIBlockProperty::GetList([
+    'ID' => 'ASC'
+], [
+    'CODE' => EDU::INFOBLOCK_FACULTY_PROPERTY_CODE,
+    'IBLOCK_ID' => $departmentsInfoblockId
 ])->Fetch()['ID'])) {
     $DB->Rollback();
     throw new \Bitrix\Main\DB\Exception('Delete error!');
@@ -423,6 +446,10 @@ if (!\CIBlock::Delete($facultiesIblockId)) {
     throw new \Bitrix\Main\DB\Exception('Delete error!');
 }
 if (!\CIBlock::Delete($subjectsInfoblockId)) {
+    $DB->Rollback();
+    throw new \Bitrix\Main\DB\Exception('Delete error!');
+}
+if (!\CIBlock::Delete($facultiesIblockId)) {
     $DB->Rollback();
     throw new \Bitrix\Main\DB\Exception('Delete error!');
 }
