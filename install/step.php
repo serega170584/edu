@@ -155,45 +155,6 @@ if (!$res) {
 
 $aUserFields = [
     'ENTITY_ID' => 'USER',
-    'FIELD_NAME' => 'UF_PHOTO',
-    'USER_TYPE_ID' => 'file',
-    'XML_ID' => 'PHOTO',
-    'SORT' => 500,
-    'MULTIPLE' => 'N',
-    'MANDATORY' => 'N',
-    'SHOW_FILTER' => 'N',
-    'SHOW_IN_LIST' => '',
-    'EDIT_IN_LIST' => '',
-    'IS_SEARCHABLE' => 'N',
-    'EDIT_FORM_LABEL' => [
-        'ru' => 'Фотография',
-        'en' => 'Photography'
-    ],
-    'LIST_COLUMN_LABEL' => [
-        'ru' => 'Фотография',
-        'en' => 'Photography',
-    ],
-    'LIST_FILTER_LABEL' => [
-        'ru' => 'Фотография',
-        'en' => 'Photography',
-    ],
-    'ERROR_MESSAGE' => [
-        'ru' => 'Ошибка при заполнении',
-        'en' => 'An error in completing',
-    ],
-    'HELP_MESSAGE' => [
-        'ru' => '',
-        'en' => '',
-    ]
-];
-$res = $oUserTypeEntity->Add($aUserFields);
-if (!$res) {
-    $DB->Rollback();
-    throw new \Bitrix\Main\DB\Exception('Ошибка добавления пользовательского свойства');
-}
-
-$aUserFields = [
-    'ENTITY_ID' => 'USER',
     'FIELD_NAME' => 'UF_DOCUMENT',
     'USER_TYPE_ID' => 'file',
     'XML_ID' => 'DOCUMENT',
@@ -254,6 +215,279 @@ $aUserFields = [
     'LIST_FILTER_LABEL' => [
         'ru' => 'Уточнение времени работы',
         'en' => 'Time addition',
+    ],
+    'ERROR_MESSAGE' => [
+        'ru' => 'Ошибка при заполнении',
+        'en' => 'An error in completing',
+    ],
+    'HELP_MESSAGE' => [
+        'ru' => '',
+        'en' => '',
+    ]
+];
+$res = $oUserTypeEntity->Add($aUserFields);
+if (!$res) {
+    $DB->Rollback();
+    throw new \Bitrix\Main\DB\Exception('Ошибка добавления пользовательского свойства');
+}
+
+$aUserFields = [
+    'ENTITY_ID' => 'USER',
+    'FIELD_NAME' => 'UF_GENERAL_EXPERIENCE',
+    'USER_TYPE_ID' => 'string',
+    'XML_ID' => 'GENERAL_EXPERIENCE',
+    'SORT' => 500,
+    'MULTIPLE' => 'N',
+    'MANDATORY' => 'N',
+    'SHOW_FILTER' => 'N',
+    'SHOW_IN_LIST' => '',
+    'EDIT_IN_LIST' => '',
+    'IS_SEARCHABLE' => 'N',
+    'EDIT_FORM_LABEL' => [
+        'ru' => 'Общий стаж работы',
+        'en' => 'General experience'
+    ],
+    'LIST_COLUMN_LABEL' => [
+        'ru' => 'Общий стаж работы',
+        'en' => 'General experience',
+    ],
+    'LIST_FILTER_LABEL' => [
+        'ru' => 'Общий стаж работы',
+        'en' => 'General experience',
+    ],
+    'ERROR_MESSAGE' => [
+        'ru' => 'Ошибка при заполнении',
+        'en' => 'An error in completing',
+    ],
+    'HELP_MESSAGE' => [
+        'ru' => '',
+        'en' => '',
+    ]
+];
+$res = $oUserTypeEntity->Add($aUserFields);
+if (!$res) {
+    $DB->Rollback();
+    throw new \Bitrix\Main\DB\Exception('Ошибка добавления пользовательского свойства');
+}
+
+$aUserFields = [
+    'ENTITY_ID' => 'USER',
+    'FIELD_NAME' => 'UF_PROFESSION_EXPERIENCE',
+    'USER_TYPE_ID' => 'string',
+    'XML_ID' => 'PROFESSION_EXPERIENCE',
+    'SORT' => 500,
+    'MULTIPLE' => 'N',
+    'MANDATORY' => 'N',
+    'SHOW_FILTER' => 'N',
+    'SHOW_IN_LIST' => '',
+    'EDIT_IN_LIST' => '',
+    'IS_SEARCHABLE' => 'N',
+    'EDIT_FORM_LABEL' => [
+        'ru' => 'Cтаж работы по специальности',
+        'en' => 'Profession experience'
+    ],
+    'LIST_COLUMN_LABEL' => [
+        'ru' => 'Cтаж работы по специальности',
+        'en' => 'Profession experience',
+    ],
+    'LIST_FILTER_LABEL' => [
+        'ru' => 'Cтаж работы по специальности',
+        'en' => 'Profession experience',
+    ],
+    'ERROR_MESSAGE' => [
+        'ru' => 'Ошибка при заполнении',
+        'en' => 'An error in completing',
+    ],
+    'HELP_MESSAGE' => [
+        'ru' => '',
+        'en' => '',
+    ]
+];
+$res = $oUserTypeEntity->Add($aUserFields);
+if (!$res) {
+    $DB->Rollback();
+    throw new \Bitrix\Main\DB\Exception('Ошибка добавления пользовательского свойства');
+}
+
+$aUserFields = [
+    'ENTITY_ID' => 'USER',
+    'FIELD_NAME' => 'UF_POSITION',
+    'USER_TYPE_ID' => 'string',
+    'XML_ID' => 'POSITION',
+    'SORT' => 500,
+    'MULTIPLE' => 'N',
+    'MANDATORY' => 'N',
+    'SHOW_FILTER' => 'N',
+    'SHOW_IN_LIST' => '',
+    'EDIT_IN_LIST' => '',
+    'IS_SEARCHABLE' => 'N',
+    'EDIT_FORM_LABEL' => [
+        'ru' => 'Должность',
+        'en' => 'Position'
+    ],
+    'LIST_COLUMN_LABEL' => [
+        'ru' => 'Должность',
+        'en' => 'Position',
+    ],
+    'LIST_FILTER_LABEL' => [
+        'ru' => 'Должность',
+        'en' => 'Position',
+    ],
+    'ERROR_MESSAGE' => [
+        'ru' => 'Ошибка при заполнении',
+        'en' => 'An error in completing',
+    ],
+    'HELP_MESSAGE' => [
+        'ru' => '',
+        'en' => '',
+    ]
+];
+$res = $oUserTypeEntity->Add($aUserFields);
+if (!$res) {
+    $DB->Rollback();
+    throw new \Bitrix\Main\DB\Exception('Ошибка добавления пользовательского свойства');
+}
+
+$aUserFields = [
+    'ENTITY_ID' => 'USER',
+    'FIELD_NAME' => 'UF_SUBJECT',
+    'USER_TYPE_ID' => 'string',
+    'XML_ID' => 'SUBJECT',
+    'SORT' => 500,
+    'MULTIPLE' => 'N',
+    'MANDATORY' => 'N',
+    'SHOW_FILTER' => 'N',
+    'SHOW_IN_LIST' => '',
+    'EDIT_IN_LIST' => '',
+    'IS_SEARCHABLE' => 'N',
+    'EDIT_FORM_LABEL' => [
+        'ru' => 'Преподаваемые дисциплины',
+        'en' => 'Subject'
+    ],
+    'LIST_COLUMN_LABEL' => [
+        'ru' => 'Преподаваемые дисциплины',
+        'en' => 'Subject',
+    ],
+    'LIST_FILTER_LABEL' => [
+        'ru' => 'Преподаваемые дисциплины',
+        'en' => 'Subject',
+    ],
+    'ERROR_MESSAGE' => [
+        'ru' => 'Ошибка при заполнении',
+        'en' => 'An error in completing',
+    ],
+    'HELP_MESSAGE' => [
+        'ru' => '',
+        'en' => '',
+    ]
+];
+$res = $oUserTypeEntity->Add($aUserFields);
+if (!$res) {
+    $DB->Rollback();
+    throw new \Bitrix\Main\DB\Exception('Ошибка добавления пользовательского свойства');
+}
+
+$aUserFields = [
+    'ENTITY_ID' => 'USER',
+    'FIELD_NAME' => 'UF_DEGREE',
+    'USER_TYPE_ID' => 'string',
+    'XML_ID' => 'DEGREEE',
+    'SORT' => 500,
+    'MULTIPLE' => 'N',
+    'MANDATORY' => 'N',
+    'SHOW_FILTER' => 'N',
+    'SHOW_IN_LIST' => '',
+    'EDIT_IN_LIST' => '',
+    'IS_SEARCHABLE' => 'N',
+    'EDIT_FORM_LABEL' => [
+        'ru' => 'Ученая степень',
+        'en' => 'Degree'
+    ],
+    'LIST_COLUMN_LABEL' => [
+        'ru' => 'Ученая степень',
+        'en' => 'Degree',
+    ],
+    'LIST_FILTER_LABEL' => [
+        'ru' => 'Ученая степень',
+        'en' => 'Degree',
+    ],
+    'ERROR_MESSAGE' => [
+        'ru' => 'Ошибка при заполнении',
+        'en' => 'An error in completing',
+    ],
+    'HELP_MESSAGE' => [
+        'ru' => '',
+        'en' => '',
+    ]
+];
+$res = $oUserTypeEntity->Add($aUserFields);
+if (!$res) {
+    $DB->Rollback();
+    throw new \Bitrix\Main\DB\Exception('Ошибка добавления пользовательского свойства');
+}
+
+$aUserFields = [
+    'ENTITY_ID' => 'USER',
+    'FIELD_NAME' => 'UF_RANK',
+    'USER_TYPE_ID' => 'string',
+    'XML_ID' => 'RANK',
+    'SORT' => 500,
+    'MULTIPLE' => 'N',
+    'MANDATORY' => 'N',
+    'SHOW_FILTER' => 'N',
+    'SHOW_IN_LIST' => '',
+    'EDIT_IN_LIST' => '',
+    'IS_SEARCHABLE' => 'N',
+    'EDIT_FORM_LABEL' => [
+        'ru' => 'Ученое звание',
+        'en' => 'Rank'
+    ],
+    'LIST_COLUMN_LABEL' => [
+        'ru' => 'Ученое звание',
+        'en' => 'Rank',
+    ],
+    'LIST_FILTER_LABEL' => [
+        'ru' => 'Ученое звание',
+        'en' => 'Rank',
+    ],
+    'ERROR_MESSAGE' => [
+        'ru' => 'Ошибка при заполнении',
+        'en' => 'An error in completing',
+    ],
+    'HELP_MESSAGE' => [
+        'ru' => '',
+        'en' => '',
+    ]
+];
+$res = $oUserTypeEntity->Add($aUserFields);
+if (!$res) {
+    $DB->Rollback();
+    throw new \Bitrix\Main\DB\Exception('Ошибка добавления пользовательского свойства');
+}
+
+$aUserFields = [
+    'ENTITY_ID' => 'USER',
+    'FIELD_NAME' => 'UF_ASSESSMENT',
+    'USER_TYPE_ID' => 'string',
+    'XML_ID' => 'ASSESSMENT',
+    'SORT' => 500,
+    'MULTIPLE' => 'N',
+    'MANDATORY' => 'N',
+    'SHOW_FILTER' => 'N',
+    'SHOW_IN_LIST' => '',
+    'EDIT_IN_LIST' => '',
+    'IS_SEARCHABLE' => 'N',
+    'EDIT_FORM_LABEL' => [
+        'ru' => 'Данные о повышении квалификации и (или) профессиональной переподготовке',
+        'en' => 'Assessment'
+    ],
+    'LIST_COLUMN_LABEL' => [
+        'ru' => 'Данные о повышении квалификации и (или) профессиональной переподготовке',
+        'en' => 'Assessment',
+    ],
+    'LIST_FILTER_LABEL' => [
+        'ru' => 'Данные о повышении квалификации и (или) профессиональной переподготовке',
+        'en' => 'Assessment',
     ],
     'ERROR_MESSAGE' => [
         'ru' => 'Ошибка при заполнении',
@@ -370,6 +604,53 @@ if (!($professionsIblockId > 0)) {
 }
 
 echo \CAdminMessage::ShowNote("Информационные блоки добавлены");
+
+echo \CAdminMessage::ShowNote("Добавление пользовательских свойств-привязок к элементам инфомационных блоков");
+
+$aUserFields = [
+    'ENTITY_ID' => 'USER',
+    'FIELD_NAME' => 'UF_PROFESSION',
+    'USER_TYPE_ID' => 'iblock_element',
+    'XML_ID' => 'PROFESSION',
+    'SORT' => 500,
+    'MULTIPLE' => 'N',
+    'MANDATORY' => 'N',
+    'SHOW_FILTER' => 'N',
+    'SHOW_IN_LIST' => '',
+    'EDIT_IN_LIST' => '',
+    'IS_SEARCHABLE' => 'N',
+    'EDIT_FORM_LABEL' => [
+        'ru' => 'Наименование направления подготовки и (или) специальности',
+        'en' => 'Profession'
+    ],
+    'LIST_COLUMN_LABEL' => [
+        'ru' => 'Наименование направления подготовки и (или) специальности',
+        'en' => 'Profession',
+    ],
+    'LIST_FILTER_LABEL' => [
+        'ru' => 'Наименование направления подготовки и (или) специальности',
+        'en' => 'Profession',
+    ],
+    'ERROR_MESSAGE' => [
+        'ru' => 'Ошибка при заполнении',
+        'en' => 'An error in completing',
+    ],
+    'HELP_MESSAGE' => [
+        'ru' => '',
+        'en' => '',
+    ],
+    'SETTINGS' => [
+        'IBLOCK_TYPE_ID' => $moduleId,
+        'IBLOCK_ID' => Edu::PROFESSIONS_INFOBLOCK_CODE
+    ]
+];
+$res = $oUserTypeEntity->Add($aUserFields);
+if (!$res) {
+    $DB->Rollback();
+    throw new \Bitrix\Main\DB\Exception('Ошибка добавления пользовательского свойства');
+}
+
+echo \CAdminMessage::ShowNote("Пользовательские свойства-привязки к элементам информационных блоков добавлены");
 
 echo \CAdminMessage::ShowNote("Добавление свойств инфомационных блоков");
 $property = new \CIBlockProperty();
@@ -596,39 +877,39 @@ echo \CAdminMessage::ShowNote("Свойства информационных б�
 
 echo \CAdminMessage::ShowNote("Добавление значений свойств инфомационных блоков");
 $iBPEnum = new CIBlockPropertyEnum;
-if (!($iBPEnum->Add(array('PROPERTY_ID' => $formOfEducationid, 'VALUE' => 'заочная')))){
+if (!($iBPEnum->Add(array('PROPERTY_ID' => $formOfEducationid, 'VALUE' => 'заочная')))) {
     $DB->Rollback();
     throw new \Bitrix\Main\DB\Exception('Ошибка добавления значения свойства инфоблока');
 }
-if (!($iBPEnum->Add(array('PROPERTY_ID' => $formOfEducationid, 'VALUE' => 'очная')))){
+if (!($iBPEnum->Add(array('PROPERTY_ID' => $formOfEducationid, 'VALUE' => 'очная')))) {
     $DB->Rollback();
     throw new \Bitrix\Main\DB\Exception('Ошибка добавления значения свойства инфоблока');
 }
-if (!($iBPEnum->Add(array('PROPERTY_ID' => $levelId, 'VALUE' => 'Бакалавриат')))){
+if (!($iBPEnum->Add(array('PROPERTY_ID' => $levelId, 'VALUE' => 'Бакалавриат')))) {
     $DB->Rollback();
     throw new \Bitrix\Main\DB\Exception('Ошибка добавления значения свойства инфоблока');
 }
-if (!($iBPEnum->Add(array('PROPERTY_ID' => $levelId, 'VALUE' => 'Магистратура')))){
+if (!($iBPEnum->Add(array('PROPERTY_ID' => $levelId, 'VALUE' => 'Магистратура')))) {
     $DB->Rollback();
     throw new \Bitrix\Main\DB\Exception('Ошибка добавления значения свойства инфоблока');
 }
-if (!($iBPEnum->Add(array('PROPERTY_ID' => $levelId, 'VALUE' => 'Специалист')))){
+if (!($iBPEnum->Add(array('PROPERTY_ID' => $levelId, 'VALUE' => 'Специалист')))) {
     $DB->Rollback();
     throw new \Bitrix\Main\DB\Exception('Ошибка добавления значения свойства инфоблока');
 }
-if (!($iBPEnum->Add(array('PROPERTY_ID' => $levelId, 'VALUE' => 'Аспирантура')))){
+if (!($iBPEnum->Add(array('PROPERTY_ID' => $levelId, 'VALUE' => 'Аспирантура')))) {
     $DB->Rollback();
     throw new \Bitrix\Main\DB\Exception('Ошибка добавления значения свойства инфоблока');
 }
-if (!($iBPEnum->Add(array('PROPERTY_ID' => $languagesId, 'VALUE' => 'Русский')))){
+if (!($iBPEnum->Add(array('PROPERTY_ID' => $languagesId, 'VALUE' => 'Русский')))) {
     $DB->Rollback();
     throw new \Bitrix\Main\DB\Exception('Ошибка добавления значения свойства инфоблока');
 }
-if (!($iBPEnum->Add(array('PROPERTY_ID' => $languagesId, 'VALUE' => 'Итальянский')))){
+if (!($iBPEnum->Add(array('PROPERTY_ID' => $languagesId, 'VALUE' => 'Итальянский')))) {
     $DB->Rollback();
     throw new \Bitrix\Main\DB\Exception('Ошибка добавления значения свойства инфоблока');
 }
-if (!($iBPEnum->Add(array('PROPERTY_ID' => $languagesId, 'VALUE' => 'Английский')))){
+if (!($iBPEnum->Add(array('PROPERTY_ID' => $languagesId, 'VALUE' => 'Английский')))) {
     $DB->Rollback();
     throw new \Bitrix\Main\DB\Exception('Ошибка добавления значения свойства инфоблока');
 }
