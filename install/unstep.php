@@ -50,6 +50,13 @@ $libraryInfoblockId = \CIBlock::GetList([
     'CODE' => Edu::LIBRARY_INFOBLOCK_CODE,
 ])->Fetch()['ID'];
 
+$newsInfoblockId = \CIBlock::GetList([
+    'ID' => 'ASC'
+], [
+    'TYPE' => $moduleId,
+    'CODE' => Edu::NEWS_INFOBLOCK_CODE,
+])->Fetch()['ID'];
+
 echo \CAdminMessage::ShowNote("Удаление значений свойств инфоблоков");
 $db = CIBlockPropertyEnum::GetList([
     'ID' => 'ASC',
@@ -476,6 +483,10 @@ if (!\CIBlock::Delete($departmentsInfoblockId)) {
     throw new \Bitrix\Main\DB\Exception('Delete error!');
 }
 if (!\CIBlock::Delete($libraryInfoblockId)) {
+    $DB->Rollback();
+    throw new \Bitrix\Main\DB\Exception('Delete error!');
+}
+if (!\CIBlock::Delete($newsInfoblockId)) {
     $DB->Rollback();
     throw new \Bitrix\Main\DB\Exception('Delete error!');
 }

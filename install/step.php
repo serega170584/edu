@@ -708,6 +708,22 @@ if (!($libraryIblockId > 0)) {
     throw new \Bitrix\Main\DB\Exception('Ошибка добавления инфоблока');
 }
 
+$arFields = [
+    "NAME" => 'Новости',
+    "CODE" => Edu::NEWS_INFOBLOCK_CODE,
+    "LIST_PAGE_URL" => '',
+    "DETAIL_PAGE_URL" => '',
+    "IBLOCK_TYPE_ID" => $moduleId,
+    "SITE_ID" => [Edu::SITE_ID],
+    'LID' => Edu::SITE_ID,
+    "GROUP_ID" => [Edu::ALL_USERS_GROUP_ID => Edu::READ_PERMISSION]
+];
+$newsIblockId = $ib->Add($arFields);
+if (!($newsIblockId > 0)) {
+    $DB->Rollback();
+    throw new \Bitrix\Main\DB\Exception('Ошибка добавления инфоблока');
+}
+
 echo \CAdminMessage::ShowNote("Информационные блоки добавлены");
 
 echo \CAdminMessage::ShowNote("Добавление пользовательских свойств-привязок к элементам инфомационных блоков");
