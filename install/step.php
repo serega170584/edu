@@ -641,7 +641,7 @@ $aUserFields = [
     ],
     'SETTINGS' => [
         'IBLOCK_TYPE_ID' => $moduleId,
-        'IBLOCK_ID' => Edu::PROFESSIONS_INFOBLOCK_CODE
+        'IBLOCK_ID' => $professionsIblockId
     ]
 ];
 $res = $oUserTypeEntity->Add($aUserFields);
