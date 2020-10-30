@@ -857,6 +857,42 @@ if (!($id > 0)) {
 }
 
 $arFields = [
+    "NAME" => 'Стоимость платных мест',
+    "CODE" => Edu::PROFESSIONS_INFOBLOCK_PRICE_PROPERTY_CODE,
+    "PROPERTY_TYPE" => Edu::STRING_INFOBLOCK_PROPERTY_TYPE,
+    "IBLOCK_ID" => $professionsIblockId,
+];
+$id = $property->Add($arFields);
+if (!($id > 0)) {
+    $DB->Rollback();
+    throw new \Bitrix\Main\DB\Exception('Ошибка добавления свойства инфоблока');
+}
+
+$arFields = [
+    "NAME" => 'Профили подготовки',
+    "CODE" => Edu::PROFESSIONS_INFOBLOCK_PREPARATORY_PROFILE_PROPERTY_CODE,
+    "PROPERTY_TYPE" => Edu::STRING_INFOBLOCK_PROPERTY_TYPE,
+    "IBLOCK_ID" => $professionsIblockId,
+];
+$id = $property->Add($arFields);
+if (!($id > 0)) {
+    $DB->Rollback();
+    throw new \Bitrix\Main\DB\Exception('Ошибка добавления свойства инфоблока');
+}
+
+$arFields = [
+    "NAME" => 'Ключевые дисциплины',
+    "CODE" => Edu::PROFESSIONS_INFOBLOCK_PRINCIPAL_SUBJECTS_PROPERTY_CODE,
+    "PROPERTY_TYPE" => Edu::STRING_INFOBLOCK_PROPERTY_TYPE,
+    "IBLOCK_ID" => $professionsIblockId,
+];
+$id = $property->Add($arFields);
+if (!($id > 0)) {
+    $DB->Rollback();
+    throw new \Bitrix\Main\DB\Exception('Ошибка добавления свойства инфоблока');
+}
+
+$arFields = [
     "NAME" => 'Языки, на которых происходит обучение',
     "CODE" => Edu::PROFESSIONS_INFOBLOCK_LANGUAGES_PROPERTY_CODE,
     "PROPERTY_TYPE" => Edu::LIST_INFOBLOCK_PROPERTY_TYPE,

@@ -312,6 +312,36 @@ if (!\CIBlockProperty::Delete(\CIBlockProperty::GetList([
 if (!\CIBlockProperty::Delete(\CIBlockProperty::GetList([
     'ID' => 'ASC'
 ], [
+    'CODE' => EDU::PROFESSIONS_INFOBLOCK_PRICE_PROPERTY_CODE,
+    'IBLOCK_ID' => $professionsIblockId
+])->Fetch()['ID'])) {
+    $DB->Rollback();
+    throw new \Bitrix\Main\DB\Exception('Delete error!');
+}
+
+if (!\CIBlockProperty::Delete(\CIBlockProperty::GetList([
+    'ID' => 'ASC'
+], [
+    'CODE' => EDU::PROFESSIONS_INFOBLOCK_PREPARATORY_PROFILE_PROPERTY_CODE,
+    'IBLOCK_ID' => $professionsIblockId
+])->Fetch()['ID'])) {
+    $DB->Rollback();
+    throw new \Bitrix\Main\DB\Exception('Delete error!');
+}
+
+if (!\CIBlockProperty::Delete(\CIBlockProperty::GetList([
+    'ID' => 'ASC'
+], [
+    'CODE' => EDU::PROFESSIONS_INFOBLOCK_PRINCIPAL_SUBJECTS_PROPERTY_CODE,
+    'IBLOCK_ID' => $professionsIblockId
+])->Fetch()['ID'])) {
+    $DB->Rollback();
+    throw new \Bitrix\Main\DB\Exception('Delete error!');
+}
+
+if (!\CIBlockProperty::Delete(\CIBlockProperty::GetList([
+    'ID' => 'ASC'
+], [
     'CODE' => EDU::PROFESSIONS_INFOBLOCK_LANGUAGES_PROPERTY_CODE,
     'IBLOCK_ID' => $professionsIblockId
 ])->Fetch()['ID'])) {
