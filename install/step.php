@@ -565,6 +565,19 @@ if (strlen($group->LAST_ERROR) > 0) {
     throw new \Bitrix\Main\DB\Exception('Ошибка добавления группы пользователя');
 }
 
+$arFields = [
+    "ACTIVE" => "Y",
+    "C_SORT" => 100,
+    "NAME" => "Ученый совет",
+    "DESCRIPTION" => "Ученый совет",
+    "USER_ID" => [],
+    "STRING_ID" => "ACADEMIC_COUNCIL"
+];
+$id = $group->Add($arFields);
+if (strlen($group->LAST_ERROR) > 0) {
+    $DB->Rollback();
+    throw new \Bitrix\Main\DB\Exception('Ошибка добавления группы пользователя');
+}
 
 echo \CAdminMessage::ShowNote("Группы пользователей добавлены");
 
