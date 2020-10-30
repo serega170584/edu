@@ -22,6 +22,20 @@ $professionsIblockId = \CIBlock::GetList([
     'CODE' => Edu::PROFESSIONS_INFOBLOCK_CODE,
 ])->Fetch()['ID'];
 
+$facultiesIblockId = \CIBlock::GetList([
+    'ID' => 'ASC'
+], [
+    'TYPE' => $moduleId,
+    'CODE' => Edu::FACULTIES_INFOBLOCK_CODE,
+])->Fetch()['ID'];
+
+$subjectsInfoblockId = \CIBlock::GetList([
+    'ID' => 'ASC'
+], [
+    'TYPE' => $moduleId,
+    'CODE' => Edu::SUBJECTS_INFOBLOCK_CODE,
+])->Fetch()['ID'];
+
 echo \CAdminMessage::ShowNote("Удаление значений свойств инфоблоков");
 $db = CIBlockPropertyEnum::GetList([
     'ID' => 'ASC',
@@ -335,6 +349,26 @@ if (!\CIBlockProperty::Delete(\CIBlockProperty::GetList([
     throw new \Bitrix\Main\DB\Exception('Delete error!');
 }
 
+if (!\CIBlockProperty::Delete(\CIBlockProperty::GetList([
+    'ID' => 'ASC'
+], [
+    'CODE' => EDU::PROFESSIONS_INFOBLOCK_FACULTY_PROPERTY_CODE,
+    'IBLOCK_ID' => $professionsIblockId
+])->Fetch()['ID'])) {
+    $DB->Rollback();
+    throw new \Bitrix\Main\DB\Exception('Delete error!');
+}
+
+if (!\CIBlockProperty::Delete(\CIBlockProperty::GetList([
+    'ID' => 'ASC'
+], [
+    'CODE' => EDU::PROFESSIONS_INFOBLOCK_PRELIMINARY_TESTS_PROPERTY_CODE,
+    'IBLOCK_ID' => $professionsIblockId
+])->Fetch()['ID'])) {
+    $DB->Rollback();
+    throw new \Bitrix\Main\DB\Exception('Delete error!');
+}
+
 echo \CAdminMessage::ShowNote("Свойства инфоблоков удалены");
 
 echo \CAdminMessage::ShowNote("Удаление инфоблоков");
@@ -346,8 +380,15 @@ if (!\CIBlock::Delete($professionsIblockId)) {
     $DB->Rollback();
     throw new \Bitrix\Main\DB\Exception('Delete error!');
 }
+if (!\CIBlock::Delete($facultiesIblockId)) {
+    $DB->Rollback();
+    throw new \Bitrix\Main\DB\Exception('Delete error!');
+}
+if (!\CIBlock::Delete($subjectsInfoblockId)) {
+    $DB->Rollback();
+    throw new \Bitrix\Main\DB\Exception('Delete error!');
+}
 echo \CAdminMessage::ShowNote("Инфоблоки удалены");
-
 
 echo \CAdminMessage::ShowNote("Удаление типа инфоблока образовательной организации");
 if (!\CIBlockType::Delete($moduleId)) {

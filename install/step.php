@@ -603,6 +603,38 @@ if (!($professionsIblockId > 0)) {
     throw new \Bitrix\Main\DB\Exception('Ошибка добавления инфоблока');
 }
 
+$arFields = [
+    "NAME" => 'Факультеты',
+    "CODE" => Edu::FACULTIES_INFOBLOCK_CODE,
+    "LIST_PAGE_URL" => '',
+    "DETAIL_PAGE_URL" => '',
+    "IBLOCK_TYPE_ID" => $moduleId,
+    "SITE_ID" => [Edu::SITE_ID],
+    'LID' => Edu::SITE_ID,
+    "GROUP_ID" => [Edu::ALL_USERS_GROUP_ID => Edu::READ_PERMISSION]
+];
+$facultiesIblockId = $ib->Add($arFields);
+if (!($facultiesIblockId > 0)) {
+    $DB->Rollback();
+    throw new \Bitrix\Main\DB\Exception('Ошибка добавления инфоблока');
+}
+
+$arFields = [
+    "NAME" => 'Предметы',
+    "CODE" => Edu::SUBJECTS_INFOBLOCK_CODE,
+    "LIST_PAGE_URL" => '',
+    "DETAIL_PAGE_URL" => '',
+    "IBLOCK_TYPE_ID" => $moduleId,
+    "SITE_ID" => [Edu::SITE_ID],
+    'LID' => Edu::SITE_ID,
+    "GROUP_ID" => [Edu::ALL_USERS_GROUP_ID => Edu::READ_PERMISSION]
+];
+$subjectsIblockId = $ib->Add($arFields);
+if (!($subjectsIblockId > 0)) {
+    $DB->Rollback();
+    throw new \Bitrix\Main\DB\Exception('Ошибка добавления инфоблока');
+}
+
 echo \CAdminMessage::ShowNote("Информационные блоки добавлены");
 
 echo \CAdminMessage::ShowNote("Добавление пользовательских свойств-привязок к элементам инфомационных блоков");
@@ -869,6 +901,31 @@ $arFields = [
 ];
 $id = $property->Add($arFields);
 if (!($id > 0)) {
+    $DB->Rollback();
+    throw new \Bitrix\Main\DB\Exception('Ошибка добавления свойства инфоблока');
+}
+$arFields = [
+    "NAME" => 'Факультет',
+    "CODE" => Edu::PROFESSIONS_INFOBLOCK_FACULTY_PROPERTY_CODE,
+    "PROPERTY_TYPE" => Edu::ELEMENT_INFOBLOCK_PROPERTY_TYPE,
+    "IBLOCK_ID" => $professionsIblockId,
+    "LINK_IBLOCK_ID" => $facultiesIblockId
+];
+$facultyId = $property->Add($arFields);
+if (!($facultyId > 0)) {
+    $DB->Rollback();
+    throw new \Bitrix\Main\DB\Exception('Ошибка добавления свойства инфоблока');
+}
+$arFields = [
+    "NAME" => 'Вступительные испытания',
+    "CODE" => Edu::PROFESSIONS_INFOBLOCK_PRELIMINARY_TESTS_PROPERTY_CODE,
+    "PROPERTY_TYPE" => Edu::ELEMENT_INFOBLOCK_PROPERTY_TYPE,
+    "IBLOCK_ID" => $professionsIblockId,
+    'MULTIPLE' => 'Y',
+    "LINK_IBLOCK_ID" => $subjectsIblockId
+];
+$preliminaryTestId = $property->Add($arFields);
+if (!($preliminaryTestId > 0)) {
     $DB->Rollback();
     throw new \Bitrix\Main\DB\Exception('Ошибка добавления свойства инфоблока');
 }
