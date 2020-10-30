@@ -187,6 +187,14 @@ if (!\CGroup::Delete(\CGroup::GetList($by, $order, $filter)->Fetch()['ID'])) {
     throw new \Bitrix\Main\DB\Exception('Delete error!');
 }
 
+$filter = [
+    'STRING_ID' => 'LEADERSHIP'
+];
+if (!\CGroup::Delete(\CGroup::GetList($by, $order, $filter)->Fetch()['ID'])) {
+    $DB->Rollback();
+    throw new \Bitrix\Main\DB\Exception('Delete error!');
+}
+
 echo \CAdminMessage::ShowNote("Группы пользователя удалены");
 
 echo \CAdminMessage::ShowNote("Удаление свойств инфоблоков");
