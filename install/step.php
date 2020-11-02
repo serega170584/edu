@@ -329,6 +329,12 @@ $id = Edu::addInfoblockProperty($property,
     Edu::STRING_INFOBLOCK_PROPERTY_TYPE,
     $dormInfoblockId
 );
+$entityId = Edu::addInfoblockProperty($property,
+    'Для кого показывать',
+    Edu::INFOBLOCK_ENTITY_PROPERTY_CODE,
+    Edu::LIST_INFOBLOCK_PROPERTY_TYPE,
+    $newsIblockId
+);
 echo \CAdminMessage::ShowNote("Свойства информационных блоков добавлены");
 
 echo \CAdminMessage::ShowNote("Добавление значений свойств инфомационных блоков");
@@ -342,6 +348,8 @@ Edu::addEnumPropertyValue($iBPEnum, $levelId, 'Аспирантура');
 Edu::addEnumPropertyValue($iBPEnum, $languagesId, 'Русский');
 Edu::addEnumPropertyValue($iBPEnum, $languagesId, 'Итальянский');
 Edu::addEnumPropertyValue($iBPEnum, $languagesId, 'Английский');
+Edu::addEnumPropertyValue($iBPEnum, $entityId, 'Студент');
+Edu::addEnumPropertyValue($iBPEnum, $entityId, 'ВУЗ');
 echo \CAdminMessage::ShowNote("Значения свойств информационных блоков добавлены");
 $DB->Commit();
 ?>

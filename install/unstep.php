@@ -27,6 +27,14 @@ $db = CIBlockPropertyEnum::GetList([
 while ($row = $db->Fetch()) {
     CIBlockPropertyEnum::Delete($row['ID']);
 }
+$db = CIBlockPropertyEnum::GetList([
+    'ID' => 'ASC',
+], [
+    'IBLOCK_ID' => $newsInfoblockId
+]);
+while ($row = $db->Fetch()) {
+    CIBlockPropertyEnum::Delete($row['ID']);
+}
 echo \CAdminMessage::ShowNote("Значения свойств инфоблока удалены");
 
 $oUserTypeEntity = new CUserTypeEntity();
