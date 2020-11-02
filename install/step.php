@@ -133,6 +133,7 @@ $departmentIblockId = Edu::addInfoblock($ib, 'Кафедры', Edu::DEPARTMENTS_
 $libraryIblockId = Edu::addInfoblock($ib, 'Библиотека', Edu::LIBRARY_INFOBLOCK_CODE, $moduleId);
 $newsIblockId = Edu::addInfoblock($ib, 'Новости', Edu::NEWS_INFOBLOCK_CODE, $moduleId);
 $advertisementIblockId = Edu::addInfoblock($ib, 'Объявления', Edu::ADVERTISEMENT_INFOBLOCK_CODE, $moduleId);
+$dormInfoblockId = Edu::addInfoblock($ib, 'Общежития', Edu::DORM_INFOBLOCK_CODE, $moduleId);
 echo \CAdminMessage::ShowNote("Информационные блоки добавлены");
 
 echo \CAdminMessage::ShowNote("Добавление пользовательских свойств-привязок к элементам инфомационных блоков");
@@ -321,6 +322,12 @@ $id = Edu::addInfoblockProperty($property,
     null,
     false,
     $facultiesIblockId
+);
+$id = Edu::addInfoblockProperty($property,
+    'Адрес',
+    Edu::INFOBLOCK_ADDRESS_PROPERTY_CODE,
+    Edu::STRING_INFOBLOCK_PROPERTY_TYPE,
+    $dormInfoblockId
 );
 echo \CAdminMessage::ShowNote("Свойства информационных блоков добавлены");
 

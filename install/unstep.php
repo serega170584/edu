@@ -16,6 +16,7 @@ $departmentsInfoblockId = Edu::getIblockId($moduleId, Edu::DEPARTMENTS_INFOBLOCK
 $libraryInfoblockId = Edu::getIblockId($moduleId, Edu::LIBRARY_INFOBLOCK_CODE);
 $newsInfoblockId = Edu::getIblockId($moduleId, Edu::NEWS_INFOBLOCK_CODE);
 $advertisementInfoblockId = Edu::getIblockId($moduleId, Edu::ADVERTISEMENT_INFOBLOCK_CODE);
+$dormInfoblockId = Edu::getIblockId($moduleId, Edu::DORM_INFOBLOCK_CODE);
 
 echo \CAdminMessage::ShowNote("Удаление значений свойств инфоблоков");
 $db = CIBlockPropertyEnum::GetList([
@@ -82,6 +83,7 @@ Edu::deleteInfoblockProperty(EDU::PROFESSIONS_INFOBLOCK_REPLACED_RESULTS_PROPERT
 Edu::deleteInfoblockProperty(EDU::INFOBLOCK_FACULTY_PROPERTY_CODE, $professionsIblockId);
 Edu::deleteInfoblockProperty(EDU::PROFESSIONS_INFOBLOCK_PRELIMINARY_TESTS_PROPERTY_CODE, $professionsIblockId);
 Edu::deleteInfoblockProperty(EDU::INFOBLOCK_FACULTY_PROPERTY_CODE, $departmentsInfoblockId);
+Edu::deleteInfoblockProperty(EDU::INFOBLOCK_ADDRESS_PROPERTY_CODE, $dormInfoblockId);
 echo \CAdminMessage::ShowNote("Свойства инфоблоков удалены");
 
 echo \CAdminMessage::ShowNote("Удаление инфоблоков");
@@ -93,6 +95,7 @@ Edu::deleteInfoblock($departmentsInfoblockId);
 Edu::deleteInfoblock($libraryInfoblockId);
 Edu::deleteInfoblock($newsInfoblockId);
 Edu::deleteInfoblock($advertisementInfoblockId);
+Edu::deleteInfoblock($dormInfoblockId);
 echo \CAdminMessage::ShowNote("Инфоблоки удалены");
 
 echo \CAdminMessage::ShowNote("Удаление типа инфоблока образовательной организации");
