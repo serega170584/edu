@@ -48,65 +48,13 @@ Edu::deleteUserField($oUserTypeEntity, 'UF_DEPARTMENT');
 echo \CAdminMessage::ShowNote("Свойства пользователя удалены");
 
 echo \CAdminMessage::ShowNote("Удаление групп пользователей");
-
-$by = 'id';
-$order = 'asc';
-$filter = [
-    'STRING_ID' => 'FOUNDERS'
-];
-if (!\CGroup::Delete(\CGroup::GetList($by, $order, $filter)->Fetch()['ID'])) {
-    $DB->Rollback();
-    throw new \Bitrix\Main\DB\Exception('Delete error!');
-}
-
-$filter = [
-    'STRING_ID' => 'BRANCHES'
-];
-if (!\CGroup::Delete(\CGroup::GetList($by, $order, $filter)->Fetch()['ID'])) {
-    $DB->Rollback();
-    throw new \Bitrix\Main\DB\Exception('Delete error!');
-}
-
-$filter = [
-    'STRING_ID' => 'MAIN'
-];
-if (!\CGroup::Delete(\CGroup::GetList($by, $order, $filter)->Fetch()['ID'])) {
-    $DB->Rollback();
-    throw new \Bitrix\Main\DB\Exception('Delete error!');
-}
-
-$filter = [
-    'STRING_ID' => 'DEPARTMENT'
-];
-if (!\CGroup::Delete(\CGroup::GetList($by, $order, $filter)->Fetch()['ID'])) {
-    $DB->Rollback();
-    throw new \Bitrix\Main\DB\Exception('Delete error!');
-}
-
-$filter = [
-    'STRING_ID' => 'ACADEMIC_COUNCIL'
-];
-if (!\CGroup::Delete(\CGroup::GetList($by, $order, $filter)->Fetch()['ID'])) {
-    $DB->Rollback();
-    throw new \Bitrix\Main\DB\Exception('Delete error!');
-}
-
-$filter = [
-    'STRING_ID' => 'LEADERSHIP'
-];
-if (!\CGroup::Delete(\CGroup::GetList($by, $order, $filter)->Fetch()['ID'])) {
-    $DB->Rollback();
-    throw new \Bitrix\Main\DB\Exception('Delete error!');
-}
-
-$filter = [
-    'STRING_ID' => 'STAFF'
-];
-if (!\CGroup::Delete(\CGroup::GetList($by, $order, $filter)->Fetch()['ID'])) {
-    $DB->Rollback();
-    throw new \Bitrix\Main\DB\Exception('Delete error!');
-}
-
+Edu::deleteUserGroup('FOUNDERS');
+Edu::deleteUserGroup('BRANCHES');
+Edu::deleteUserGroup('MAIN');
+Edu::deleteUserGroup('DEPARTMENT');
+Edu::deleteUserGroup('ACADEMIC_COUNCIL');
+Edu::deleteUserGroup('LEADERSHIP');
+Edu::deleteUserGroup('STAFF');
 echo \CAdminMessage::ShowNote("Группы пользователя удалены");
 
 echo \CAdminMessage::ShowNote("Удаление свойств инфоблоков");

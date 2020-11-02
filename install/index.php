@@ -143,4 +143,25 @@ class Edu extends CModule
             'FIELD_NAME' => $fieldName
         ])->Fetch()['ID']);
     }
+
+    /**
+     * @param $name
+     * @throws \Bitrix\Main\DB\Exception
+     */
+    public static function deleteUserGroup($name)
+    {
+        /**
+         * @var \CDatabase $DB
+         */
+        global $DB;
+        $by = 'id';
+        $order = 'asc';
+        $filter = [
+            'STRING_ID' => $name
+        ];
+        if (!\CGroup::Delete(\CGroup::GetList($by, $order, $filter)->Fetch()['ID'])) {
+            $DB->Rollback();
+            throw new \Bitrix\Main\DB\Exception('Delete error!');
+        }
+    }
 }
