@@ -36,474 +36,78 @@ echo \CAdminMessage::ShowNote("Тип инфоблока образовател�
 
 echo \CAdminMessage::ShowNote("Добавление свойств");
 $oUserTypeEntity = new CUserTypeEntity();
-$aUserFields = [
-    'ENTITY_ID' => 'USER',
-    'FIELD_NAME' => 'UF_BEGIN_TIME',
-    'USER_TYPE_ID' => 'datetime',
-    'XML_ID' => 'BEGIN_TIME',
-    'SORT' => 500,
-    'MULTIPLE' => 'N',
-    'MANDATORY' => 'N',
-    'SHOW_FILTER' => 'N',
-    'SHOW_IN_LIST' => '',
-    'EDIT_IN_LIST' => '',
-    'IS_SEARCHABLE' => 'N',
-    'EDIT_FORM_LABEL' => [
-        'ru' => 'Время начала',
-        'en' => 'Begin time'
-    ],
-    'LIST_COLUMN_LABEL' => [
-        'ru' => 'Время начала',
-        'en' => 'Begin time',
-    ],
-    'LIST_FILTER_LABEL' => [
-        'ru' => 'Время начала',
-        'en' => 'Begin time',
-    ],
-    'ERROR_MESSAGE' => [
-        'ru' => 'Ошибка при заполнении',
-        'en' => 'An error in completing',
-    ],
-    'HELP_MESSAGE' => [
-        'ru' => '',
-        'en' => '',
-    ]
-];
-$res = $oUserTypeEntity->Add($aUserFields);
-if (!$res) {
-    $DB->Rollback();
-    throw new \Bitrix\Main\DB\Exception('Ошибка добавления пользовательского свойства');
-}
-
-$aUserFields = [
-    'ENTITY_ID' => 'USER',
-    'FIELD_NAME' => 'UF_END_TIME',
-    'USER_TYPE_ID' => 'datetime',
-    'XML_ID' => 'BEGIN_TIME',
-    'SORT' => 500,
-    'MULTIPLE' => 'N',
-    'MANDATORY' => 'N',
-    'SHOW_FILTER' => 'N',
-    'SHOW_IN_LIST' => '',
-    'EDIT_IN_LIST' => '',
-    'IS_SEARCHABLE' => 'N',
-    'EDIT_FORM_LABEL' => [
-        'ru' => 'Время окончания',
-        'en' => 'End time'
-    ],
-    'LIST_COLUMN_LABEL' => [
-        'ru' => 'Время окончания',
-        'en' => 'End time',
-    ],
-    'LIST_FILTER_LABEL' => [
-        'ru' => 'Время окончания',
-        'en' => 'End time',
-    ],
-    'ERROR_MESSAGE' => [
-        'ru' => 'Ошибка при заполнении',
-        'en' => 'An error in completing',
-    ],
-    'HELP_MESSAGE' => [
-        'ru' => '',
-        'en' => '',
-    ]
-];
-$res = $oUserTypeEntity->Add($aUserFields);
-if (!$res) {
-    $DB->Rollback();
-    throw new \Bitrix\Main\DB\Exception('Ошибка добавления пользовательского свойства');
-}
-
-$aUserFields = [
-    'ENTITY_ID' => 'USER',
-    'FIELD_NAME' => 'UF_SITE',
-    'USER_TYPE_ID' => 'string',
-    'XML_ID' => 'SITE',
-    'SORT' => 500,
-    'MULTIPLE' => 'N',
-    'MANDATORY' => 'N',
-    'SHOW_FILTER' => 'N',
-    'SHOW_IN_LIST' => '',
-    'EDIT_IN_LIST' => '',
-    'IS_SEARCHABLE' => 'N',
-    'EDIT_FORM_LABEL' => [
-        'ru' => 'Сайт',
-        'en' => 'Site'
-    ],
-    'LIST_COLUMN_LABEL' => [
-        'ru' => 'Сайт',
-        'en' => 'Site',
-    ],
-    'LIST_FILTER_LABEL' => [
-        'ru' => 'Сайт',
-        'en' => 'Site',
-    ],
-    'ERROR_MESSAGE' => [
-        'ru' => 'Ошибка при заполнении',
-        'en' => 'An error in completing',
-    ],
-    'HELP_MESSAGE' => [
-        'ru' => '',
-        'en' => '',
-    ]
-];
-$res = $oUserTypeEntity->Add($aUserFields);
-if (!$res) {
-    $DB->Rollback();
-    throw new \Bitrix\Main\DB\Exception('Ошибка добавления пользовательского свойства');
-}
-
-$aUserFields = [
-    'ENTITY_ID' => 'USER',
-    'FIELD_NAME' => 'UF_DOCUMENT',
-    'USER_TYPE_ID' => 'file',
-    'XML_ID' => 'DOCUMENT',
-    'SORT' => 500,
-    'MULTIPLE' => 'N',
-    'MANDATORY' => 'N',
-    'SHOW_FILTER' => 'N',
-    'SHOW_IN_LIST' => '',
-    'EDIT_IN_LIST' => '',
-    'IS_SEARCHABLE' => 'N',
-    'EDIT_FORM_LABEL' => [
-        'ru' => 'Документ',
-        'en' => 'Document'
-    ],
-    'LIST_COLUMN_LABEL' => [
-        'ru' => 'Документ',
-        'en' => 'Document',
-    ],
-    'LIST_FILTER_LABEL' => [
-        'ru' => 'Документ',
-        'en' => 'Document',
-    ],
-    'ERROR_MESSAGE' => [
-        'ru' => 'Ошибка при заполнении',
-        'en' => 'An error in completing',
-    ],
-    'HELP_MESSAGE' => [
-        'ru' => '',
-        'en' => '',
-    ]
-];
-$res = $oUserTypeEntity->Add($aUserFields);
-if (!$res) {
-    $DB->Rollback();
-    throw new \Bitrix\Main\DB\Exception('Ошибка добавления пользовательского свойства');
-}
-
-$aUserFields = [
-    'ENTITY_ID' => 'USER',
-    'FIELD_NAME' => 'UF_TIME_ADDITION',
-    'USER_TYPE_ID' => 'string',
-    'XML_ID' => 'TIME_ADDITION',
-    'SORT' => 500,
-    'MULTIPLE' => 'N',
-    'MANDATORY' => 'N',
-    'SHOW_FILTER' => 'N',
-    'SHOW_IN_LIST' => '',
-    'EDIT_IN_LIST' => '',
-    'IS_SEARCHABLE' => 'N',
-    'EDIT_FORM_LABEL' => [
-        'ru' => 'Уточнение времени работы',
-        'en' => 'Time addition'
-    ],
-    'LIST_COLUMN_LABEL' => [
-        'ru' => 'Уточнение времени работы',
-        'en' => 'Time addition',
-    ],
-    'LIST_FILTER_LABEL' => [
-        'ru' => 'Уточнение времени работы',
-        'en' => 'Time addition',
-    ],
-    'ERROR_MESSAGE' => [
-        'ru' => 'Ошибка при заполнении',
-        'en' => 'An error in completing',
-    ],
-    'HELP_MESSAGE' => [
-        'ru' => '',
-        'en' => '',
-    ]
-];
-$res = $oUserTypeEntity->Add($aUserFields);
-if (!$res) {
-    $DB->Rollback();
-    throw new \Bitrix\Main\DB\Exception('Ошибка добавления пользовательского свойства');
-}
-
-$aUserFields = [
-    'ENTITY_ID' => 'USER',
-    'FIELD_NAME' => 'UF_GENERAL_EXPERIENCE',
-    'USER_TYPE_ID' => 'string',
-    'XML_ID' => 'GENERAL_EXPERIENCE',
-    'SORT' => 500,
-    'MULTIPLE' => 'N',
-    'MANDATORY' => 'N',
-    'SHOW_FILTER' => 'N',
-    'SHOW_IN_LIST' => '',
-    'EDIT_IN_LIST' => '',
-    'IS_SEARCHABLE' => 'N',
-    'EDIT_FORM_LABEL' => [
-        'ru' => 'Общий стаж работы',
-        'en' => 'General experience'
-    ],
-    'LIST_COLUMN_LABEL' => [
-        'ru' => 'Общий стаж работы',
-        'en' => 'General experience',
-    ],
-    'LIST_FILTER_LABEL' => [
-        'ru' => 'Общий стаж работы',
-        'en' => 'General experience',
-    ],
-    'ERROR_MESSAGE' => [
-        'ru' => 'Ошибка при заполнении',
-        'en' => 'An error in completing',
-    ],
-    'HELP_MESSAGE' => [
-        'ru' => '',
-        'en' => '',
-    ]
-];
-$res = $oUserTypeEntity->Add($aUserFields);
-if (!$res) {
-    $DB->Rollback();
-    throw new \Bitrix\Main\DB\Exception('Ошибка добавления пользовательского свойства');
-}
-
-$aUserFields = [
-    'ENTITY_ID' => 'USER',
-    'FIELD_NAME' => 'UF_PROFESSION_EXPERIENCE',
-    'USER_TYPE_ID' => 'string',
-    'XML_ID' => 'PROFESSION_EXPERIENCE',
-    'SORT' => 500,
-    'MULTIPLE' => 'N',
-    'MANDATORY' => 'N',
-    'SHOW_FILTER' => 'N',
-    'SHOW_IN_LIST' => '',
-    'EDIT_IN_LIST' => '',
-    'IS_SEARCHABLE' => 'N',
-    'EDIT_FORM_LABEL' => [
-        'ru' => 'Cтаж работы по специальности',
-        'en' => 'Profession experience'
-    ],
-    'LIST_COLUMN_LABEL' => [
-        'ru' => 'Cтаж работы по специальности',
-        'en' => 'Profession experience',
-    ],
-    'LIST_FILTER_LABEL' => [
-        'ru' => 'Cтаж работы по специальности',
-        'en' => 'Profession experience',
-    ],
-    'ERROR_MESSAGE' => [
-        'ru' => 'Ошибка при заполнении',
-        'en' => 'An error in completing',
-    ],
-    'HELP_MESSAGE' => [
-        'ru' => '',
-        'en' => '',
-    ]
-];
-$res = $oUserTypeEntity->Add($aUserFields);
-if (!$res) {
-    $DB->Rollback();
-    throw new \Bitrix\Main\DB\Exception('Ошибка добавления пользовательского свойства');
-}
-
-$aUserFields = [
-    'ENTITY_ID' => 'USER',
-    'FIELD_NAME' => 'UF_POSITION',
-    'USER_TYPE_ID' => 'string',
-    'XML_ID' => 'POSITION',
-    'SORT' => 500,
-    'MULTIPLE' => 'N',
-    'MANDATORY' => 'N',
-    'SHOW_FILTER' => 'N',
-    'SHOW_IN_LIST' => '',
-    'EDIT_IN_LIST' => '',
-    'IS_SEARCHABLE' => 'N',
-    'EDIT_FORM_LABEL' => [
-        'ru' => 'Должность',
-        'en' => 'Position'
-    ],
-    'LIST_COLUMN_LABEL' => [
-        'ru' => 'Должность',
-        'en' => 'Position',
-    ],
-    'LIST_FILTER_LABEL' => [
-        'ru' => 'Должность',
-        'en' => 'Position',
-    ],
-    'ERROR_MESSAGE' => [
-        'ru' => 'Ошибка при заполнении',
-        'en' => 'An error in completing',
-    ],
-    'HELP_MESSAGE' => [
-        'ru' => '',
-        'en' => '',
-    ]
-];
-$res = $oUserTypeEntity->Add($aUserFields);
-if (!$res) {
-    $DB->Rollback();
-    throw new \Bitrix\Main\DB\Exception('Ошибка добавления пользовательского свойства');
-}
-
-$aUserFields = [
-    'ENTITY_ID' => 'USER',
-    'FIELD_NAME' => 'UF_SUBJECT',
-    'USER_TYPE_ID' => 'string',
-    'XML_ID' => 'SUBJECT',
-    'SORT' => 500,
-    'MULTIPLE' => 'N',
-    'MANDATORY' => 'N',
-    'SHOW_FILTER' => 'N',
-    'SHOW_IN_LIST' => '',
-    'EDIT_IN_LIST' => '',
-    'IS_SEARCHABLE' => 'N',
-    'EDIT_FORM_LABEL' => [
-        'ru' => 'Преподаваемые дисциплины',
-        'en' => 'Subject'
-    ],
-    'LIST_COLUMN_LABEL' => [
-        'ru' => 'Преподаваемые дисциплины',
-        'en' => 'Subject',
-    ],
-    'LIST_FILTER_LABEL' => [
-        'ru' => 'Преподаваемые дисциплины',
-        'en' => 'Subject',
-    ],
-    'ERROR_MESSAGE' => [
-        'ru' => 'Ошибка при заполнении',
-        'en' => 'An error in completing',
-    ],
-    'HELP_MESSAGE' => [
-        'ru' => '',
-        'en' => '',
-    ]
-];
-$res = $oUserTypeEntity->Add($aUserFields);
-if (!$res) {
-    $DB->Rollback();
-    throw new \Bitrix\Main\DB\Exception('Ошибка добавления пользовательского свойства');
-}
-
-$aUserFields = [
-    'ENTITY_ID' => 'USER',
-    'FIELD_NAME' => 'UF_DEGREE',
-    'USER_TYPE_ID' => 'string',
-    'XML_ID' => 'DEGREEE',
-    'SORT' => 500,
-    'MULTIPLE' => 'N',
-    'MANDATORY' => 'N',
-    'SHOW_FILTER' => 'N',
-    'SHOW_IN_LIST' => '',
-    'EDIT_IN_LIST' => '',
-    'IS_SEARCHABLE' => 'N',
-    'EDIT_FORM_LABEL' => [
-        'ru' => 'Ученая степень',
-        'en' => 'Degree'
-    ],
-    'LIST_COLUMN_LABEL' => [
-        'ru' => 'Ученая степень',
-        'en' => 'Degree',
-    ],
-    'LIST_FILTER_LABEL' => [
-        'ru' => 'Ученая степень',
-        'en' => 'Degree',
-    ],
-    'ERROR_MESSAGE' => [
-        'ru' => 'Ошибка при заполнении',
-        'en' => 'An error in completing',
-    ],
-    'HELP_MESSAGE' => [
-        'ru' => '',
-        'en' => '',
-    ]
-];
-$res = $oUserTypeEntity->Add($aUserFields);
-if (!$res) {
-    $DB->Rollback();
-    throw new \Bitrix\Main\DB\Exception('Ошибка добавления пользовательского свойства');
-}
-
-$aUserFields = [
-    'ENTITY_ID' => 'USER',
-    'FIELD_NAME' => 'UF_RANK',
-    'USER_TYPE_ID' => 'string',
-    'XML_ID' => 'RANK',
-    'SORT' => 500,
-    'MULTIPLE' => 'N',
-    'MANDATORY' => 'N',
-    'SHOW_FILTER' => 'N',
-    'SHOW_IN_LIST' => '',
-    'EDIT_IN_LIST' => '',
-    'IS_SEARCHABLE' => 'N',
-    'EDIT_FORM_LABEL' => [
-        'ru' => 'Ученое звание',
-        'en' => 'Rank'
-    ],
-    'LIST_COLUMN_LABEL' => [
-        'ru' => 'Ученое звание',
-        'en' => 'Rank',
-    ],
-    'LIST_FILTER_LABEL' => [
-        'ru' => 'Ученое звание',
-        'en' => 'Rank',
-    ],
-    'ERROR_MESSAGE' => [
-        'ru' => 'Ошибка при заполнении',
-        'en' => 'An error in completing',
-    ],
-    'HELP_MESSAGE' => [
-        'ru' => '',
-        'en' => '',
-    ]
-];
-$res = $oUserTypeEntity->Add($aUserFields);
-if (!$res) {
-    $DB->Rollback();
-    throw new \Bitrix\Main\DB\Exception('Ошибка добавления пользовательского свойства');
-}
-
-$aUserFields = [
-    'ENTITY_ID' => 'USER',
-    'FIELD_NAME' => 'UF_ASSESSMENT',
-    'USER_TYPE_ID' => 'string',
-    'XML_ID' => 'ASSESSMENT',
-    'SORT' => 500,
-    'MULTIPLE' => 'N',
-    'MANDATORY' => 'N',
-    'SHOW_FILTER' => 'N',
-    'SHOW_IN_LIST' => '',
-    'EDIT_IN_LIST' => '',
-    'IS_SEARCHABLE' => 'N',
-    'EDIT_FORM_LABEL' => [
-        'ru' => 'Данные о повышении квалификации и (или) профессиональной переподготовке',
-        'en' => 'Assessment'
-    ],
-    'LIST_COLUMN_LABEL' => [
-        'ru' => 'Данные о повышении квалификации и (или) профессиональной переподготовке',
-        'en' => 'Assessment',
-    ],
-    'LIST_FILTER_LABEL' => [
-        'ru' => 'Данные о повышении квалификации и (или) профессиональной переподготовке',
-        'en' => 'Assessment',
-    ],
-    'ERROR_MESSAGE' => [
-        'ru' => 'Ошибка при заполнении',
-        'en' => 'An error in completing',
-    ],
-    'HELP_MESSAGE' => [
-        'ru' => '',
-        'en' => '',
-    ]
-];
-$res = $oUserTypeEntity->Add($aUserFields);
-if (!$res) {
-    $DB->Rollback();
-    throw new \Bitrix\Main\DB\Exception('Ошибка добавления пользовательского свойства');
-}
-
+Edu::addUserField($oUserTypeEntity,
+    'UF_BEGIN_TIME',
+    'datetime',
+    'BEGIN_TIME',
+    'Время начала',
+    'Begin time');
+Edu::addUserField($oUserTypeEntity,
+    'UF_END_TIME',
+    'datetime',
+    'END_TIME',
+    'Время окончания',
+    'End time');
+Edu::addUserField($oUserTypeEntity,
+    'UF_SITE',
+    'string',
+    'SITE',
+    'Сайт',
+    'Site');
+Edu::addUserField($oUserTypeEntity,
+    'UF_DOCUMENT',
+    'file',
+    'DOCUMENT',
+    'Документ',
+    'Document');
+Edu::addUserField($oUserTypeEntity,
+    'UF_TIME_ADDITION',
+    'string',
+    'TIME_ADDITION',
+    'Уточнение времени работы',
+    'Time addition');
+Edu::addUserField($oUserTypeEntity,
+    'UF_GENERAL_EXPERIENCE',
+    'string',
+    'GENERAL_EXPERIENCE',
+    'Общий стаж работы',
+    'General experience');
+Edu::addUserField($oUserTypeEntity,
+    'UF_PROFESSION_EXPERIENCE',
+    'string',
+    'PROFESSION_EXPERIENCE',
+    'Cтаж работы по специальности',
+    'Profession experience');
+Edu::addUserField($oUserTypeEntity,
+    'UF_POSITION',
+    'string',
+    'POSITION',
+    'Должность',
+    'Position');
+Edu::addUserField($oUserTypeEntity,
+    'UF_SUBJECT',
+    'string',
+    'SUBJECT',
+    'Преподаваемые дисциплины',
+    'Subject');
+Edu::addUserField($oUserTypeEntity,
+    'UF_DEGREE',
+    'string',
+    'DEGREEE',
+    'Ученая степень',
+    'Degree');
+Edu::addUserField($oUserTypeEntity,
+    'UF_RANK',
+    'string',
+    'RANK',
+    'Ученое звание',
+    'Rank');
+Edu::addUserField($oUserTypeEntity,
+    'UF_ASSESSMENT',
+    'string',
+    'ASSESSMENT',
+    'Данные о повышении квалификации и (или) профессиональной переподготовке',
+    'Assessment');
 echo \CAdminMessage::ShowNote("Свойства пользователя добавлены");
 
 echo \CAdminMessage::ShowNote("Добавление групп пользователей");

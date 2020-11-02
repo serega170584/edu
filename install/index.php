@@ -202,4 +202,59 @@ class Edu extends CModule
             throw new \Bitrix\Main\DB\Exception('Delete error!');
         }
     }
+
+    /**
+     * @param $oUserTypeEntity
+     * @param $name
+     * @param $type
+     * @param $xmlId
+     * @param $ruLabel
+     * @param $enLabel
+     * @throws \Bitrix\Main\DB\Exception
+     */
+    public static function addUserField($oUserTypeEntity, $name, $type, $xmlId, $ruLabel, $enLabel)
+    {
+        /**
+         * @var \CDatabase $DB
+         */
+        global $DB;
+        $aUserFields = [
+            'ENTITY_ID' => 'USER',
+            'FIELD_NAME' => $name,
+            'USER_TYPE_ID' => $type,
+            'XML_ID' => $xmlId,
+            'SORT' => 500,
+            'MULTIPLE' => 'N',
+            'MANDATORY' => 'N',
+            'SHOW_FILTER' => 'N',
+            'SHOW_IN_LIST' => '',
+            'EDIT_IN_LIST' => '',
+            'IS_SEARCHABLE' => 'N',
+            'EDIT_FORM_LABEL' => [
+                'ru' => $ruLabel,
+                'en' => $enLabel
+            ],
+            'LIST_COLUMN_LABEL' => [
+                'ru' => $ruLabel,
+                'en' => $enLabel,
+            ],
+            'LIST_FILTER_LABEL' => [
+                'ru' => $ruLabel,
+                'en' => $enLabel,
+            ],
+            'ERROR_MESSAGE' => [
+                'ru' => 'Ошибка при заполнении',
+                'en' => 'An error in completing',
+            ],
+            'HELP_MESSAGE' => [
+                'ru' => '',
+                'en' => '',
+            ]
+        ];
+        $res = $oUserTypeEntity->Add($aUserFields);
+        if (!$res) {
+            $DB->Rollback();
+            throw new \Bitrix\Main\DB\Exception('Ошибка добавления пользовательского свойства');
+        }
+    }
 }
