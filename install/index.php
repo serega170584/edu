@@ -257,4 +257,33 @@ class Edu extends CModule
             throw new \Bitrix\Main\DB\Exception('Ошибка добавления пользовательского свойства');
         }
     }
+
+    /**
+     * @param $group
+     * @param $name
+     * @param $id
+     * @return
+     * @throws \Bitrix\Main\DB\Exception
+     */
+    public static function addUserGroup($group, $name, $id)
+    {
+        /**
+         * @var \CDatabase $group
+         */
+        global $DB;
+        $arFields = [
+            "ACTIVE" => "Y",
+            "C_SORT" => 100,
+            "NAME" => $name,
+            "DESCRIPTION" => $name,
+            "USER_ID" => [],
+            "STRING_ID" => $id
+        ];
+        $id = $group->Add($arFields);
+        if (strlen($group->LAST_ERROR) > 0) {
+            $DB->Rollback();
+            throw new \Bitrix\Main\DB\Exception('Ошибка добавления группы пользователя');
+        }
+        return $id;
+    }
 }
