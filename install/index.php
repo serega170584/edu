@@ -376,4 +376,22 @@ class Edu extends CModule
         }
         return $id;
     }
+
+    /**
+     * @param $iBPEnum
+     * @param $id
+     * @param $value
+     * @throws \Bitrix\Main\DB\Exception
+     */
+    public static function addEnumPropertyValue($iBPEnum, $id, $value)
+    {
+        /**
+         * @var \CDatabase $DB
+         */
+        global $DB;
+        if (!($iBPEnum->Add(['PROPERTY_ID' => $id, 'VALUE' => $value]))) {
+            $DB->Rollback();
+            throw new \Bitrix\Main\DB\Exception('Ошибка добавления значения свойства инфоблока');
+        }
+    }
 }

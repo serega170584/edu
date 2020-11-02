@@ -326,42 +326,15 @@ echo \CAdminMessage::ShowNote("Свойства информационных б�
 
 echo \CAdminMessage::ShowNote("Добавление значений свойств инфомационных блоков");
 $iBPEnum = new CIBlockPropertyEnum;
-if (!($iBPEnum->Add(array('PROPERTY_ID' => $formOfEducationid, 'VALUE' => 'заочная')))) {
-    $DB->Rollback();
-    throw new \Bitrix\Main\DB\Exception('Ошибка добавления значения свойства инфоблока');
-}
-if (!($iBPEnum->Add(array('PROPERTY_ID' => $formOfEducationid, 'VALUE' => 'очная')))) {
-    $DB->Rollback();
-    throw new \Bitrix\Main\DB\Exception('Ошибка добавления значения свойства инфоблока');
-}
-if (!($iBPEnum->Add(array('PROPERTY_ID' => $levelId, 'VALUE' => 'Бакалавриат')))) {
-    $DB->Rollback();
-    throw new \Bitrix\Main\DB\Exception('Ошибка добавления значения свойства инфоблока');
-}
-if (!($iBPEnum->Add(array('PROPERTY_ID' => $levelId, 'VALUE' => 'Магистратура')))) {
-    $DB->Rollback();
-    throw new \Bitrix\Main\DB\Exception('Ошибка добавления значения свойства инфоблока');
-}
-if (!($iBPEnum->Add(array('PROPERTY_ID' => $levelId, 'VALUE' => 'Специалист')))) {
-    $DB->Rollback();
-    throw new \Bitrix\Main\DB\Exception('Ошибка добавления значения свойства инфоблока');
-}
-if (!($iBPEnum->Add(array('PROPERTY_ID' => $levelId, 'VALUE' => 'Аспирантура')))) {
-    $DB->Rollback();
-    throw new \Bitrix\Main\DB\Exception('Ошибка добавления значения свойства инфоблока');
-}
-if (!($iBPEnum->Add(array('PROPERTY_ID' => $languagesId, 'VALUE' => 'Русский')))) {
-    $DB->Rollback();
-    throw new \Bitrix\Main\DB\Exception('Ошибка добавления значения свойства инфоблока');
-}
-if (!($iBPEnum->Add(array('PROPERTY_ID' => $languagesId, 'VALUE' => 'Итальянский')))) {
-    $DB->Rollback();
-    throw new \Bitrix\Main\DB\Exception('Ошибка добавления значения свойства инфоблока');
-}
-if (!($iBPEnum->Add(array('PROPERTY_ID' => $languagesId, 'VALUE' => 'Английский')))) {
-    $DB->Rollback();
-    throw new \Bitrix\Main\DB\Exception('Ошибка добавления значения свойства инфоблока');
-}
+Edu::addEnumPropertyValue($iBPEnum, $formOfEducationid, 'заочная');
+Edu::addEnumPropertyValue($iBPEnum, $formOfEducationid, 'очная');
+Edu::addEnumPropertyValue($iBPEnum, $levelId, 'Бакалавриат');
+Edu::addEnumPropertyValue($iBPEnum, $levelId, 'Магистратура');
+Edu::addEnumPropertyValue($iBPEnum, $levelId, 'Специалист');
+Edu::addEnumPropertyValue($iBPEnum, $levelId, 'Аспирантура');
+Edu::addEnumPropertyValue($iBPEnum, $languagesId, 'Русский');
+Edu::addEnumPropertyValue($iBPEnum, $languagesId, 'Итальянский');
+Edu::addEnumPropertyValue($iBPEnum, $languagesId, 'Английский');
 echo \CAdminMessage::ShowNote("Значения свойств информационных блоков добавлены");
 $DB->Commit();
 ?>
