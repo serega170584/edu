@@ -19,22 +19,8 @@ $advertisementInfoblockId = Edu::getIblockId($moduleId, Edu::ADVERTISEMENT_INFOB
 $dormInfoblockId = Edu::getIblockId($moduleId, Edu::DORM_INFOBLOCK_CODE);
 
 echo \CAdminMessage::ShowNote("Удаление значений свойств инфоблоков");
-$db = CIBlockPropertyEnum::GetList([
-    'ID' => 'ASC',
-], [
-    'IBLOCK_ID' => $professionsIblockId
-]);
-while ($row = $db->Fetch()) {
-    CIBlockPropertyEnum::Delete($row['ID']);
-}
-$db = CIBlockPropertyEnum::GetList([
-    'ID' => 'ASC',
-], [
-    'IBLOCK_ID' => $newsInfoblockId
-]);
-while ($row = $db->Fetch()) {
-    CIBlockPropertyEnum::Delete($row['ID']);
-}
+Edu::deleteInfoblockPropertyEnumValues($professionsIblockId);
+Edu::deleteInfoblockPropertyEnumValues($newsInfoblockId);
 echo \CAdminMessage::ShowNote("Значения свойств инфоблока удалены");
 
 $oUserTypeEntity = new CUserTypeEntity();

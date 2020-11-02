@@ -397,4 +397,27 @@ class Edu extends CModule
             throw new \Bitrix\Main\DB\Exception('Ошибка добавления значения свойства инфоблока');
         }
     }
+
+    /**
+     * @param $id
+     * @throws \Bitrix\Main\DB\Exception
+     */
+    public static function deleteInfoblockPropertyEnumValues($id)
+    {
+        /**
+         * @var \CDatabase $DB
+         */
+        global $DB;
+        $db = CIBlockPropertyEnum::GetList([
+            'ID' => 'ASC',
+        ], [
+            'IBLOCK_ID' => $id
+        ]);
+        while ($row = $db->Fetch()) {
+            if (!\CIBlockPropertyEnum::Delete($row['ID'])){
+                $DB->Rollback();
+                throw new \Bitrix\Main\DB\Exception('Ошибка удаления значения свойства инфоблока');
+            }
+        }
+    }
 }
