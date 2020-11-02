@@ -30,90 +30,21 @@ echo \CAdminMessage::ShowNote("Значения свойств инфоблок�
 
 $oUserTypeEntity = new CUserTypeEntity();
 echo \CAdminMessage::ShowNote("Удаление свойств");
-$oUserTypeEntity->Delete(CUserTypeEntity::GetList([
-    'ID' => 'ASC'
-], [
-    'ENTITY_ID' => 'USER',
-    'FIELD_NAME' => 'UF_BEGIN_TIME'
-])->Fetch()['ID']);
-$oUserTypeEntity->Delete(CUserTypeEntity::GetList([
-    'ID' => 'ASC'
-], [
-    'ENTITY_ID' => 'USER',
-    'FIELD_NAME' => 'UF_END_TIME'
-])->Fetch()['ID']);
-$oUserTypeEntity->Delete(CUserTypeEntity::GetList([
-    'ID' => 'ASC'
-], [
-    'ENTITY_ID' => 'USER',
-    'FIELD_NAME' => 'UF_SITE'
-])->Fetch()['ID']);
-$oUserTypeEntity->Delete(CUserTypeEntity::GetList([
-    'ID' => 'ASC'
-], [
-    'ENTITY_ID' => 'USER',
-    'FIELD_NAME' => 'UF_DOCUMENT'
-])->Fetch()['ID']);
-$oUserTypeEntity->Delete(CUserTypeEntity::GetList([
-    'ID' => 'ASC'
-], [
-    'ENTITY_ID' => 'USER',
-    'FIELD_NAME' => 'UF_TIME_ADDITION'
-])->Fetch()['ID']);
-$oUserTypeEntity->Delete(CUserTypeEntity::GetList([
-    'ID' => 'ASC'
-], [
-    'ENTITY_ID' => 'USER',
-    'FIELD_NAME' => 'UF_GENERAL_EXPERIENCE'
-])->Fetch()['ID']);
-$oUserTypeEntity->Delete(CUserTypeEntity::GetList([
-    'ID' => 'ASC'
-], [
-    'ENTITY_ID' => 'USER',
-    'FIELD_NAME' => 'UF_PROFESSION_EXPERIENCE'
-])->Fetch()['ID']);
-$oUserTypeEntity->Delete(CUserTypeEntity::GetList([
-    'ID' => 'ASC'
-], [
-    'ENTITY_ID' => 'USER',
-    'FIELD_NAME' => 'UF_POSITION'
-])->Fetch()['ID']);
-$oUserTypeEntity->Delete(CUserTypeEntity::GetList([
-    'ID' => 'ASC'
-], [
-    'ENTITY_ID' => 'USER',
-    'FIELD_NAME' => 'UF_SUBJECT'
-])->Fetch()['ID']);
-$oUserTypeEntity->Delete(CUserTypeEntity::GetList([
-    'ID' => 'ASC'
-], [
-    'ENTITY_ID' => 'USER',
-    'FIELD_NAME' => 'UF_DEGREE'
-])->Fetch()['ID']);
-$oUserTypeEntity->Delete(CUserTypeEntity::GetList([
-    'ID' => 'ASC'
-], [
-    'ENTITY_ID' => 'USER',
-    'FIELD_NAME' => 'UF_RANK'
-])->Fetch()['ID']);
-$oUserTypeEntity->Delete(CUserTypeEntity::GetList([
-    'ID' => 'ASC'
-], [
-    'ENTITY_ID' => 'USER',
-    'FIELD_NAME' => 'UF_ASSESSMENT'
-])->Fetch()['ID']);
-$oUserTypeEntity->Delete(CUserTypeEntity::GetList([
-    'ID' => 'ASC'
-], [
-    'ENTITY_ID' => 'USER',
-    'FIELD_NAME' => 'UF_PROFESSION'
-])->Fetch()['ID']);
-$oUserTypeEntity->Delete(CUserTypeEntity::GetList([
-    'ID' => 'ASC'
-], [
-    'ENTITY_ID' => 'USER',
-    'FIELD_NAME' => 'UF_DEPARTMENT'
-])->Fetch()['ID']);
+Edu::deleteUserField($oUserTypeEntity, 'UF_BEGIN_TIME');
+Edu::deleteUserField($oUserTypeEntity, 'UF_END_TIME');
+Edu::deleteUserField($oUserTypeEntity, 'UF_SITE');
+Edu::deleteUserField($oUserTypeEntity, 'UF_DOCUMENT');
+Edu::deleteUserField($oUserTypeEntity, 'UF_TIME_ADDITION');
+Edu::deleteUserField($oUserTypeEntity, 'UF_GENERAL_EXPERIENCE');
+Edu::deleteUserField($oUserTypeEntity, 'UF_PROFESSION_EXPERIENCE');
+Edu::deleteUserField($oUserTypeEntity, 'UF_POSITION');
+Edu::deleteUserField($oUserTypeEntity, 'UF_SUBJECT');
+Edu::deleteUserField($oUserTypeEntity, 'UF_DEGREE');
+Edu::deleteUserField($oUserTypeEntity, 'UF_RANK');
+Edu::deleteUserField($oUserTypeEntity, 'UF_RANK');
+Edu::deleteUserField($oUserTypeEntity, 'UF_ASSESSMENT');
+Edu::deleteUserField($oUserTypeEntity, 'UF_PROFESSION');
+Edu::deleteUserField($oUserTypeEntity, 'UF_DEPARTMENT');
 echo \CAdminMessage::ShowNote("Свойства пользователя удалены");
 
 echo \CAdminMessage::ShowNote("Удаление групп пользователей");

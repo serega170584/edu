@@ -129,4 +129,18 @@ class Edu extends CModule
             'CODE' => $code,
         ])->Fetch()['ID'];
     }
+
+    /**
+     * @param $oUserTypeEntity
+     * @param $fieldName
+     */
+    public static function deleteUserField($oUserTypeEntity, $fieldName)
+    {
+        $oUserTypeEntity->Delete(CUserTypeEntity::GetList([
+            'ID' => 'ASC'
+        ], [
+            'ENTITY_ID' => 'USER',
+            'FIELD_NAME' => $fieldName
+        ])->Fetch()['ID']);
+    }
 }
