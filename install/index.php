@@ -286,4 +286,36 @@ class Edu extends CModule
         }
         return $id;
     }
+
+    /**
+     * @param $ib
+     * @param $name
+     * @param $code
+     * @param $type
+     * @return mixed
+     * @throws \Bitrix\Main\DB\Exception
+     */
+    public static function addInfoblock($ib, $name, $code, $type)
+    {
+        /**
+         * @var \CDatabase $DB
+         */
+        global $DB;
+        $arFields = [
+            "NAME" => $name,
+            "CODE" => $code,
+            "LIST_PAGE_URL" => '',
+            "DETAIL_PAGE_URL" => '',
+            "IBLOCK_TYPE_ID" => $type,
+            "SITE_ID" => [Edu::SITE_ID],
+            'LID' => Edu::SITE_ID,
+            "GROUP_ID" => [Edu::ALL_USERS_GROUP_ID => Edu::READ_PERMISSION]
+        ];
+        $id = $ib->Add($arFields);
+        if (!($id > 0)) {
+            $DB->Rollback();
+            throw new \Bitrix\Main\DB\Exception('Ошибка добавления инфоблока');
+        }
+        return $id;
+    }
 }

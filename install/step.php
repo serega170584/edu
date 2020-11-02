@@ -113,146 +113,26 @@ echo \CAdminMessage::ShowNote("Свойства пользователя доб�
 echo \CAdminMessage::ShowNote("Добавление групп пользователей");
 
 $group = new \CGroup;
-$id = Edu::addUserGroup($group, 'Учредители',  'FOUNDERS');
-$id = Edu::addUserGroup($group, 'Филиалы',  'BRANCHES');
-$id = Edu::addUserGroup($group, 'Главный корпус',  'MAIN');
-$id = Edu::addUserGroup($group, 'Отдел',  'DEPARTMENT');
-$id = Edu::addUserGroup($group, 'Ученый совет',  'ACADEMIC_COUNCIL');
-$id = Edu::addUserGroup($group, 'Руководство',  'LEADERSHIP');
-$id = Edu::addUserGroup($group, 'Сотрудник',  'STAFF');
+$id = Edu::addUserGroup($group, 'Учредители', 'FOUNDERS');
+$id = Edu::addUserGroup($group, 'Филиалы', 'BRANCHES');
+$id = Edu::addUserGroup($group, 'Главный корпус', 'MAIN');
+$id = Edu::addUserGroup($group, 'Отдел', 'DEPARTMENT');
+$id = Edu::addUserGroup($group, 'Ученый совет', 'ACADEMIC_COUNCIL');
+$id = Edu::addUserGroup($group, 'Руководство', 'LEADERSHIP');
+$id = Edu::addUserGroup($group, 'Сотрудник', 'STAFF');
 echo \CAdminMessage::ShowNote("Группы пользователей добавлены");
 
 echo \CAdminMessage::ShowNote("Добавление инфомационных блоков");
 
 $ib = new \CIBlock;
-$arFields = [
-    "NAME" => 'Документы',
-    "CODE" => Edu::DOCUMENTS_INFOBLOCK_CODE,
-    "LIST_PAGE_URL" => '',
-    "DETAIL_PAGE_URL" => '',
-    "IBLOCK_TYPE_ID" => $moduleId,
-    "SITE_ID" => [Edu::SITE_ID],
-    'LID' => Edu::SITE_ID,
-    "GROUP_ID" => [Edu::ALL_USERS_GROUP_ID => Edu::READ_PERMISSION]
-];
-$documentsIblockId = $ib->Add($arFields);
-if (!($documentsIblockId > 0)) {
-    $DB->Rollback();
-    throw new \Bitrix\Main\DB\Exception('Ошибка добавления инфоблока');
-}
-
-$arFields = [
-    "NAME" => 'Специальности',
-    "CODE" => Edu::PROFESSIONS_INFOBLOCK_CODE,
-    "LIST_PAGE_URL" => '',
-    "DETAIL_PAGE_URL" => '',
-    "IBLOCK_TYPE_ID" => $moduleId,
-    "SITE_ID" => [Edu::SITE_ID],
-    'LID' => Edu::SITE_ID,
-    "GROUP_ID" => [Edu::ALL_USERS_GROUP_ID => Edu::READ_PERMISSION]
-];
-$professionsIblockId = $ib->Add($arFields);
-if (!($professionsIblockId > 0)) {
-    $DB->Rollback();
-    throw new \Bitrix\Main\DB\Exception('Ошибка добавления инфоблока');
-}
-
-$arFields = [
-    "NAME" => 'Факультеты',
-    "CODE" => Edu::FACULTIES_INFOBLOCK_CODE,
-    "LIST_PAGE_URL" => '',
-    "DETAIL_PAGE_URL" => '',
-    "IBLOCK_TYPE_ID" => $moduleId,
-    "SITE_ID" => [Edu::SITE_ID],
-    'LID' => Edu::SITE_ID,
-    "GROUP_ID" => [Edu::ALL_USERS_GROUP_ID => Edu::READ_PERMISSION]
-];
-$facultiesIblockId = $ib->Add($arFields);
-if (!($facultiesIblockId > 0)) {
-    $DB->Rollback();
-    throw new \Bitrix\Main\DB\Exception('Ошибка добавления инфоблока');
-}
-
-$arFields = [
-    "NAME" => 'Предметы',
-    "CODE" => Edu::SUBJECTS_INFOBLOCK_CODE,
-    "LIST_PAGE_URL" => '',
-    "DETAIL_PAGE_URL" => '',
-    "IBLOCK_TYPE_ID" => $moduleId,
-    "SITE_ID" => [Edu::SITE_ID],
-    'LID' => Edu::SITE_ID,
-    "GROUP_ID" => [Edu::ALL_USERS_GROUP_ID => Edu::READ_PERMISSION]
-];
-$subjectsIblockId = $ib->Add($arFields);
-if (!($subjectsIblockId > 0)) {
-    $DB->Rollback();
-    throw new \Bitrix\Main\DB\Exception('Ошибка добавления инфоблока');
-}
-
-$arFields = [
-    "NAME" => 'Кафедры',
-    "CODE" => Edu::DEPARTMENTS_INFOBLOCK_CODE,
-    "LIST_PAGE_URL" => '',
-    "DETAIL_PAGE_URL" => '',
-    "IBLOCK_TYPE_ID" => $moduleId,
-    "SITE_ID" => [Edu::SITE_ID],
-    'LID' => Edu::SITE_ID,
-    "GROUP_ID" => [Edu::ALL_USERS_GROUP_ID => Edu::READ_PERMISSION]
-];
-$departmentIblockId = $ib->Add($arFields);
-if (!($departmentIblockId > 0)) {
-    $DB->Rollback();
-    throw new \Bitrix\Main\DB\Exception('Ошибка добавления инфоблока');
-}
-
-$arFields = [
-    "NAME" => 'Библиотека',
-    "CODE" => Edu::LIBRARY_INFOBLOCK_CODE,
-    "LIST_PAGE_URL" => '',
-    "DETAIL_PAGE_URL" => '',
-    "IBLOCK_TYPE_ID" => $moduleId,
-    "SITE_ID" => [Edu::SITE_ID],
-    'LID' => Edu::SITE_ID,
-    "GROUP_ID" => [Edu::ALL_USERS_GROUP_ID => Edu::READ_PERMISSION]
-];
-$libraryIblockId = $ib->Add($arFields);
-if (!($libraryIblockId > 0)) {
-    $DB->Rollback();
-    throw new \Bitrix\Main\DB\Exception('Ошибка добавления инфоблока');
-}
-
-$arFields = [
-    "NAME" => 'Новости',
-    "CODE" => Edu::NEWS_INFOBLOCK_CODE,
-    "LIST_PAGE_URL" => '',
-    "DETAIL_PAGE_URL" => '',
-    "IBLOCK_TYPE_ID" => $moduleId,
-    "SITE_ID" => [Edu::SITE_ID],
-    'LID' => Edu::SITE_ID,
-    "GROUP_ID" => [Edu::ALL_USERS_GROUP_ID => Edu::READ_PERMISSION]
-];
-$newsIblockId = $ib->Add($arFields);
-if (!($newsIblockId > 0)) {
-    $DB->Rollback();
-    throw new \Bitrix\Main\DB\Exception('Ошибка добавления инфоблока');
-}
-
-$arFields = [
-    "NAME" => 'Объявления',
-    "CODE" => Edu::ADVERTISEMENT_INFOBLOCK_CODE,
-    "LIST_PAGE_URL" => '',
-    "DETAIL_PAGE_URL" => '',
-    "IBLOCK_TYPE_ID" => $moduleId,
-    "SITE_ID" => [Edu::SITE_ID],
-    'LID' => Edu::SITE_ID,
-    "GROUP_ID" => [Edu::ALL_USERS_GROUP_ID => Edu::READ_PERMISSION]
-];
-$advertisementIblockId = $ib->Add($arFields);
-if (!($advertisementIblockId > 0)) {
-    $DB->Rollback();
-    throw new \Bitrix\Main\DB\Exception('Ошибка добавления инфоблока');
-}
-
+$documentsIblockId = Edu::addInfoblock($ib, 'Документы', Edu::DOCUMENTS_INFOBLOCK_CODE, $moduleId);
+$professionsIblockId = Edu::addInfoblock($ib, 'Специальности', Edu::PROFESSIONS_INFOBLOCK_CODE, $moduleId);
+$facultiesIblockId = Edu::addInfoblock($ib, 'Факультеты', Edu::FACULTIES_INFOBLOCK_CODE, $moduleId);
+$subjectsIblockId = Edu::addInfoblock($ib, 'Предметы', Edu::SUBJECTS_INFOBLOCK_CODE, $moduleId);
+$departmentIblockId = Edu::addInfoblock($ib, 'Кафедры', Edu::DEPARTMENTS_INFOBLOCK_CODE, $moduleId);
+$libraryIblockId = Edu::addInfoblock($ib, 'Библиотека', Edu::LIBRARY_INFOBLOCK_CODE, $moduleId);
+$newsIblockId = Edu::addInfoblock($ib, 'Новости', Edu::NEWS_INFOBLOCK_CODE, $moduleId);
+$advertisementIblockId = Edu::addInfoblock($ib, 'Объявления', Edu::ADVERTISEMENT_INFOBLOCK_CODE, $moduleId);
 echo \CAdminMessage::ShowNote("Информационные блоки добавлены");
 
 echo \CAdminMessage::ShowNote("Добавление пользовательских свойств-привязок к элементам инфомационных блоков");
