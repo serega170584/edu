@@ -114,4 +114,19 @@ class Edu extends CModule
             $APPLICATION->IncludeAdminFile($e->getMessage(), $DOCUMENT_ROOT . "/" . self::DIRECTORY . "/error_unstep.php");
         }
     }
+
+    /**
+     * @param $type
+     * @param $code
+     * @return mixed
+     */
+    public static function getIblockId($type, $code)
+    {
+        return \CIBlock::GetList([
+            'ID' => 'ASC'
+        ], [
+            'TYPE' => $type,
+            'CODE' => $code,
+        ])->Fetch()['ID'];
+    }
 }

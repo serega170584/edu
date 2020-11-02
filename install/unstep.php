@@ -8,62 +8,14 @@
  */
 global $moduleId;
 
-$documentsIblockId = \CIBlock::GetList([
-    'ID' => 'ASC'
-], [
-    'TYPE' => $moduleId,
-    'CODE' => Edu::DOCUMENTS_INFOBLOCK_CODE,
-])->Fetch()['ID'];
-
-$professionsIblockId = \CIBlock::GetList([
-    'ID' => 'ASC'
-], [
-    'TYPE' => $moduleId,
-    'CODE' => Edu::PROFESSIONS_INFOBLOCK_CODE,
-])->Fetch()['ID'];
-
-$facultiesIblockId = \CIBlock::GetList([
-    'ID' => 'ASC'
-], [
-    'TYPE' => $moduleId,
-    'CODE' => Edu::FACULTIES_INFOBLOCK_CODE,
-])->Fetch()['ID'];
-
-$subjectsInfoblockId = \CIBlock::GetList([
-    'ID' => 'ASC'
-], [
-    'TYPE' => $moduleId,
-    'CODE' => Edu::SUBJECTS_INFOBLOCK_CODE,
-])->Fetch()['ID'];
-
-$departmentsInfoblockId = \CIBlock::GetList([
-    'ID' => 'ASC'
-], [
-    'TYPE' => $moduleId,
-    'CODE' => Edu::DEPARTMENTS_INFOBLOCK_CODE,
-])->Fetch()['ID'];
-
-$libraryInfoblockId = \CIBlock::GetList([
-    'ID' => 'ASC'
-], [
-    'TYPE' => $moduleId,
-    'CODE' => Edu::LIBRARY_INFOBLOCK_CODE,
-])->Fetch()['ID'];
-
-$newsInfoblockId = \CIBlock::GetList([
-    'ID' => 'ASC'
-], [
-    'TYPE' => $moduleId,
-    'CODE' => Edu::NEWS_INFOBLOCK_CODE,
-])->Fetch()['ID'];
-
-$advertisementInfoblockId = \CIBlock::GetList([
-    'ID' => 'ASC'
-], [
-    'TYPE' => $moduleId,
-    'CODE' => Edu::ADVERTISEMENT_INFOBLOCK_CODE,
-])->Fetch()['ID'];
-
+$documentsIblockId = Edu::getIblockId($moduleId, Edu::DOCUMENTS_INFOBLOCK_CODE);
+$professionsIblockId = Edu::getIblockId($moduleId, Edu::PROFESSIONS_INFOBLOCK_CODE);
+$facultiesIblockId = Edu::getIblockId($moduleId, Edu::FACULTIES_INFOBLOCK_CODE);
+$subjectsInfoblockId = Edu::getIblockId($moduleId, Edu::SUBJECTS_INFOBLOCK_CODE);
+$departmentsInfoblockId = Edu::getIblockId($moduleId, Edu::DEPARTMENTS_INFOBLOCK_CODE);
+$libraryInfoblockId = Edu::getIblockId($moduleId, Edu::LIBRARY_INFOBLOCK_CODE);
+$newsInfoblockId = Edu::getIblockId($moduleId, Edu::NEWS_INFOBLOCK_CODE);
+$advertisementInfoblockId = Edu::getIblockId($moduleId, Edu::ADVERTISEMENT_INFOBLOCK_CODE);
 
 echo \CAdminMessage::ShowNote("Удаление значений свойств инфоблоков");
 $db = CIBlockPropertyEnum::GetList([
