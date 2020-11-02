@@ -17,6 +17,7 @@ $libraryInfoblockId = Edu::getIblockId($moduleId, Edu::LIBRARY_INFOBLOCK_CODE);
 $newsInfoblockId = Edu::getIblockId($moduleId, Edu::NEWS_INFOBLOCK_CODE);
 $advertisementInfoblockId = Edu::getIblockId($moduleId, Edu::ADVERTISEMENT_INFOBLOCK_CODE);
 $dormInfoblockId = Edu::getIblockId($moduleId, Edu::DORM_INFOBLOCK_CODE);
+$creativeInfoblockId = Edu::getIblockId($moduleId, Edu::CREATIVE_INFOBLOCK_CODE);
 
 echo \CAdminMessage::ShowNote("Удаление значений свойств инфоблоков");
 Edu::deleteInfoblockPropertyEnumValues($professionsIblockId);
@@ -79,6 +80,10 @@ Edu::deleteInfoblockProperty(EDU::PROFESSIONS_INFOBLOCK_PRELIMINARY_TESTS_PROPER
 Edu::deleteInfoblockProperty(EDU::INFOBLOCK_FACULTY_PROPERTY_CODE, $departmentsInfoblockId);
 Edu::deleteInfoblockProperty(EDU::INFOBLOCK_ADDRESS_PROPERTY_CODE, $dormInfoblockId);
 Edu::deleteInfoblockProperty(EDU::INFOBLOCK_ENTITY_PROPERTY_CODE, $newsInfoblockId);
+Edu::deleteInfoblockProperty(EDU::INFOBLOCK_CREATIVE_LEADERSHIP_PROPERTY_CODE, $creativeInfoblockId);
+Edu::deleteInfoblockProperty(EDU::INFOBLOCK_SCHEDULE_PROPERTY_CODE, $creativeInfoblockId);
+Edu::deleteInfoblockProperty(EDU::INFOBLOCK_TIME_PROPERTY_CODE, $creativeInfoblockId);
+Edu::deleteInfoblockProperty(EDU::INFOBLOCK_PLACE_PROPERTY_CODE, $creativeInfoblockId);
 echo \CAdminMessage::ShowNote("Свойства инфоблоков удалены");
 
 echo \CAdminMessage::ShowNote("Удаление инфоблоков");
@@ -91,6 +96,7 @@ Edu::deleteInfoblock($libraryInfoblockId);
 Edu::deleteInfoblock($newsInfoblockId);
 Edu::deleteInfoblock($advertisementInfoblockId);
 Edu::deleteInfoblock($dormInfoblockId);
+Edu::deleteInfoblock($creativeInfoblockId);
 echo \CAdminMessage::ShowNote("Инфоблоки удалены");
 
 echo \CAdminMessage::ShowNote("Удаление типа инфоблока образовательной организации");

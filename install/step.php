@@ -134,6 +134,7 @@ $libraryIblockId = Edu::addInfoblock($ib, 'Библиотека', Edu::LIBRARY_I
 $newsIblockId = Edu::addInfoblock($ib, 'Новости', Edu::NEWS_INFOBLOCK_CODE, $moduleId);
 $advertisementIblockId = Edu::addInfoblock($ib, 'Объявления', Edu::ADVERTISEMENT_INFOBLOCK_CODE, $moduleId);
 $dormInfoblockId = Edu::addInfoblock($ib, 'Общежития', Edu::DORM_INFOBLOCK_CODE, $moduleId);
+$creativeInfoblockId = Edu::addInfoblock($ib, 'Творческие коллективы', Edu::CREATIVE_INFOBLOCK_CODE, $moduleId);
 echo \CAdminMessage::ShowNote("Информационные блоки добавлены");
 
 echo \CAdminMessage::ShowNote("Добавление пользовательских свойств-привязок к элементам инфомационных блоков");
@@ -334,6 +335,30 @@ $entityId = Edu::addInfoblockProperty($property,
     Edu::INFOBLOCK_ENTITY_PROPERTY_CODE,
     Edu::LIST_INFOBLOCK_PROPERTY_TYPE,
     $newsIblockId
+);
+$id = Edu::addInfoblockProperty($property,
+    'Руководители коллектива',
+    Edu::INFOBLOCK_CREATIVE_LEADERSHIP_PROPERTY_CODE,
+    Edu::STRING_INFOBLOCK_PROPERTY_TYPE,
+    $creativeInfoblockId
+);
+$id = Edu::addInfoblockProperty($property,
+    'Расписание',
+    Edu::INFOBLOCK_SCHEDULE_PROPERTY_CODE,
+    Edu::STRING_INFOBLOCK_PROPERTY_TYPE,
+    $creativeInfoblockId
+);
+$id = Edu::addInfoblockProperty($property,
+    'Время',
+    Edu::INFOBLOCK_TIME_PROPERTY_CODE,
+    Edu::STRING_INFOBLOCK_PROPERTY_TYPE,
+    $creativeInfoblockId
+);
+$id = Edu::addInfoblockProperty($property,
+    'Место',
+    Edu::INFOBLOCK_PLACE_PROPERTY_CODE,
+    Edu::STRING_INFOBLOCK_PROPERTY_TYPE,
+    $creativeInfoblockId
 );
 echo \CAdminMessage::ShowNote("Свойства информационных блоков добавлены");
 
