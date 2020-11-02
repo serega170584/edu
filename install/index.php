@@ -186,4 +186,20 @@ class Edu extends CModule
             throw new \Bitrix\Main\DB\Exception('Delete error!');
         }
     }
+
+    /**
+     * @param $id
+     * @throws \Bitrix\Main\DB\Exception
+     */
+    public static function deleteInfoblock($id)
+    {
+        /**
+         * @var \CDatabase $DB
+         */
+        global $DB;
+        if (!\CIBlock::Delete($id)) {
+            $DB->Rollback();
+            throw new \Bitrix\Main\DB\Exception('Delete error!');
+        }
+    }
 }

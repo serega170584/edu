@@ -85,38 +85,14 @@ Edu::deleteInfoblockProperty(EDU::INFOBLOCK_FACULTY_PROPERTY_CODE, $departmentsI
 echo \CAdminMessage::ShowNote("Свойства инфоблоков удалены");
 
 echo \CAdminMessage::ShowNote("Удаление инфоблоков");
-if (!\CIBlock::Delete($documentsIblockId)) {
-    $DB->Rollback();
-    throw new \Bitrix\Main\DB\Exception('Delete error!');
-}
-if (!\CIBlock::Delete($professionsIblockId)) {
-    $DB->Rollback();
-    throw new \Bitrix\Main\DB\Exception('Delete error!');
-}
-if (!\CIBlock::Delete($facultiesIblockId)) {
-    $DB->Rollback();
-    throw new \Bitrix\Main\DB\Exception('Delete error!');
-}
-if (!\CIBlock::Delete($subjectsInfoblockId)) {
-    $DB->Rollback();
-    throw new \Bitrix\Main\DB\Exception('Delete error!');
-}
-if (!\CIBlock::Delete($departmentsInfoblockId)) {
-    $DB->Rollback();
-    throw new \Bitrix\Main\DB\Exception('Delete error!');
-}
-if (!\CIBlock::Delete($libraryInfoblockId)) {
-    $DB->Rollback();
-    throw new \Bitrix\Main\DB\Exception('Delete error!');
-}
-if (!\CIBlock::Delete($newsInfoblockId)) {
-    $DB->Rollback();
-    throw new \Bitrix\Main\DB\Exception('Delete error!');
-}
-if (!\CIBlock::Delete($advertisementInfoblockId)) {
-    $DB->Rollback();
-    throw new \Bitrix\Main\DB\Exception('Delete error!');
-}
+Edu::deleteInfoblock($documentsIblockId);
+Edu::deleteInfoblock($professionsIblockId);
+Edu::deleteInfoblock($facultiesIblockId);
+Edu::deleteInfoblock($subjectsInfoblockId);
+Edu::deleteInfoblock($departmentsInfoblockId);
+Edu::deleteInfoblock($libraryInfoblockId);
+Edu::deleteInfoblock($newsInfoblockId);
+Edu::deleteInfoblock($advertisementInfoblockId);
 echo \CAdminMessage::ShowNote("Инфоблоки удалены");
 
 echo \CAdminMessage::ShowNote("Удаление типа инфоблока образовательной организации");
