@@ -212,7 +212,13 @@ class Edu extends CModule
      * @param $enLabel
      * @throws \Bitrix\Main\DB\Exception
      */
-    public static function addUserField($oUserTypeEntity, $name, $type, $xmlId, $ruLabel, $enLabel)
+    public static function addUserField($oUserTypeEntity,
+                                        $name,
+                                        $type,
+                                        $xmlId,
+                                        $ruLabel,
+                                        $enLabel,
+                                        $settings = [])
     {
         /**
          * @var \CDatabase $DB
@@ -251,6 +257,9 @@ class Edu extends CModule
                 'en' => '',
             ]
         ];
+        if ($settings) {
+            $aUserFields['SETTINGS'] = $settings;
+        }
         $res = $oUserTypeEntity->Add($aUserFields);
         if (!$res) {
             $DB->Rollback();
@@ -315,6 +324,55 @@ class Edu extends CModule
         if (!($id > 0)) {
             $DB->Rollback();
             throw new \Bitrix\Main\DB\Exception('Ошибка добавления инфоблока');
+        }
+        return $id;
+    }
+
+    /**
+     * @param $property
+     * @param $name
+     * @param $code
+     * @param $type
+     * @param $iblockId
+     * @param null $userType
+     * @param bool $isMultiple
+     * @param null $linkIblockId
+     * @return mixed
+     * @throws \Bitrix\Main\DB\Exception
+     */
+    public static function addInfoblockProperty($property,
+                                                $name,
+                                                $code,
+                                                $type,
+                                                $iblockId,
+                                                $userType = null,
+                                                $isMultiple = false,
+                                                $linkIblockId = null
+    )
+    {
+        /**
+         * @var \CDatabase $DB
+         */
+        global $DB;
+        $arFields = [
+            "NAME" => $name,
+            "CODE" => $code,
+            "PROPERTY_TYPE" => $type,
+            "IBLOCK_ID" => $iblockId,
+        ];
+        if ($userType) {
+            $arFields['USER_TYPE'] = $userType;
+        }
+        if ($isMultiple) {
+            $arFields['MULTIPLE'] = 'Y';
+        }
+        if ($linkIblockId) {
+            $arFields['LINK_IBLOCK_ID'] = $linkIblockId;
+        }
+        $id = $property->Add($arFields);
+        if (!($id > 0)) {
+            $DB->Rollback();
+            throw new \Bitrix\Main\DB\Exception('Ошибка добавления свойства инфоблока');
         }
         return $id;
     }
