@@ -92,6 +92,7 @@ Edu::deleteInfoblockProperty(EDU::INFOBLOCK_FACULTY_PROPERTY_CODE, $professionsI
 Edu::deleteInfoblockProperty(EDU::PROFESSIONS_INFOBLOCK_PRELIMINARY_TESTS_PROPERTY_CODE, $professionsIblockId);
 Edu::deleteInfoblockProperty(EDU::INFOBLOCK_FACULTY_PROPERTY_CODE, $departmentsInfoblockId);
 Edu::deleteInfoblockProperty(EDU::INFOBLOCK_ADDRESS_PROPERTY_CODE, $dormInfoblockId);
+Edu::deleteInfoblockProperty(EDU::INFOBLOCK_ENTITY_PROPERTY_CODE, $newsInfoblockId);
 echo \CAdminMessage::ShowNote("Свойства инфоблоков удалены");
 
 echo \CAdminMessage::ShowNote("Удаление инфоблоков");
