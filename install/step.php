@@ -120,6 +120,7 @@ $id = Edu::addUserGroup($group, 'Отдел', 'DEPARTMENT');
 $id = Edu::addUserGroup($group, 'Ученый совет', 'ACADEMIC_COUNCIL');
 $id = Edu::addUserGroup($group, 'Руководство', 'LEADERSHIP');
 $id = Edu::addUserGroup($group, 'Сотрудник', 'STAFF');
+$id = Edu::addUserGroup($group, 'Выпускник', 'GRADUATE');
 echo \CAdminMessage::ShowNote("Группы пользователей добавлены");
 
 echo \CAdminMessage::ShowNote("Добавление инфомационных блоков");
@@ -137,6 +138,7 @@ $dormInfoblockId = Edu::addInfoblock($ib, 'Общежития', Edu::DORM_INFOBL
 $creativeInfoblockId = Edu::addInfoblock($ib, 'Творческие коллективы', Edu::CREATIVE_INFOBLOCK_CODE, $moduleId);
 $conferenceInfoblockId = Edu::addInfoblock($ib, 'Конференции', Edu::CONFERENCE_INFOBLOCK_CODE, $moduleId);
 $trainingMaterialsId = Edu::addInfoblock($ib, 'Учебные материалы', Edu::TRAINING_MATERIALS_INFOBLOCK_CODE, $moduleId);
+$reviewsInfoblockId = Edu::addInfoblock($ib, 'Отзывы', Edu::REVIEWS_INFOBLOCK_CODE, $moduleId);
 echo \CAdminMessage::ShowNote("Информационные блоки добавлены");
 
 echo \CAdminMessage::ShowNote("Добавление пользовательских свойств-привязок к элементам инфомационных блоков");
