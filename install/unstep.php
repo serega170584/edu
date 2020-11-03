@@ -19,6 +19,7 @@ $advertisementInfoblockId = Edu::getIblockId($moduleId, Edu::ADVERTISEMENT_INFOB
 $dormInfoblockId = Edu::getIblockId($moduleId, Edu::DORM_INFOBLOCK_CODE);
 $creativeInfoblockId = Edu::getIblockId($moduleId, Edu::CREATIVE_INFOBLOCK_CODE);
 $conferenceInfoblockId = Edu::getIblockId($moduleId, Edu::CONFERENCE_INFOBLOCK_CODE);
+$trainingInfoblockId = Edu::getIblockId($moduleId, Edu::TRAINING_MATERIALS_INFOBLOCK_CODE);
 
 echo \CAdminMessage::ShowNote("Удаление значений свойств инфоблоков");
 Edu::deleteInfoblockPropertyEnumValues($professionsIblockId);
@@ -87,6 +88,8 @@ Edu::deleteInfoblockProperty(EDU::INFOBLOCK_TIME_PROPERTY_CODE, $creativeInfoblo
 Edu::deleteInfoblockProperty(EDU::INFOBLOCK_PLACE_PROPERTY_CODE, $creativeInfoblockId);
 Edu::deleteInfoblockProperty(EDU::INFOBLOCK_PERIOD_PROPERTY_CODE, $conferenceInfoblockId);
 Edu::deleteInfoblockProperty(EDU::INFOBLOCK_ORGANIZATOR_PROPERTY_CODE, $conferenceInfoblockId);
+Edu::deleteInfoblockProperty(EDU::INFOBLOCK_FILE_PROPERTY_CODE, $trainingInfoblockId);
+Edu::deleteInfoblockProperty(EDU::INFOBLOCK_FACULTY_PROPERTY_CODE, $trainingInfoblockId);
 echo \CAdminMessage::ShowNote("Свойства инфоблоков удалены");
 
 echo \CAdminMessage::ShowNote("Удаление инфоблоков");
@@ -101,6 +104,7 @@ Edu::deleteInfoblock($advertisementInfoblockId);
 Edu::deleteInfoblock($dormInfoblockId);
 Edu::deleteInfoblock($creativeInfoblockId);
 Edu::deleteInfoblock($conferenceInfoblockId);
+Edu::deleteInfoblock($trainingInfoblockId);
 echo \CAdminMessage::ShowNote("Инфоблоки удалены");
 
 echo \CAdminMessage::ShowNote("Удаление типа инфоблока образовательной организации");

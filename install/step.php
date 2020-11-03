@@ -136,6 +136,7 @@ $advertisementIblockId = Edu::addInfoblock($ib, 'Объявления', Edu::ADV
 $dormInfoblockId = Edu::addInfoblock($ib, 'Общежития', Edu::DORM_INFOBLOCK_CODE, $moduleId);
 $creativeInfoblockId = Edu::addInfoblock($ib, 'Творческие коллективы', Edu::CREATIVE_INFOBLOCK_CODE, $moduleId);
 $conferenceInfoblockId = Edu::addInfoblock($ib, 'Конференции', Edu::CONFERENCE_INFOBLOCK_CODE, $moduleId);
+$trainingMaterialsId = Edu::addInfoblock($ib, 'Учебные материалы', Edu::TRAINING_MATERIALS_INFOBLOCK_CODE, $moduleId);
 echo \CAdminMessage::ShowNote("Информационные блоки добавлены");
 
 echo \CAdminMessage::ShowNote("Добавление пользовательских свойств-привязок к элементам инфомационных блоков");
@@ -372,6 +373,21 @@ $id = Edu::addInfoblockProperty($property,
     Edu::INFOBLOCK_ORGANIZATOR_PROPERTY_CODE,
     Edu::STRING_INFOBLOCK_PROPERTY_TYPE,
     $conferenceInfoblockId
+);
+$id = Edu::addInfoblockProperty($property,
+    'Факультет',
+    Edu::INFOBLOCK_FACULTY_PROPERTY_CODE,
+    Edu::ELEMENT_INFOBLOCK_PROPERTY_TYPE,
+    $trainingMaterialsId,
+    null,
+    false,
+    $facultiesIblockId
+);
+$id = Edu::addInfoblockProperty($property,
+    'Файл',
+    Edu::INFOBLOCK_FILE_PROPERTY_CODE,
+    Edu::FILE_INFOBLOCK_PROPERTY_TYPE,
+    $trainingMaterialsId,
 );
 echo \CAdminMessage::ShowNote("Свойства информационных блоков добавлены");
 
