@@ -391,6 +391,13 @@ $id = Edu::addInfoblockProperty($property,
     Edu::FILE_INFOBLOCK_PROPERTY_TYPE,
     $trainingMaterialsId,
 );
+$id = Edu::addInfoblockProperty($property,
+    'Пользователь',
+    Edu::INFOBLOCK_USER_PROPERTY_CODE,
+    Edu::STRING_INFOBLOCK_PROPERTY_TYPE,
+    $reviewsInfoblockId,
+    Edu::USER_INFOBLOCK_PROPERTY_USER_TYPE
+);
 echo \CAdminMessage::ShowNote("Свойства информационных блоков добавлены");
 
 echo \CAdminMessage::ShowNote("Добавление значений свойств инфомационных блоков");

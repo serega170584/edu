@@ -91,6 +91,7 @@ Edu::deleteInfoblockProperty(EDU::INFOBLOCK_PERIOD_PROPERTY_CODE, $conferenceInf
 Edu::deleteInfoblockProperty(EDU::INFOBLOCK_ORGANIZATOR_PROPERTY_CODE, $conferenceInfoblockId);
 Edu::deleteInfoblockProperty(EDU::INFOBLOCK_FILE_PROPERTY_CODE, $trainingInfoblockId);
 Edu::deleteInfoblockProperty(EDU::INFOBLOCK_FACULTY_PROPERTY_CODE, $trainingInfoblockId);
+Edu::deleteInfoblockProperty(EDU::INFOBLOCK_USER_PROPERTY_CODE, $reviewsInfoblockId);
 echo \CAdminMessage::ShowNote("Свойства инфоблоков удалены");
 
 echo \CAdminMessage::ShowNote("Удаление инфоблоков");
