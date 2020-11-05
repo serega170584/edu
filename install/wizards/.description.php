@@ -14,11 +14,6 @@ $arWizardDescription = [
         "WELCOME" => [
             "CONTENT" => "Добро пожаловать в мастер создания сайта образовательной организации",
         ],
-
-        "START_INSTALL" => [
-            "CLASS" => "EduSiteStartInstall",
-            "SCRIPT" => "scripts/start_install.php",
-        ],
     ]
 ];
 
