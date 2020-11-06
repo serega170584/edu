@@ -95,6 +95,22 @@ $MESS["STAFF"] = "STAFF";
 $MESS["RU_STAFF"] = "Сотрудник";
 $MESS["GRADUATE"] = "GRADUATE";
 $MESS["RU_GRADUATE"] = "Выпускник";
+$MESS["module_add_infoblock_title"] = "Добавление инфомационных блоков";
+$MESS["module_added_infoblock_title"] = "Информационные блоки добавлены";
+$MESS["DOCUMENTS_TITLE"] = "Документы";
+$MESS["PROFESSIONS_TITLE"] = "Специальности";
+$MESS["FACULTIES_TITLE"] = "Факультеты";
+$MESS["SUBJECTS_TITLE"] = "Предметы";
+$MESS["DEPARTMENTS_TITLE"] = "Кафедры";
+$MESS["LIBRARY_TITLE"] = "Библиотека";
+$MESS["NEWS_TITLE"] = "Новости";
+$MESS["ADVERTISE_TITLE"] = "Объявления";
+$MESS["DORMS_TITLE"] = "Общежития";
+$MESS["CREATIVES_TITLE"] = "Творческие коллективы";
+$MESS["CONFERENCES_TITLE"] = "Конференции";
+$MESS["TRAINING_MATERIALS_TITLE"] = "Учебные материалы";
+$MESS["REVIEWS_TITLE"] = "Отзывы";
+$MESS["TRAININGS_TITLE"] = "Тренинги и семинары";
 
 
 ?>

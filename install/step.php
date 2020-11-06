@@ -123,24 +123,24 @@ $id = Edu::addUserGroup($group, GetMessage('RU_STAFF'), GetMessage('STAFF'));
 $id = Edu::addUserGroup($group, GetMessage('RU_GRADUATE'), GetMessage('GRADUATE'));
 echo \CAdminMessage::ShowNote(GetMessage("module_added_group_title"));
 
-echo \CAdminMessage::ShowNote("Добавление инфомационных блоков");
+echo \CAdminMessage::ShowNote(GetMessage('module_add_infoblock_title'));
 
 $ib = new \CIBlock;
-$documentsIblockId = Edu::addInfoblock($ib, 'Документы', Edu::DOCUMENTS_INFOBLOCK_CODE, $moduleId);
-$professionsIblockId = Edu::addInfoblock($ib, 'Специальности', Edu::PROFESSIONS_INFOBLOCK_CODE, $moduleId);
-$facultiesIblockId = Edu::addInfoblock($ib, 'Факультеты', Edu::FACULTIES_INFOBLOCK_CODE, $moduleId);
-$subjectsIblockId = Edu::addInfoblock($ib, 'Предметы', Edu::SUBJECTS_INFOBLOCK_CODE, $moduleId);
-$departmentIblockId = Edu::addInfoblock($ib, 'Кафедры', Edu::DEPARTMENTS_INFOBLOCK_CODE, $moduleId);
-$libraryIblockId = Edu::addInfoblock($ib, 'Библиотека', Edu::LIBRARY_INFOBLOCK_CODE, $moduleId);
-$newsIblockId = Edu::addInfoblock($ib, 'Новости', Edu::NEWS_INFOBLOCK_CODE, $moduleId);
-$advertisementIblockId = Edu::addInfoblock($ib, 'Объявления', Edu::ADVERTISEMENT_INFOBLOCK_CODE, $moduleId);
-$dormInfoblockId = Edu::addInfoblock($ib, 'Общежития', Edu::DORM_INFOBLOCK_CODE, $moduleId);
-$creativeInfoblockId = Edu::addInfoblock($ib, 'Творческие коллективы', Edu::CREATIVE_INFOBLOCK_CODE, $moduleId);
-$conferenceInfoblockId = Edu::addInfoblock($ib, 'Конференции', Edu::CONFERENCE_INFOBLOCK_CODE, $moduleId);
-$trainingMaterialsId = Edu::addInfoblock($ib, 'Учебные материалы', Edu::TRAINING_MATERIALS_INFOBLOCK_CODE, $moduleId);
-$reviewsInfoblockId = Edu::addInfoblock($ib, 'Отзывы', Edu::REVIEWS_INFOBLOCK_CODE, $moduleId);
-$trainingInfoblockId = Edu::addInfoblock($ib, 'Тренинги и семинары', Edu::TRAININGS_INFOBLOCK_CODE, $moduleId);
-echo \CAdminMessage::ShowNote("Информационные блоки добавлены");
+$documentsIblockId = Edu::addInfoblock($ib, GetMessage('DOCUMENTS_TITLE'), Edu::DOCUMENTS_INFOBLOCK_CODE, $moduleId);
+$professionsIblockId = Edu::addInfoblock($ib, GetMessage('PROFESSIONS_TITLE'), Edu::PROFESSIONS_INFOBLOCK_CODE, $moduleId);
+$facultiesIblockId = Edu::addInfoblock($ib, GetMessage('FACULTIES_TITLE'), Edu::FACULTIES_INFOBLOCK_CODE, $moduleId);
+$subjectsIblockId = Edu::addInfoblock($ib, GetMessage('SUBJECTS_TITLE'), Edu::SUBJECTS_INFOBLOCK_CODE, $moduleId);
+$departmentIblockId = Edu::addInfoblock($ib, GetMessage('DEPARTMENTS_TITLE'), Edu::DEPARTMENTS_INFOBLOCK_CODE, $moduleId);
+$libraryIblockId = Edu::addInfoblock($ib, GetMessage('LIBRARY_TITLE'), Edu::LIBRARY_INFOBLOCK_CODE, $moduleId);
+$newsIblockId = Edu::addInfoblock($ib, GetMessage('NEWS_TITLE'), Edu::NEWS_INFOBLOCK_CODE, $moduleId);
+$advertisementIblockId = Edu::addInfoblock($ib, GetMessage('ADVERTISE_TITLE'), Edu::ADVERTISEMENT_INFOBLOCK_CODE, $moduleId);
+$dormInfoblockId = Edu::addInfoblock($ib, GetMessage('DORMS_TITLE'), Edu::DORM_INFOBLOCK_CODE, $moduleId);
+$creativeInfoblockId = Edu::addInfoblock($ib, GetMessage('CREATIVES_TITLE'), Edu::CREATIVE_INFOBLOCK_CODE, $moduleId);
+$conferenceInfoblockId = Edu::addInfoblock($ib, GetMessage('CONFERENCES_TITLE'), Edu::CONFERENCE_INFOBLOCK_CODE, $moduleId);
+$trainingMaterialsId = Edu::addInfoblock($ib, GetMessage('TRAINING_MATERIALS_TITLE'), Edu::TRAINING_MATERIALS_INFOBLOCK_CODE, $moduleId);
+$reviewsInfoblockId = Edu::addInfoblock($ib, GetMessage('REVIEWS_TITLE'), Edu::REVIEWS_INFOBLOCK_CODE, $moduleId);
+$trainingInfoblockId = Edu::addInfoblock($ib, GetMessage('TRAININGS_TITLE'), Edu::TRAININGS_INFOBLOCK_CODE, $moduleId);
+echo \CAdminMessage::ShowNote(GetMessage('module_added_infoblock_title'));
 
 echo \CAdminMessage::ShowNote("Добавление пользовательских свойств-привязок к элементам инфомационных блоков");
 
