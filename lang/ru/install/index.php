@@ -77,6 +77,24 @@ $MESS["UF_ASSESSMENT"] = "UF_ASSESSMENT";
 $MESS["ASSESSMENT"] = "ASSESSMENT";
 $MESS["ASSESSMENT_RU_TITLE"] = "Данные о повышении квалификации и (или) профессиональной переподготовке";
 $MESS["ASSESSMENT_EN_TITLE"] = "Assessment";
+$MESS["module_add_group_title"] = "Добавление групп пользователей";
+$MESS["module_added_group_title"] = "Группы пользователей добавлены";
+$MESS["FOUNDERS"] = "FOUNDERS";
+$MESS["RU_FOUNDERS"] = "Учредители";
+$MESS["BRANCHES"] = "BRANCHES";
+$MESS["RU_BRANCHES"] = "Филиалы";
+$MESS["MAIN"] = "MAIN";
+$MESS["RU_MAIN"] = "Главный корпус";
+$MESS["DEPARTMENT"] = "DEPARTMENT";
+$MESS["RU_DEPARTMENT"] = "Отдел";
+$MESS["ACADEMIC_COUNCIL"] = "ACADEMIC_COUNCIL";
+$MESS["RU_ACADEMIC_COUNCIL"] = "Ученый совет";
+$MESS["LEADERSHIP"] = "LEADERSHIP";
+$MESS["RU_LEADERSHIP"] = "Руководство";
+$MESS["STAFF"] = "STAFF";
+$MESS["RU_STAFF"] = "Сотрудник";
+$MESS["GRADUATE"] = "GRADUATE";
+$MESS["RU_GRADUATE"] = "Выпускник";
 
 
 ?>

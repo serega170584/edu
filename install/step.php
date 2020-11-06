@@ -110,18 +110,18 @@ Edu::addUserField($oUserTypeEntity,
     GetMessage('ASSESSMENT_EN_TITLE'));
 echo \CAdminMessage::ShowNote(GetMessage('module_added_user_field_title'));
 
-echo \CAdminMessage::ShowNote("Добавление групп пользователей");
+echo \CAdminMessage::ShowNote(GetMessage("module_add_group_title"));
 
 $group = new \CGroup;
-$id = Edu::addUserGroup($group, 'Учредители', 'FOUNDERS');
-$id = Edu::addUserGroup($group, 'Филиалы', 'BRANCHES');
-$id = Edu::addUserGroup($group, 'Главный корпус', 'MAIN');
-$id = Edu::addUserGroup($group, 'Отдел', 'DEPARTMENT');
-$id = Edu::addUserGroup($group, 'Ученый совет', 'ACADEMIC_COUNCIL');
-$id = Edu::addUserGroup($group, 'Руководство', 'LEADERSHIP');
-$id = Edu::addUserGroup($group, 'Сотрудник', 'STAFF');
-$id = Edu::addUserGroup($group, 'Выпускник', 'GRADUATE');
-echo \CAdminMessage::ShowNote("Группы пользователей добавлены");
+$id = Edu::addUserGroup($group, GetMessage('RU_FOUNDERS'), GetMessage('FOUNDERS'));
+$id = Edu::addUserGroup($group, GetMessage('RU_BRANCHES'), GetMessage('BRANCHES'));
+$id = Edu::addUserGroup($group, GetMessage('RU_MAIN'), GetMessage('MAIN'));
+$id = Edu::addUserGroup($group, GetMessage('RU_DEPARTMENT'), GetMessage('DEPARTMENT'));
+$id = Edu::addUserGroup($group, GetMessage('RU_ACADEMIC_COUNCIL'), GetMessage('ACADEMIC_COUNCIL'));
+$id = Edu::addUserGroup($group, GetMessage('RU_LEADERSHIP'), GetMessage('LEADERSHIP'));
+$id = Edu::addUserGroup($group, GetMessage('RU_STAFF'), GetMessage('STAFF'));
+$id = Edu::addUserGroup($group, GetMessage('RU_GRADUATE'), GetMessage('GRADUATE'));
+echo \CAdminMessage::ShowNote(GetMessage("module_added_group_title"));
 
 echo \CAdminMessage::ShowNote("Добавление инфомационных блоков");
 
