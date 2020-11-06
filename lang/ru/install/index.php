@@ -117,6 +117,44 @@ $MESS["RU_UF_PROFESSION_TITLE"] = "Наименование направлени
 $MESS["EN_UF_PROFESSION_TITLE"] = "Profession";
 $MESS["RU_UF_DEPARTMENT_TITLE"] = "Кафедра";
 $MESS["EN_UF_DEPARTMENT_TITLE"] = "Department";
+$MESS["module_add_infoblock_property_title"] = "Добавление свойств инфомационных блоков";
+$MESS["module_added_infoblock_property_title"] = "Свойства информационных блоков добавлены";
+$MESS['FILE_TITLE'] = 'Файл';
+$MESS['FORM_OF_EDUCATION_TITLE'] = 'Форма обучения';
+$MESS['PERIOD_TITLE'] = 'Сроки обучения';
+$MESS['ACCREDITATION_TITLE'] = 'Срок гос. аккредитации';
+$MESS['LEVEL_TITLE'] = 'Уровень образования';
+$MESS['CODE_TITLE'] = 'Код специальности, направления подготовки';
+$MESS['DESCRIPTION_TITLE'] = 'Описание образовательной программы';
+$MESS['PLAN_TITLE'] = 'Учебный план';
+$MESS['ANNOTATIONS_TITLE'] = 'Аннотации к рабочим программам дисциплин';
+$MESS['SCHEDULE_TITLE'] = 'Календарный учебный график';
+$MESS['METHODOLOGICAL_TITLE'] = 'Методические и иные документы';
+$MESS['PRACTICES_TITLE'] = 'Практики';
+$MESS['BUDGET_COUNT_TITLE'] = 'Численность лиц, обучающихся за счет бюджета';
+$MESS['PAYED_COUNT_TITLE'] = 'Численность лиц, находящихся на платном обучении';
+$MESS['PRICE_TITLE'] = 'Стоимость платных мест';
+$MESS['PREPARATORY_PROFILE_TITLE'] = 'Профили подготовки';
+$MESS['PRINCIPAL_SUBJECTS_TITLE'] = 'Ключевые дисциплины';
+$MESS['LANGUAGES_TITLE'] = 'Языки, на которых происходит обучение';
+$MESS['RESEARCHES_TITLE'] = 'Научно-исследовательская работа';
+$MESS['RESULTS_TITLE'] = 'Сведения о результатах приема';
+$MESS['REPLACED_RESULTS_TITLE'] = 'Результаты перевода и отчисления';
+$MESS['FACULTY_TITLE'] = 'Факультет';
+$MESS['PRELIMINARY_TESTS_TITLE'] = 'Вступительные испытания';
+$MESS['ADDRESS_TITLE'] = 'Адрес';
+$MESS['ENTITY_TITLE'] = 'Для кого показывать';
+$MESS['CREATIVE_LEADERSHIP_TITLE'] = 'Руководители коллектива';
+$MESS['TIMETABLE_TITLE'] = 'Расписание';
+$MESS['TIME_TITLE'] = 'Время';
+$MESS['PLACE_TITLE'] = 'Место';
+$MESS['PASS_PERIOD_TITLE'] = 'Сроки проведения';
+$MESS['ORGANIZATOR_PERIOD_TITLE'] = 'Организатор(факультет, лаборатория)';
+$MESS['USER_TITLE'] = 'Пользователь';
+$MESS["module_add_infoblock_property_values_title"] = "Добавление значений свойств инфомационных блоков";
+$MESS["module_added_infoblock_property_values_title"] = "Значения свойств информационных блоков добавлены";
+
+
 
 
 ?>

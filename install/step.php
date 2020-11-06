@@ -169,71 +169,71 @@ Edu::addUserField($oUserTypeEntity,
 );
 echo \CAdminMessage::ShowNote(GetMessage('module_added_infoblock_attached_property_title'));
 
-echo \CAdminMessage::ShowNote("Добавление свойств инфомационных блоков");
+echo \CAdminMessage::ShowNote(GetMessage('module_add_infoblock_property_title'));
 $property = new \CIBlockProperty();
 $id = Edu::addInfoblockProperty($property,
-    'Файл',
+    GetMessage('FILE_TITLE'),
     Edu::DOCUMENT_INFOBLOCK_FILE_PROPERTY_CODE,
     Edu::FILE_INFOBLOCK_PROPERTY_TYPE,
     $documentsIblockId
 );
 $formOfEducationid = Edu::addInfoblockProperty($property,
-    'Форма обучения',
+    GetMessage('FORM_OF_EDUCATION_TITLE'),
     Edu::PROFESSIONS_INFOBLOCK_FORM_OF_EDUCATION_PROPERTY_CODE,
     Edu::LIST_INFOBLOCK_PROPERTY_TYPE,
     $professionsIblockId
 );
 $id = Edu::addInfoblockProperty($property,
-    'Сроки обучения',
+    GetMessage('PERIOD_TITLE'),
     Edu::PROFESSIONS_INFOBLOCK_PERIOD_PROPERTY_CODE,
     Edu::STRING_INFOBLOCK_PROPERTY_TYPE,
     $professionsIblockId
 );
 $id = Edu::addInfoblockProperty($property,
-    'Срок гос. аккредитации',
+    GetMessage('ACCREDITATION_TITLE'),
     Edu::PROFESSIONS_INFOBLOCK_ACCREDITATION_PERIOD_PROPERTY_CODE,
     Edu::STRING_INFOBLOCK_PROPERTY_TYPE,
     $professionsIblockId,
     Edu::DATE_TIME_INFOBLOCK_PROPERTY_USER_TYPE
 );
 $levelId = Edu::addInfoblockProperty($property,
-    'Уровень образования',
+    GetMessage('LEVEL_TITLE'),
     Edu::PROFESSIONS_INFOBLOCK_LEVEL_PROPERTY_CODE,
     Edu::LIST_INFOBLOCK_PROPERTY_TYPE,
     $professionsIblockId
 );
 $id = Edu::addInfoblockProperty($property,
-    'Код специальности, направления подготовки',
+    GetMessage('CODE_TITLE'),
     Edu::PROFESSIONS_INFOBLOCK_CODE_PROPERTY_CODE,
     Edu::STRING_INFOBLOCK_PROPERTY_TYPE,
     $professionsIblockId
 );
 $id = Edu::addInfoblockProperty($property,
-    'Описание образовательной программы',
+    GetMessage('DESCRIPTION_TITLE'),
     Edu::PROFESSIONS_INFOBLOCK_DESCRIPTION_PROPERTY_CODE,
     Edu::STRING_INFOBLOCK_PROPERTY_TYPE,
     $professionsIblockId
 );
 $id = Edu::addInfoblockProperty($property,
-    'Учебный план',
+    GetMessage('PLAN_TITLE'),
     Edu::PROFESSIONS_INFOBLOCK_PLAN_PROPERTY_CODE,
     Edu::FILE_INFOBLOCK_PROPERTY_TYPE,
     $professionsIblockId
 );
 $id = Edu::addInfoblockProperty($property,
-    'Аннотации к рабочим программам дисциплин',
+    GetMessage('ANNOTATIONS_TITLE'),
     Edu::PROFESSIONS_INFOBLOCK_ANNOTATIONS_PROPERTY_CODE,
     Edu::FILE_INFOBLOCK_PROPERTY_TYPE,
     $professionsIblockId
 );
 $id = Edu::addInfoblockProperty($property,
-    'Календарный учебный график',
+    GetMessage('SCHEDULE_TITLE'),
     Edu::PROFESSIONS_INFOBLOCK_SCHEDULE_PROPERTY_CODE,
     Edu::FILE_INFOBLOCK_PROPERTY_TYPE,
     $professionsIblockId
 );
 $id = Edu::addInfoblockProperty($property,
-    'Методические и иные документы',
+    GetMessage('METHODOLOGICAL_TITLE'),
     Edu::PROFESSIONS_INFOBLOCK_METHODOLOGICAL_DOCUMENTS_PROPERTY_CODE,
     Edu::FILE_INFOBLOCK_PROPERTY_TYPE,
     $professionsIblockId,
@@ -241,43 +241,43 @@ $id = Edu::addInfoblockProperty($property,
     true
 );
 $id = Edu::addInfoblockProperty($property,
-    'Практики',
+    GetMessage('PRACTICES_TITLE'),
     Edu::PROFESSIONS_INFOBLOCK_PRACTICES_PROPERTY_CODE,
     Edu::FILE_INFOBLOCK_PROPERTY_TYPE,
     $professionsIblockId
 );
 $id = Edu::addInfoblockProperty($property,
-    'Численность лиц, обучающихся за счет бюджета',
+    GetMessage('BUDGET_COUNT_TITLE'),
     Edu::PROFESSIONS_INFOBLOCK_BUDGET_COUNT_PROPERTY_CODE,
     Edu::STRING_INFOBLOCK_PROPERTY_TYPE,
     $professionsIblockId
 );
 $id = Edu::addInfoblockProperty($property,
-    'Численность лиц, находящихся на платном обучении',
+    GetMessage('PAYED_COUNT_TITLE'),
     Edu::PROFESSIONS_INFOBLOCK_PAYED_COUNT_PROPERTY_CODE,
     Edu::STRING_INFOBLOCK_PROPERTY_TYPE,
     $professionsIblockId
 );
 $id = Edu::addInfoblockProperty($property,
-    'Стоимость платных мест',
+    GetMessage('PRICE_TITLE'),
     Edu::PROFESSIONS_INFOBLOCK_PRICE_PROPERTY_CODE,
     Edu::STRING_INFOBLOCK_PROPERTY_TYPE,
     $professionsIblockId
 );
 $id = Edu::addInfoblockProperty($property,
-    'Профили подготовки',
+    GetMessage('PREPARATORY_PROFILE_TITLE'),
     Edu::PROFESSIONS_INFOBLOCK_PREPARATORY_PROFILE_PROPERTY_CODE,
     Edu::STRING_INFOBLOCK_PROPERTY_TYPE,
     $professionsIblockId
 );
 $id = Edu::addInfoblockProperty($property,
-    'Ключевые дисциплины',
+    GetMessage('PRINCIPAL_SUBJECTS_TITLE'),
     Edu::PROFESSIONS_INFOBLOCK_PRINCIPAL_SUBJECTS_PROPERTY_CODE,
     Edu::STRING_INFOBLOCK_PROPERTY_TYPE,
     $professionsIblockId
 );
 $languagesId = Edu::addInfoblockProperty($property,
-    'Языки, на которых происходит обучение',
+    GetMessage('LANGUAGES_TITLE'),
     Edu::PROFESSIONS_INFOBLOCK_LANGUAGES_PROPERTY_CODE,
     Edu::LIST_INFOBLOCK_PROPERTY_TYPE,
     $professionsIblockId,
@@ -285,25 +285,25 @@ $languagesId = Edu::addInfoblockProperty($property,
     true
 );
 $id = Edu::addInfoblockProperty($property,
-    'Научно-исследовательская работа',
+    GetMessage('RESEARCHES_TITLE'),
     Edu::PROFESSIONS_INFOBLOCK_RESEARCHES_PROPERTY_CODE,
     Edu::FILE_INFOBLOCK_PROPERTY_TYPE,
     $professionsIblockId
 );
 $id = Edu::addInfoblockProperty($property,
-    'Сведения о результатах приема',
+    GetMessage('RESULTS_TITLE'),
     Edu::PROFESSIONS_INFOBLOCK_RESULTS_PROPERTY_CODE,
     Edu::FILE_INFOBLOCK_PROPERTY_TYPE,
     $professionsIblockId
 );
 $id = Edu::addInfoblockProperty($property,
-    'Результаты перевода и отчисления',
+    GetMessage('REPLACED_RESULTS_TITLE'),
     Edu::PROFESSIONS_INFOBLOCK_REPLACED_RESULTS_PROPERTY_CODE,
     Edu::FILE_INFOBLOCK_PROPERTY_TYPE,
     $professionsIblockId
 );
 $facultyId = Edu::addInfoblockProperty($property,
-    'Факультет',
+    GetMessage('FACULTY_TITLE'),
     Edu::INFOBLOCK_FACULTY_PROPERTY_CODE,
     Edu::ELEMENT_INFOBLOCK_PROPERTY_TYPE,
     $professionsIblockId,
@@ -312,7 +312,7 @@ $facultyId = Edu::addInfoblockProperty($property,
     $facultiesIblockId
 );
 $preliminaryTestId = Edu::addInfoblockProperty($property,
-    'Вступительные испытания',
+    GetMessage('PRELIMINARY_TESTS_TITLE'),
     Edu::PROFESSIONS_INFOBLOCK_PRELIMINARY_TESTS_PROPERTY_CODE,
     Edu::ELEMENT_INFOBLOCK_PROPERTY_TYPE,
     $professionsIblockId,
@@ -321,7 +321,7 @@ $preliminaryTestId = Edu::addInfoblockProperty($property,
     $subjectsIblockId
 );
 $id = Edu::addInfoblockProperty($property,
-    'Факультет',
+    GetMessage('FACULTY_TITLE'),
     Edu::INFOBLOCK_FACULTY_PROPERTY_CODE,
     Edu::ELEMENT_INFOBLOCK_PROPERTY_TYPE,
     $departmentIblockId,
@@ -330,55 +330,55 @@ $id = Edu::addInfoblockProperty($property,
     $facultiesIblockId
 );
 $id = Edu::addInfoblockProperty($property,
-    'Адрес',
+    GetMessage('ADDRESS_TITLE'),
     Edu::INFOBLOCK_ADDRESS_PROPERTY_CODE,
     Edu::STRING_INFOBLOCK_PROPERTY_TYPE,
     $dormInfoblockId
 );
 $entityId = Edu::addInfoblockProperty($property,
-    'Для кого показывать',
+    GetMessage('ENTITY_TITLE'),
     Edu::INFOBLOCK_ENTITY_PROPERTY_CODE,
     Edu::LIST_INFOBLOCK_PROPERTY_TYPE,
     $newsIblockId
 );
 $id = Edu::addInfoblockProperty($property,
-    'Руководители коллектива',
+    GetMessage('CREATIVE_LEADERSHIP_TITLE'),
     Edu::INFOBLOCK_CREATIVE_LEADERSHIP_PROPERTY_CODE,
     Edu::STRING_INFOBLOCK_PROPERTY_TYPE,
     $creativeInfoblockId
 );
 $id = Edu::addInfoblockProperty($property,
-    'Расписание',
+    GetMessage('TIMETABLE_TITLE'),
     Edu::INFOBLOCK_SCHEDULE_PROPERTY_CODE,
     Edu::STRING_INFOBLOCK_PROPERTY_TYPE,
     $creativeInfoblockId
 );
 $id = Edu::addInfoblockProperty($property,
-    'Время',
+    GetMessage('TIME_TITLE'),
     Edu::INFOBLOCK_TIME_PROPERTY_CODE,
     Edu::STRING_INFOBLOCK_PROPERTY_TYPE,
     $creativeInfoblockId
 );
 $id = Edu::addInfoblockProperty($property,
-    'Место',
+    GetMessage('PLACE_TITLE'),
     Edu::INFOBLOCK_PLACE_PROPERTY_CODE,
     Edu::STRING_INFOBLOCK_PROPERTY_TYPE,
     $creativeInfoblockId
 );
 $id = Edu::addInfoblockProperty($property,
-    'Сроки проведения',
+    GetMessage('PASS_PERIOD_TITLE'),
     Edu::INFOBLOCK_PERIOD_PROPERTY_CODE,
     Edu::STRING_INFOBLOCK_PROPERTY_TYPE,
     $conferenceInfoblockId
 );
 $id = Edu::addInfoblockProperty($property,
-    'Организатор(факультет, лаборатория)',
+    GetMessage('ORGANIZATOR_PERIOD_TITLE'),
     Edu::INFOBLOCK_ORGANIZATOR_PROPERTY_CODE,
     Edu::STRING_INFOBLOCK_PROPERTY_TYPE,
     $conferenceInfoblockId
 );
 $id = Edu::addInfoblockProperty($property,
-    'Факультет',
+    GetMessage('FACULTY_TITLE'),
     Edu::INFOBLOCK_FACULTY_PROPERTY_CODE,
     Edu::ELEMENT_INFOBLOCK_PROPERTY_TYPE,
     $trainingMaterialsId,
@@ -387,21 +387,21 @@ $id = Edu::addInfoblockProperty($property,
     $facultiesIblockId
 );
 $id = Edu::addInfoblockProperty($property,
-    'Файл',
+    GetMessage('FILE_TITLE'),
     Edu::INFOBLOCK_FILE_PROPERTY_CODE,
     Edu::FILE_INFOBLOCK_PROPERTY_TYPE,
     $trainingMaterialsId,
 );
 $id = Edu::addInfoblockProperty($property,
-    'Пользователь',
+    GetMessage('USER_TITLE'),
     Edu::INFOBLOCK_USER_PROPERTY_CODE,
     Edu::STRING_INFOBLOCK_PROPERTY_TYPE,
     $reviewsInfoblockId,
     Edu::USER_INFOBLOCK_PROPERTY_USER_TYPE
 );
-echo \CAdminMessage::ShowNote("Свойства информационных блоков добавлены");
+echo \CAdminMessage::ShowNote(GetMessage('module_added_infoblock_property_title'));
 
-echo \CAdminMessage::ShowNote("Добавление значений свойств инфомационных блоков");
+echo \CAdminMessage::ShowNote(GetMessage('module_add_infoblock_property_values_title'));
 $iBPEnum = new CIBlockPropertyEnum;
 Edu::addEnumPropertyValue($iBPEnum, $formOfEducationid, 'заочная');
 Edu::addEnumPropertyValue($iBPEnum, $formOfEducationid, 'очная');
@@ -414,6 +414,6 @@ Edu::addEnumPropertyValue($iBPEnum, $languagesId, 'Итальянский');
 Edu::addEnumPropertyValue($iBPEnum, $languagesId, 'Английский');
 Edu::addEnumPropertyValue($iBPEnum, $entityId, 'Студент');
 Edu::addEnumPropertyValue($iBPEnum, $entityId, 'ВУЗ');
-echo \CAdminMessage::ShowNote("Значения свойств информационных блоков добавлены");
+echo \CAdminMessage::ShowNote(GetMessage('module_added_infoblock_property_values_title'));
 $DB->Commit();
 ?>
