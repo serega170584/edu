@@ -84,8 +84,8 @@ class Edu extends CModule
             $this->MODULE_VERSION_DATE = $arModuleVersion["VERSION_DATE"];
         }
 
-        $this->MODULE_NAME = self::ID . " – модуль образовательной организации";
-        $this->MODULE_DESCRIPTION = "После установки вы сможете пользоваться модулем образовательной организации";
+        $this->MODULE_NAME = sprintf(GetMessage('module_title'), self::ID);
+        $this->MODULE_DESCRIPTION = GetMessage('module_description');
 
         \CModule::IncludeModule('iblock');
     }
@@ -110,7 +110,7 @@ class Edu extends CModule
             $DB->StartTransaction();
             RegisterModule(self::ID);
             $moduleId = self::ID;
-            $APPLICATION->IncludeAdminFile("Установка модуля " . self::ID, $DOCUMENT_ROOT . "/" . self::DIRECTORY . "/step.php");
+            $APPLICATION->IncludeAdminFile(sprintf(GetMessage('module_setup_step_title'), self::ID), $DOCUMENT_ROOT . "/" . self::DIRECTORY . "/step.php");
         } catch (\Exception $e) {
             $APPLICATION->IncludeAdminFile($e->getMessage(), $DOCUMENT_ROOT . "/" . self::DIRECTORY . "/error_step.php");
         }
@@ -126,7 +126,7 @@ class Edu extends CModule
             $DB->StartTransaction();
             UnRegisterModule(self::ID);
             $moduleId = self::ID;
-            $APPLICATION->IncludeAdminFile("Деинсталляция модуля " . self::ID, $DOCUMENT_ROOT . "/" . self::DIRECTORY . "/unstep.php");
+            $APPLICATION->IncludeAdminFile(sprintf(GetMessage('module_setup_step_title'), self::ID), $DOCUMENT_ROOT . "/" . self::DIRECTORY . "/unstep.php");
         } catch (Exception $e) {
             $APPLICATION->IncludeAdminFile($e->getMessage(), $DOCUMENT_ROOT . "/" . self::DIRECTORY . "/error_unstep.php");
         }
@@ -428,7 +428,7 @@ class Edu extends CModule
             'IBLOCK_ID' => $id
         ]);
         while ($row = $db->Fetch()) {
-            if (!\CIBlockPropertyEnum::Delete($row['ID'])){
+            if (!\CIBlockPropertyEnum::Delete($row['ID'])) {
                 $DB->Rollback();
                 throw new \Bitrix\Main\DB\Exception('Ошибка удаления значения свойства инфоблока');
             }
