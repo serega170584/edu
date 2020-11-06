@@ -178,7 +178,7 @@ class Edu extends CModule
         ];
         if (!\CGroup::Delete(\CGroup::GetList($by, $order, $filter)->Fetch()['ID'])) {
             $DB->Rollback();
-            throw new \Bitrix\Main\DB\Exception('Delete error!');
+            throw new \Bitrix\Main\DB\Exception(GetMessage('db_delete_error'));
         }
     }
 
@@ -200,7 +200,7 @@ class Edu extends CModule
             'IBLOCK_ID' => $id
         ])->Fetch()['ID'])) {
             $DB->Rollback();
-            throw new \Bitrix\Main\DB\Exception('Delete error!');
+            throw new \Bitrix\Main\DB\Exception(GetMessage('db_delete_error'));
         }
     }
 
@@ -216,7 +216,7 @@ class Edu extends CModule
         global $DB;
         if (!\CIBlock::Delete($id)) {
             $DB->Rollback();
-            throw new \Bitrix\Main\DB\Exception('Delete error!');
+            throw new \Bitrix\Main\DB\Exception(GetMessage('db_delete_error'));
         }
     }
 
@@ -266,8 +266,8 @@ class Edu extends CModule
                 'en' => $enLabel,
             ],
             'ERROR_MESSAGE' => [
-                'ru' => 'Ошибка при заполнении',
-                'en' => 'An error in completing',
+                'ru' => GetMessage('completing_error'),
+                'en' => GetMessage('en_completing_error'),
             ],
             'HELP_MESSAGE' => [
                 'ru' => '',
@@ -280,7 +280,7 @@ class Edu extends CModule
         $res = $oUserTypeEntity->Add($aUserFields);
         if (!$res) {
             $DB->Rollback();
-            throw new \Bitrix\Main\DB\Exception('Ошибка добавления пользовательского свойства');
+            throw new \Bitrix\Main\DB\Exception(GetMessage('db_add_user_field_error'));
         }
     }
 
@@ -308,7 +308,7 @@ class Edu extends CModule
         $id = $group->Add($arFields);
         if (strlen($group->LAST_ERROR) > 0) {
             $DB->Rollback();
-            throw new \Bitrix\Main\DB\Exception('Ошибка добавления группы пользователя');
+            throw new \Bitrix\Main\DB\Exception(GetMessage('db_add_user_group_error'));
         }
         return $id;
     }
@@ -340,7 +340,7 @@ class Edu extends CModule
         $id = $ib->Add($arFields);
         if (!($id > 0)) {
             $DB->Rollback();
-            throw new \Bitrix\Main\DB\Exception('Ошибка добавления инфоблока');
+            throw new \Bitrix\Main\DB\Exception(GetMessage('db_add_infoblock_error'));
         }
         return $id;
     }
@@ -389,7 +389,7 @@ class Edu extends CModule
         $id = $property->Add($arFields);
         if (!($id > 0)) {
             $DB->Rollback();
-            throw new \Bitrix\Main\DB\Exception('Ошибка добавления свойства инфоблока');
+            throw new \Bitrix\Main\DB\Exception(GetMessage('db_add_infoblock_property_error'));
         }
         return $id;
     }
@@ -408,7 +408,7 @@ class Edu extends CModule
         global $DB;
         if (!($iBPEnum->Add(['PROPERTY_ID' => $id, 'VALUE' => $value]))) {
             $DB->Rollback();
-            throw new \Bitrix\Main\DB\Exception('Ошибка добавления значения свойства инфоблока');
+            throw new \Bitrix\Main\DB\Exception(GetMessage('db_add_infoblock_property_value_error'));
         }
     }
 
@@ -430,7 +430,7 @@ class Edu extends CModule
         while ($row = $db->Fetch()) {
             if (!\CIBlockPropertyEnum::Delete($row['ID'])) {
                 $DB->Rollback();
-                throw new \Bitrix\Main\DB\Exception('Ошибка удаления значения свойства инфоблока');
+                throw new \Bitrix\Main\DB\Exception(GetMessage('db_delete_infoblock_property_value_error'));
             }
         }
     }
