@@ -142,14 +142,14 @@ $reviewsInfoblockId = Edu::addInfoblock($ib, GetMessage('REVIEWS_TITLE'), Edu::R
 $trainingInfoblockId = Edu::addInfoblock($ib, GetMessage('TRAININGS_TITLE'), Edu::TRAININGS_INFOBLOCK_CODE, $moduleId);
 echo \CAdminMessage::ShowNote(GetMessage('module_added_infoblock_title'));
 
-echo \CAdminMessage::ShowNote("Добавление пользовательских свойств-привязок к элементам инфомационных блоков");
+echo \CAdminMessage::ShowNote(GetMessage('module_add_infoblock_attached_property_title'));
 
 Edu::addUserField($oUserTypeEntity,
     'UF_PROFESSION',
     'iblock_element',
     'PROFESSION',
-    'Наименование направления подготовки и (или) специальности',
-    'Profession',
+    GetMessage('RU_UF_PROFESSION_TITLE'),
+    GetMessage('EN_UF_PROFESSION_TITLE'),
     [
         'IBLOCK_TYPE_ID' => $moduleId,
         'IBLOCK_ID' => $professionsIblockId
@@ -159,15 +159,15 @@ Edu::addUserField($oUserTypeEntity,
 Edu::addUserField($oUserTypeEntity,
     'UF_DEPARTMENT',
     'iblock_element',
-    'PROFESSION',
-    'Кафедра',
-    'Department',
+    'DEPARTMENT',
+    GetMessage('RU_UF_DEPARTMENT_TITLE'),
+    GetMessage('EN_UF_DEPARTMENT_TITLE'),
     [
         'IBLOCK_TYPE_ID' => $moduleId,
         'IBLOCK_ID' => $departmentIblockId
     ]
 );
-echo \CAdminMessage::ShowNote("Пользовательские свойства-привязки к элементам информационных блоков добавлены");
+echo \CAdminMessage::ShowNote(GetMessage('module_added_infoblock_attached_property_title'));
 
 echo \CAdminMessage::ShowNote("Добавление свойств инфомационных блоков");
 $property = new \CIBlockProperty();

@@ -111,6 +111,12 @@ $MESS["CONFERENCES_TITLE"] = "Конференции";
 $MESS["TRAINING_MATERIALS_TITLE"] = "Учебные материалы";
 $MESS["REVIEWS_TITLE"] = "Отзывы";
 $MESS["TRAININGS_TITLE"] = "Тренинги и семинары";
+$MESS["module_add_infoblock_attached_property_title"] = "Добавление пользовательских свойств-привязок к элементам инфомационных блоков";
+$MESS["module_added_infoblock_attached_property_title"] = "Пользовательские свойства-привязки к элементам информационных блоков добавлены";
+$MESS["RU_UF_PROFESSION_TITLE"] = "Наименование направления подготовки и (или) специальности";
+$MESS["EN_UF_PROFESSION_TITLE"] = "Profession";
+$MESS["RU_UF_DEPARTMENT_TITLE"] = "Кафедра";
+$MESS["EN_UF_DEPARTMENT_TITLE"] = "Department";
 
 
 ?>
