@@ -164,4 +164,19 @@ $MESS['ITALIAN_TITLE'] = 'Итальянский';
 $MESS['ENGLISH_TITLE'] = 'Английский';
 $MESS['STUDENT_TITLE'] = 'Студент';
 $MESS['UNIVERSITY_TITLE'] = 'ВУЗ';
+$MESS["module_delete_user_field_title"] = "Удаление свойств";
+$MESS["module_deleted_user_field_title"] = "Свойства пользователя удалены";
+$MESS["module_delete_edu_infoblock_type_title"] = "Удаление типа инфоблока образовательной организации";
+$MESS["module_deleted_edu_infoblock_type_title"] = "Тип инфоблока образовательной организации удален";
+$MESS["module_delete_group_title"] = "Удаление групп пользователей";
+$MESS["module_deleted_group_title"] = "Группы пользователей удалены";
+$MESS["module_delete_infoblock_attached_property_title"] = "Удаление пользовательских свойств-привязок к элементам инфомационных блоков";
+$MESS["module_deleted_infoblock_attached_property_title"] = "Пользовательские свойства-привязки к элементам информационных блоков удалены";
+$MESS["module_delete_infoblock_title"] = "Удаление инфомационных блоков";
+$MESS["module_deleted_infoblock_title"] = "Информационные блоки удалены";
+$MESS["module_delete_infoblock_property_values_title"] = "Удаление значений свойств инфомационных блоков";
+$MESS["module_deleted_infoblock_property_values_title"] = "Значения свойств информационных блоков удалены";
+$MESS["module_delete_infoblock_property_title"] = "Удаление свойств инфомационных блоков";
+$MESS["module_deleted_infoblock_property_title"] = "Свойства информационных блоков удалены";
+
 ?>
