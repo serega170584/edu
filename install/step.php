@@ -7,7 +7,7 @@
  */
 global $moduleId;
 
-echo \CAdminMessage::ShowNote("Добавление типа инфоблока образовательной организации");
+echo \CAdminMessage::ShowNote(GetMessage('module_add_edu_infoblock_type_title'));
 $arFields = [
     'ID' => $moduleId,
     'SECTIONS' => 'Y',
@@ -15,14 +15,14 @@ $arFields = [
     'SORT' => 100,
     'LANG' => [
         'en' => [
-            'NAME' => 'Educational organization',
-            'SECTION_NAME' => 'Sections',
-            'ELEMENT_NAME' => 'Elements'
+            'NAME' => GetMessage('en_edu_infoblock_type_name'),
+            'SECTION_NAME' => GetMessage('en_edu_infoblock_type_sections'),
+            'ELEMENT_NAME' => GetMessage('en_edu_infoblock_type_elements')
         ],
         'ru' => [
-            'NAME' => 'Образовательная организация',
-            'SECTION_NAME' => 'Разделы',
-            'ELEMENT_NAME' => 'Элементы'
+            'NAME' => GetMessage('ru_edu_infoblock_type_name'),
+            'SECTION_NAME' => GetMessage('ru_edu_infoblock_type_sections'),
+            'ELEMENT_NAME' => GetMessage('ru_edu_infoblock_type_elements')
         ]
     ]
 ];
@@ -32,9 +32,9 @@ if (!$res) {
     $DB->Rollback();
     throw new \Bitrix\Main\DB\Exception($obBlocktype->LAST_ERROR);
 }
-echo \CAdminMessage::ShowNote("Тип инфоблока образовательной организации добавлен");
+echo \CAdminMessage::ShowNote(GetMessage('module_added_edu_infoblock_type_title'));
 
-echo \CAdminMessage::ShowNote("Добавление свойств");
+echo \CAdminMessage::ShowNote(GetMessage('module_add_user_field_title'));
 $oUserTypeEntity = new CUserTypeEntity();
 Edu::addUserField($oUserTypeEntity,
     'UF_BEGIN_TIME',
@@ -108,7 +108,7 @@ Edu::addUserField($oUserTypeEntity,
     'ASSESSMENT',
     'Данные о повышении квалификации и (или) профессиональной переподготовке',
     'Assessment');
-echo \CAdminMessage::ShowNote("Свойства пользователя добавлены");
+echo \CAdminMessage::ShowNote(GetMessage('module_added_user_field_title'));
 
 echo \CAdminMessage::ShowNote("Добавление групп пользователей");
 
