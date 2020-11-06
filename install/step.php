@@ -37,77 +37,77 @@ echo \CAdminMessage::ShowNote(GetMessage('module_added_edu_infoblock_type_title'
 echo \CAdminMessage::ShowNote(GetMessage('module_add_user_field_title'));
 $oUserTypeEntity = new CUserTypeEntity();
 Edu::addUserField($oUserTypeEntity,
-    'UF_BEGIN_TIME',
-    'datetime',
-    'BEGIN_TIME',
-    'Время начала',
-    'Begin time');
+    GetMessage('UF_BEGIN_TIME'),
+    GetMessage('datetime'),
+    GetMessage('BEGIN_TIME'),
+    GetMessage('BEGIN_TIME_RU_TITLE'),
+    GetMessage('BEGIN_TIME_EN_TITLE'));
 Edu::addUserField($oUserTypeEntity,
-    'UF_END_TIME',
-    'datetime',
-    'END_TIME',
-    'Время окончания',
-    'End time');
+    GetMessage('UF_END_TIME'),
+    GetMessage('datetime'),
+    GetMessage('END_TIME'),
+    GetMessage('END_TIME_RU_TITLE'),
+    GetMessage('END_TIME_EN_TITLE'));
 Edu::addUserField($oUserTypeEntity,
-    'UF_SITE',
-    'string',
-    'SITE',
-    'Сайт',
-    'Site');
+    GetMessage('UF_SITE'),
+    GetMessage('string'),
+    GetMessage('SITE'),
+    GetMessage('SITE_RU_TITLE'),
+    GetMessage('SITE_EN_TITLE'));
 Edu::addUserField($oUserTypeEntity,
-    'UF_DOCUMENT',
-    'file',
-    'DOCUMENT',
-    'Документ',
-    'Document');
+    GetMessage('UF_DOCUMENT'),
+    GetMessage('file'),
+    GetMessage('DOCUMENT'),
+    GetMessage('DOCUMENT_RU_TITLE'),
+    GetMessage('DOCUMENT_EN_TITLE'));
 Edu::addUserField($oUserTypeEntity,
-    'UF_TIME_ADDITION',
-    'string',
-    'TIME_ADDITION',
-    'Уточнение времени работы',
-    'Time addition');
+    GetMessage('UF_TIME_ADDITION'),
+    GetMessage('string'),
+    GetMessage('TIME_ADDITION'),
+    GetMessage('TIME_ADDITION_RU_TITLE'),
+    GetMessage('TIME_ADDITION_EN_TITLE'));
 Edu::addUserField($oUserTypeEntity,
-    'UF_GENERAL_EXPERIENCE',
-    'string',
-    'GENERAL_EXPERIENCE',
-    'Общий стаж работы',
-    'General experience');
+    GetMessage('UF_GENERAL_EXPERIENCE'),
+    GetMessage('string'),
+    GetMessage('GENERAL_EXPERIENCE'),
+    GetMessage('GENERAL_EXPERIENCE_RU_TITLE'),
+    GetMessage('GENERAL_EXPERIENCE_EN_TITLE'));
 Edu::addUserField($oUserTypeEntity,
-    'UF_PROFESSION_EXPERIENCE',
-    'string',
-    'PROFESSION_EXPERIENCE',
-    'Cтаж работы по специальности',
-    'Profession experience');
+    GetMessage('UF_PROFESSION_EXPERIENCE'),
+    GetMessage('string'),
+    GetMessage('PROFESSION_EXPERIENCE'),
+    GetMessage('PROFESSION_EXPERIENCE_RU_TITLE'),
+    GetMessage('PROFESSION_EXPERIENCE_EN_TITLE'));
 Edu::addUserField($oUserTypeEntity,
-    'UF_POSITION',
-    'string',
-    'POSITION',
-    'Должность',
-    'Position');
+    GetMessage('UF_POSITION'),
+    GetMessage('string'),
+    GetMessage('POSITION'),
+    GetMessage('POSITION_RU_TITLE'),
+    GetMessage('POSITION_EN_TITLE'));
 Edu::addUserField($oUserTypeEntity,
-    'UF_SUBJECT',
-    'string',
-    'SUBJECT',
-    'Преподаваемые дисциплины',
-    'Subject');
+    GetMessage('UF_SUBJECT'),
+    GetMessage('string'),
+    GetMessage('SUBJECT'),
+    GetMessage('SUBJECT_RU_TITLE'),
+    GetMessage('SUBJECT_EN_TITLE'));
 Edu::addUserField($oUserTypeEntity,
-    'UF_DEGREE',
-    'string',
-    'DEGREEE',
-    'Ученая степень',
-    'Degree');
+    GetMessage('UF_DEGREE'),
+    GetMessage('string'),
+    GetMessage('DEGREEE'),
+    GetMessage('DEGREEE_RU_TITLE'),
+    GetMessage('DEGREEE_EN_TITLE'));
 Edu::addUserField($oUserTypeEntity,
-    'UF_RANK',
-    'string',
-    'RANK',
-    'Ученое звание',
-    'Rank');
+    GetMessage('UF_RANK'),
+    GetMessage('string'),
+    GetMessage('RANK'),
+    GetMessage('RANK_RU_TITLE'),
+    GetMessage('RANK_EN_TITLE'));
 Edu::addUserField($oUserTypeEntity,
-    'UF_ASSESSMENT',
-    'string',
-    'ASSESSMENT',
-    'Данные о повышении квалификации и (или) профессиональной переподготовке',
-    'Assessment');
+    GetMessage('UF_ASSESSMENT'),
+    GetMessage('string'),
+    GetMessage('ASSESSMENT'),
+    GetMessage('ASSESSMENT_RU_TITLE'),
+    GetMessage('ASSESSMENT_EN_TITLE'));
 echo \CAdminMessage::ShowNote(GetMessage('module_added_user_field_title'));
 
 echo \CAdminMessage::ShowNote("Добавление групп пользователей");
