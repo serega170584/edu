@@ -403,17 +403,17 @@ echo \CAdminMessage::ShowNote(GetMessage('module_added_infoblock_property_title'
 
 echo \CAdminMessage::ShowNote(GetMessage('module_add_infoblock_property_values_title'));
 $iBPEnum = new CIBlockPropertyEnum;
-Edu::addEnumPropertyValue($iBPEnum, $formOfEducationid, 'заочная');
-Edu::addEnumPropertyValue($iBPEnum, $formOfEducationid, 'очная');
-Edu::addEnumPropertyValue($iBPEnum, $levelId, 'Бакалавриат');
-Edu::addEnumPropertyValue($iBPEnum, $levelId, 'Магистратура');
-Edu::addEnumPropertyValue($iBPEnum, $levelId, 'Специалист');
-Edu::addEnumPropertyValue($iBPEnum, $levelId, 'Аспирантура');
-Edu::addEnumPropertyValue($iBPEnum, $languagesId, 'Русский');
-Edu::addEnumPropertyValue($iBPEnum, $languagesId, 'Итальянский');
-Edu::addEnumPropertyValue($iBPEnum, $languagesId, 'Английский');
-Edu::addEnumPropertyValue($iBPEnum, $entityId, 'Студент');
-Edu::addEnumPropertyValue($iBPEnum, $entityId, 'ВУЗ');
+Edu::addEnumPropertyValue($iBPEnum, $formOfEducationid, GetMessage('EXTRAMURAL_TITLE'));
+Edu::addEnumPropertyValue($iBPEnum, $formOfEducationid, GetMessage('INTERNAL_TITLE'));
+Edu::addEnumPropertyValue($iBPEnum, $levelId, GetMessage('BACHELOR_TITLE'));
+Edu::addEnumPropertyValue($iBPEnum, $levelId, GetMessage('MAGISTRACY_TITLE'));
+Edu::addEnumPropertyValue($iBPEnum, $levelId, GetMessage('SPECIALIST_TITLE'));
+Edu::addEnumPropertyValue($iBPEnum, $levelId, GetMessage('GRADUATE_SCHOOL_TITLE'));
+Edu::addEnumPropertyValue($iBPEnum, $languagesId, GetMessage('RUSSIAN_TITLE'));
+Edu::addEnumPropertyValue($iBPEnum, $languagesId, GetMessage('ITALIAN_TITLE'));
+Edu::addEnumPropertyValue($iBPEnum, $languagesId, GetMessage('ENGLISH_TITLE'));
+Edu::addEnumPropertyValue($iBPEnum, $entityId, GetMessage('STUDENT_TITLE'));
+Edu::addEnumPropertyValue($iBPEnum, $entityId, GetMessage('UNIVERSITY_TITLE'));
 echo \CAdminMessage::ShowNote(GetMessage('module_added_infoblock_property_values_title'));
 $DB->Commit();
 ?>

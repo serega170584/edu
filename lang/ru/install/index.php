@@ -153,8 +153,15 @@ $MESS['ORGANIZATOR_PERIOD_TITLE'] = 'Организатор(факультет, 
 $MESS['USER_TITLE'] = 'Пользователь';
 $MESS["module_add_infoblock_property_values_title"] = "Добавление значений свойств инфомационных блоков";
 $MESS["module_added_infoblock_property_values_title"] = "Значения свойств информационных блоков добавлены";
-
-
-
-
+$MESS['EXTRAMURAL_TITLE'] = 'заочная';
+$MESS['INTERNAL_TITLE'] = 'очная';
+$MESS['BACHELOR_TITLE'] = 'Бакалавриат';
+$MESS['MAGISTRACY_TITLE'] = 'Магистратура';
+$MESS['SPECIALIST_TITLE'] = 'Специалист';
+$MESS['GRADUATE_SCHOOL_TITLE'] = 'Аспирантура';
+$MESS['RUSSIAN_TITLE'] = 'Русский';
+$MESS['ITALIAN_TITLE'] = 'Итальянский';
+$MESS['ENGLISH_TITLE'] = 'Английский';
+$MESS['STUDENT_TITLE'] = 'Студент';
+$MESS['UNIVERSITY_TITLE'] = 'ВУЗ';
 ?>
