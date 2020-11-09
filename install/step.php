@@ -54,6 +54,7 @@ $adminMessage->ShowNote(GetMessage('module_added_user_field_title'));
 $adminMessage->ShowNote(GetMessage("module_add_group_title"));
 
 $group = new \CGroup;
+Edu::addUG_FOUNDERS();
 $id = Edu::addUserGroup($group, GetMessage('RU_FOUNDERS'), GetMessage('FOUNDERS'));
 $id = Edu::addUserGroup($group, GetMessage('RU_BRANCHES'), GetMessage('BRANCHES'));
 $id = Edu::addUserGroup($group, GetMessage('RU_MAIN'), GetMessage('MAIN'));

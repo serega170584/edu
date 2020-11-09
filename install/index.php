@@ -14,6 +14,7 @@
  * @method static UF_DEGREE_type_string()
  * @method static UF_RANK_type_string()
  * @method static UF_ASSESSMENT_type_string()
+ * @method static addUG_FOUNDERS()
  */
 class Edu extends CModule
 {
@@ -77,7 +78,9 @@ class Edu extends CModule
     const USER_INFOBLOCK_PROPERTY_USER_TYPE = 'UserID';
     const UF = 'UF_';
     const TYPE = '_type_';
+    const ADD_UG = 'addUG_';
     private static CUserTypeEntity $userTypeEntity;
+    private static CGroup $userGroup;
 
     var $MODULE_ID = "edu";
     var $MODULE_VERSION;
@@ -121,6 +124,8 @@ class Edu extends CModule
          * \CDatabase $DB
          */
         global $DOCUMENT_ROOT, $APPLICATION, $DB, $moduleId;
+        Edu::addUG_FOUNDERS();
+        die('asd');
         try {
             $DB->StartTransaction();
             RegisterModule(self::ID);
@@ -463,7 +468,23 @@ class Edu extends CModule
                 GetMessage($id),
                 GetMessage("{$id}_RU_TITLE"),
                 GetMessage("{$id}_EN_TITLE"));
+        } elseif (strpos($name, self::ADD_UG) !== FALSE) {
+            $parts = explode(self::ADD_UG, $name);
+            $groupName = $parts[1];
+            var_dump($groupName);
+            die('asd');
+            Edu::addUserGroup(self::getUserGroup(), GetMessage("RU_$groupName"), GetMessage($groupName));
         }
+    }
+
+
+    /**
+     * @return CGroup
+     */
+    public static function getUserGroup()
+    {
+        self::$userGroup = self::$userGroup ?? (new \CGroup());
+        return self::$userGroup;
     }
 
     /**
