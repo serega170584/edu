@@ -2,6 +2,7 @@
 
 /**
  * Class Edu
+ * @method void UF_BEGIN_TIME_type_datetime()
  */
 class Edu extends CModule
 {
@@ -63,6 +64,9 @@ class Edu extends CModule
     const ELEMENT_INFOBLOCK_PROPERTY_TYPE = 'E';
     const DATE_TIME_INFOBLOCK_PROPERTY_USER_TYPE = 'DateTime';
     const USER_INFOBLOCK_PROPERTY_USER_TYPE = 'UserID';
+    const UF = 'UF_';
+    const TYPE = '_type_';
+    private static CUserTypeEntity $userTypeEntity;
 
     var $MODULE_ID = "edu";
     var $MODULE_VERSION;
@@ -106,6 +110,8 @@ class Edu extends CModule
          * \CDatabase $DB
          */
         global $DOCUMENT_ROOT, $APPLICATION, $DB, $moduleId;
+        self::UF_BEGIN_TIME_type_datetime();
+        die('asd');
         try {
             $DB->StartTransaction();
             RegisterModule(self::ID);
@@ -433,5 +439,33 @@ class Edu extends CModule
                 throw new \Bitrix\Main\DB\Exception(GetMessage('db_delete_infoblock_property_value_error'));
             }
         }
+    }
+
+    public function __callStatic($name, $args)
+    {
+        if (strpos(self::UF, $name) !== FALSE) {
+            $parts = explode(self::UF, $name);
+            $parts = explode(self::TYPE, $parts[1]);
+            $id = $parts[0];
+            $type = $parts[1];
+            var_dump($id);
+            var_dump($type);
+            die('asd');
+            self::addUserField(self::getUserTypeEntity(),
+                GetMessage("UF_$id"),
+                GetMessage($type),
+                GetMessage($id),
+                GetMessage("{$id}_RU_TITLE"),
+                GetMessage("{$id}_EN_TITLE"));
+        }
+    }
+
+    /**
+     * @return CUserTypeEntity
+     */
+    public static function getUserTypeEntity()
+    {
+        self::$userTypeEntity = self::$userTypeEntity ?? (new \CUserTypeEntity());
+        return self::$userTypeEntity;
     }
 }
