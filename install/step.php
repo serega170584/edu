@@ -38,72 +38,17 @@ $adminMessage->ShowNote(GetMessage('module_added_edu_infoblock_type_title'));
 $adminMessage->ShowNote(GetMessage('module_add_user_field_title'));
 $oUserTypeEntity = new CUserTypeEntity();
 Edu::UF_BEGIN_TIME_type_datetime();
-Edu::addUserField($oUserTypeEntity,
-    GetMessage('UF_END_TIME'),
-    GetMessage('datetime'),
-    GetMessage('END_TIME'),
-    GetMessage('END_TIME_RU_TITLE'),
-    GetMessage('END_TIME_EN_TITLE'));
-Edu::addUserField($oUserTypeEntity,
-    GetMessage('UF_SITE'),
-    GetMessage('string'),
-    GetMessage('SITE'),
-    GetMessage('SITE_RU_TITLE'),
-    GetMessage('SITE_EN_TITLE'));
-Edu::addUserField($oUserTypeEntity,
-    GetMessage('UF_DOCUMENT'),
-    GetMessage('file'),
-    GetMessage('DOCUMENT'),
-    GetMessage('DOCUMENT_RU_TITLE'),
-    GetMessage('DOCUMENT_EN_TITLE'));
-Edu::addUserField($oUserTypeEntity,
-    GetMessage('UF_TIME_ADDITION'),
-    GetMessage('string'),
-    GetMessage('TIME_ADDITION'),
-    GetMessage('TIME_ADDITION_RU_TITLE'),
-    GetMessage('TIME_ADDITION_EN_TITLE'));
-Edu::addUserField($oUserTypeEntity,
-    GetMessage('UF_GENERAL_EXPERIENCE'),
-    GetMessage('string'),
-    GetMessage('GENERAL_EXPERIENCE'),
-    GetMessage('GENERAL_EXPERIENCE_RU_TITLE'),
-    GetMessage('GENERAL_EXPERIENCE_EN_TITLE'));
-Edu::addUserField($oUserTypeEntity,
-    GetMessage('UF_PROFESSION_EXPERIENCE'),
-    GetMessage('string'),
-    GetMessage('PROFESSION_EXPERIENCE'),
-    GetMessage('PROFESSION_EXPERIENCE_RU_TITLE'),
-    GetMessage('PROFESSION_EXPERIENCE_EN_TITLE'));
-Edu::addUserField($oUserTypeEntity,
-    GetMessage('UF_POSITION'),
-    GetMessage('string'),
-    GetMessage('POSITION'),
-    GetMessage('POSITION_RU_TITLE'),
-    GetMessage('POSITION_EN_TITLE'));
-Edu::addUserField($oUserTypeEntity,
-    GetMessage('UF_SUBJECT'),
-    GetMessage('string'),
-    GetMessage('SUBJECT'),
-    GetMessage('SUBJECT_RU_TITLE'),
-    GetMessage('SUBJECT_EN_TITLE'));
-Edu::addUserField($oUserTypeEntity,
-    GetMessage('UF_DEGREE'),
-    GetMessage('string'),
-    GetMessage('DEGREEE'),
-    GetMessage('DEGREEE_RU_TITLE'),
-    GetMessage('DEGREEE_EN_TITLE'));
-Edu::addUserField($oUserTypeEntity,
-    GetMessage('UF_RANK'),
-    GetMessage('string'),
-    GetMessage('RANK'),
-    GetMessage('RANK_RU_TITLE'),
-    GetMessage('RANK_EN_TITLE'));
-Edu::addUserField($oUserTypeEntity,
-    GetMessage('UF_ASSESSMENT'),
-    GetMessage('string'),
-    GetMessage('ASSESSMENT'),
-    GetMessage('ASSESSMENT_RU_TITLE'),
-    GetMessage('ASSESSMENT_EN_TITLE'));
+Edu::UF_END_TIME_type_datetime();
+Edu::UF_SITE_type_string();
+Edu::UF_DOCUMENT_type_file();
+Edu::UF_TIME_ADDITION_type_string();
+Edu::UF_GENERAL_EXPERIENCE_type_string();
+Edu::UF_PROFESSION_EXPERIENCE_type_string();
+Edu::UF_POSITION_type_string();
+Edu::UF_SUBJECT_type_string();
+Edu::UF_DEGREE_type_string();
+Edu::UF_RANK_type_string();
+Edu::UF_ASSESSMENT_type_string();
 $adminMessage->ShowNote(GetMessage('module_added_user_field_title'));
 
 $adminMessage->ShowNote(GetMessage("module_add_group_title"));

@@ -3,6 +3,17 @@
 /**
  * Class Edu
  * @method static void UF_BEGIN_TIME_type_datetime()
+ * @method static UF_END_TIME_type_datetime()
+ * @method static UF_SITE_type_string()
+ * @method static UF_DOCUMENT_type_file()
+ * @method static UF_TIME_ADDITION_type_string()
+ * @method static UF_GENERAL_EXPERIENCE_type_string()
+ * @method static UF_PROFESSION_EXPERIENCE_type_string()
+ * @method static UF_POSITION_type_string()
+ * @method static UF_SUBJECT_type_string()
+ * @method static UF_DEGREE_type_string()
+ * @method static UF_RANK_type_string()
+ * @method static UF_ASSESSMENT_type_string()
  */
 class Edu extends CModule
 {
