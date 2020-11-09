@@ -8,6 +8,7 @@
  */
 global $moduleId;
 
+$adminMessage = new \CAdminMessage('');
 $documentsIblockId = Edu::getIblockId($moduleId, Edu::DOCUMENTS_INFOBLOCK_CODE);
 $professionsIblockId = Edu::getIblockId($moduleId, Edu::PROFESSIONS_INFOBLOCK_CODE);
 $facultiesIblockId = Edu::getIblockId($moduleId, Edu::FACULTIES_INFOBLOCK_CODE);
@@ -22,13 +23,13 @@ $conferenceInfoblockId = Edu::getIblockId($moduleId, Edu::CONFERENCE_INFOBLOCK_C
 $trainingMaterialInfoblockId = Edu::getIblockId($moduleId, Edu::TRAINING_MATERIALS_INFOBLOCK_CODE);
 $reviewsInfoblockId = Edu::getIblockId($moduleId, Edu::REVIEWS_INFOBLOCK_CODE);
 $trainingInfoblockId = Edu::getIblockId($moduleId, Edu::TRAININGS_INFOBLOCK_CODE);
-echo \CAdminMessage::ShowNote(GetMessage('module_delete_infoblock_property_values_title'));
+$adminMessage->ShowNote(GetMessage('module_delete_infoblock_property_values_title'));
 Edu::deleteInfoblockPropertyEnumValues($professionsIblockId);
 Edu::deleteInfoblockPropertyEnumValues($newsInfoblockId);
-echo \CAdminMessage::ShowNote(GetMessage('module_deleted_infoblock_property_values_title'));
+$adminMessage->ShowNote(GetMessage('module_deleted_infoblock_property_values_title'));
 
 $oUserTypeEntity = new CUserTypeEntity();
-echo \CAdminMessage::ShowNote(GetMessage('module_delete_user_field_title'));
+$adminMessage->ShowNote(GetMessage('module_delete_user_field_title'));
 Edu::deleteUserField($oUserTypeEntity, 'UF_BEGIN_TIME');
 Edu::deleteUserField($oUserTypeEntity, 'UF_END_TIME');
 Edu::deleteUserField($oUserTypeEntity, 'UF_SITE');
@@ -44,9 +45,9 @@ Edu::deleteUserField($oUserTypeEntity, 'UF_RANK');
 Edu::deleteUserField($oUserTypeEntity, 'UF_ASSESSMENT');
 Edu::deleteUserField($oUserTypeEntity, 'UF_PROFESSION');
 Edu::deleteUserField($oUserTypeEntity, 'UF_DEPARTMENT');
-echo \CAdminMessage::ShowNote(GetMessage('module_deleted_user_field_title'));
+$adminMessage->ShowNote(GetMessage('module_deleted_user_field_title'));
 
-echo \CAdminMessage::ShowNote(GetMessage('module_delete_group_title'));
+$adminMessage->ShowNote(GetMessage('module_delete_group_title'));
 Edu::deleteUserGroup('FOUNDERS');
 Edu::deleteUserGroup('BRANCHES');
 Edu::deleteUserGroup('MAIN');
@@ -55,9 +56,9 @@ Edu::deleteUserGroup('ACADEMIC_COUNCIL');
 Edu::deleteUserGroup('LEADERSHIP');
 Edu::deleteUserGroup('STAFF');
 Edu::deleteUserGroup('GRADUATE');
-echo \CAdminMessage::ShowNote(GetMessage('module_deleted_group_title'));
+$adminMessage->ShowNote(GetMessage('module_deleted_group_title'));
 
-echo \CAdminMessage::ShowNote(GetMessage('module_delete_infoblock_property_title'));
+$adminMessage->ShowNote(GetMessage('module_delete_infoblock_property_title'));
 Edu::deleteInfoblockProperty(EDU::DOCUMENT_INFOBLOCK_FILE_PROPERTY_CODE, $documentsIblockId);
 Edu::deleteInfoblockProperty(EDU::PROFESSIONS_INFOBLOCK_FORM_OF_EDUCATION_PROPERTY_CODE, $professionsIblockId);
 Edu::deleteInfoblockProperty(EDU::PROFESSIONS_INFOBLOCK_PERIOD_PROPERTY_CODE, $professionsIblockId);
@@ -93,9 +94,9 @@ Edu::deleteInfoblockProperty(EDU::INFOBLOCK_ORGANIZATOR_PROPERTY_CODE, $conferen
 Edu::deleteInfoblockProperty(EDU::INFOBLOCK_FILE_PROPERTY_CODE, $trainingMaterialInfoblockId);
 Edu::deleteInfoblockProperty(EDU::INFOBLOCK_FACULTY_PROPERTY_CODE, $trainingMaterialInfoblockId);
 Edu::deleteInfoblockProperty(EDU::INFOBLOCK_USER_PROPERTY_CODE, $reviewsInfoblockId);
-echo \CAdminMessage::ShowNote(GetMessage('module_deleted_infoblock_property_title'));
+$adminMessage->ShowNote(GetMessage('module_deleted_infoblock_property_title'));
 
-echo \CAdminMessage::ShowNote(GetMessage('module_delete_infoblock_title'));
+$adminMessage->ShowNote(GetMessage('module_delete_infoblock_title'));
 Edu::deleteInfoblock($documentsIblockId);
 Edu::deleteInfoblock($professionsIblockId);
 Edu::deleteInfoblock($facultiesIblockId);
@@ -110,13 +111,13 @@ Edu::deleteInfoblock($conferenceInfoblockId);
 Edu::deleteInfoblock($trainingMaterialInfoblockId);
 Edu::deleteInfoblock($reviewsInfoblockId);
 Edu::deleteInfoblock($trainingInfoblockId);
-echo \CAdminMessage::ShowNote(GetMessage('module_deleted_infoblock_title'));
+$adminMessage->ShowNote(GetMessage('module_deleted_infoblock_title'));
 
-echo \CAdminMessage::ShowNote(GetMessage('module_delete_edu_infoblock_type_title'));
+$adminMessage->ShowNote(GetMessage('module_delete_edu_infoblock_type_title'));
 if (!\CIBlockType::Delete($moduleId)) {
     $DB->Rollback();
     throw new \Bitrix\Main\DB\Exception('Delete error!');
 }
-echo \CAdminMessage::ShowNote(GetMessage('module_delete_edu_infoblock_type_title'));
+$adminMessage->ShowNote(GetMessage('module_delete_edu_infoblock_type_title'));
 $DB->Commit();
 ?>

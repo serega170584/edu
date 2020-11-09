@@ -7,7 +7,8 @@
  */
 global $moduleId;
 
-echo \CAdminMessage::ShowNote(GetMessage('module_add_edu_infoblock_type_title'));
+$adminMessage = new \CAdminMessage('');
+$adminMessage->ShowNote(GetMessage('module_add_edu_infoblock_type_title'));
 $arFields = [
     'ID' => $moduleId,
     'SECTIONS' => 'Y',
@@ -32,9 +33,9 @@ if (!$res) {
     $DB->Rollback();
     throw new \Bitrix\Main\DB\Exception($obBlocktype->LAST_ERROR);
 }
-echo \CAdminMessage::ShowNote(GetMessage('module_added_edu_infoblock_type_title'));
+$adminMessage->ShowNote(GetMessage('module_added_edu_infoblock_type_title'));
 
-echo \CAdminMessage::ShowNote(GetMessage('module_add_user_field_title'));
+$adminMessage->ShowNote(GetMessage('module_add_user_field_title'));
 $oUserTypeEntity = new CUserTypeEntity();
 Edu::addUserField($oUserTypeEntity,
     GetMessage('UF_BEGIN_TIME'),
@@ -108,9 +109,9 @@ Edu::addUserField($oUserTypeEntity,
     GetMessage('ASSESSMENT'),
     GetMessage('ASSESSMENT_RU_TITLE'),
     GetMessage('ASSESSMENT_EN_TITLE'));
-echo \CAdminMessage::ShowNote(GetMessage('module_added_user_field_title'));
+$adminMessage->ShowNote(GetMessage('module_added_user_field_title'));
 
-echo \CAdminMessage::ShowNote(GetMessage("module_add_group_title"));
+$adminMessage->ShowNote(GetMessage("module_add_group_title"));
 
 $group = new \CGroup;
 $id = Edu::addUserGroup($group, GetMessage('RU_FOUNDERS'), GetMessage('FOUNDERS'));
@@ -121,9 +122,9 @@ $id = Edu::addUserGroup($group, GetMessage('RU_ACADEMIC_COUNCIL'), GetMessage('A
 $id = Edu::addUserGroup($group, GetMessage('RU_LEADERSHIP'), GetMessage('LEADERSHIP'));
 $id = Edu::addUserGroup($group, GetMessage('RU_STAFF'), GetMessage('STAFF'));
 $id = Edu::addUserGroup($group, GetMessage('RU_GRADUATE'), GetMessage('GRADUATE'));
-echo \CAdminMessage::ShowNote(GetMessage("module_added_group_title"));
+$adminMessage->ShowNote(GetMessage("module_added_group_title"));
 
-echo \CAdminMessage::ShowNote(GetMessage('module_add_infoblock_title'));
+$adminMessage->ShowNote(GetMessage('module_add_infoblock_title'));
 
 $ib = new \CIBlock;
 $documentsIblockId = Edu::addInfoblock($ib, GetMessage('DOCUMENTS_TITLE'), Edu::DOCUMENTS_INFOBLOCK_CODE, $moduleId);
@@ -140,9 +141,9 @@ $conferenceInfoblockId = Edu::addInfoblock($ib, GetMessage('CONFERENCES_TITLE'),
 $trainingMaterialsId = Edu::addInfoblock($ib, GetMessage('TRAINING_MATERIALS_TITLE'), Edu::TRAINING_MATERIALS_INFOBLOCK_CODE, $moduleId);
 $reviewsInfoblockId = Edu::addInfoblock($ib, GetMessage('REVIEWS_TITLE'), Edu::REVIEWS_INFOBLOCK_CODE, $moduleId);
 $trainingInfoblockId = Edu::addInfoblock($ib, GetMessage('TRAININGS_TITLE'), Edu::TRAININGS_INFOBLOCK_CODE, $moduleId);
-echo \CAdminMessage::ShowNote(GetMessage('module_added_infoblock_title'));
+$adminMessage->ShowNote(GetMessage('module_added_infoblock_title'));
 
-echo \CAdminMessage::ShowNote(GetMessage('module_add_infoblock_attached_property_title'));
+$adminMessage->ShowNote(GetMessage('module_add_infoblock_attached_property_title'));
 
 Edu::addUserField($oUserTypeEntity,
     'UF_PROFESSION',
@@ -167,9 +168,9 @@ Edu::addUserField($oUserTypeEntity,
         'IBLOCK_ID' => $departmentIblockId
     ]
 );
-echo \CAdminMessage::ShowNote(GetMessage('module_added_infoblock_attached_property_title'));
+$adminMessage->ShowNote(GetMessage('module_added_infoblock_attached_property_title'));
 
-echo \CAdminMessage::ShowNote(GetMessage('module_add_infoblock_property_title'));
+$adminMessage->ShowNote(GetMessage('module_add_infoblock_property_title'));
 $property = new \CIBlockProperty();
 $id = Edu::addInfoblockProperty($property,
     GetMessage('FILE_TITLE'),
@@ -399,9 +400,9 @@ $id = Edu::addInfoblockProperty($property,
     $reviewsInfoblockId,
     Edu::USER_INFOBLOCK_PROPERTY_USER_TYPE
 );
-echo \CAdminMessage::ShowNote(GetMessage('module_added_infoblock_property_title'));
+$adminMessage->ShowNote(GetMessage('module_added_infoblock_property_title'));
 
-echo \CAdminMessage::ShowNote(GetMessage('module_add_infoblock_property_values_title'));
+$adminMessage->ShowNote(GetMessage('module_add_infoblock_property_values_title'));
 $iBPEnum = new CIBlockPropertyEnum;
 Edu::addEnumPropertyValue($iBPEnum, $formOfEducationid, GetMessage('EXTRAMURAL_TITLE'));
 Edu::addEnumPropertyValue($iBPEnum, $formOfEducationid, GetMessage('INTERNAL_TITLE'));
@@ -414,6 +415,6 @@ Edu::addEnumPropertyValue($iBPEnum, $languagesId, GetMessage('ITALIAN_TITLE'));
 Edu::addEnumPropertyValue($iBPEnum, $languagesId, GetMessage('ENGLISH_TITLE'));
 Edu::addEnumPropertyValue($iBPEnum, $entityId, GetMessage('STUDENT_TITLE'));
 Edu::addEnumPropertyValue($iBPEnum, $entityId, GetMessage('UNIVERSITY_TITLE'));
-echo \CAdminMessage::ShowNote(GetMessage('module_added_infoblock_property_values_title'));
+$adminMessage->ShowNote(GetMessage('module_added_infoblock_property_values_title'));
 $DB->Commit();
 ?>
