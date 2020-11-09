@@ -443,6 +443,7 @@ class Edu extends CModule
 
     public function __callStatic($name, $args)
     {
+        var_dump($name);
         die('123');
         if (strpos(self::UF, $name) !== FALSE) {
             $parts = explode(self::UF, $name);
