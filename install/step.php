@@ -37,12 +37,7 @@ $adminMessage->ShowNote(GetMessage('module_added_edu_infoblock_type_title'));
 
 $adminMessage->ShowNote(GetMessage('module_add_user_field_title'));
 $oUserTypeEntity = new CUserTypeEntity();
-Edu::addUserField($oUserTypeEntity,
-    GetMessage('UF_BEGIN_TIME'),
-    GetMessage('datetime'),
-    GetMessage('BEGIN_TIME'),
-    GetMessage('BEGIN_TIME_RU_TITLE'),
-    GetMessage('BEGIN_TIME_EN_TITLE'));
+Edu::UF_BEGIN_TIME_type_datetime();
 Edu::addUserField($oUserTypeEntity,
     GetMessage('UF_END_TIME'),
     GetMessage('datetime'),

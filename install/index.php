@@ -2,7 +2,7 @@
 
 /**
  * Class Edu
- * @method void UF_BEGIN_TIME_type_datetime()
+ * @method static void UF_BEGIN_TIME_type_datetime()
  */
 class Edu extends CModule
 {
@@ -110,8 +110,6 @@ class Edu extends CModule
          * \CDatabase $DB
          */
         global $DOCUMENT_ROOT, $APPLICATION, $DB, $moduleId;
-        self::UF_BEGIN_TIME_type_datetime();
-        die('asd');
         try {
             $DB->StartTransaction();
             RegisterModule(self::ID);
@@ -448,8 +446,6 @@ class Edu extends CModule
             $parts = explode(self::TYPE, $parts[1]);
             $id = $parts[0];
             $type = $parts[1];
-            var_dump(self::getUserTypeEntity());
-            die('asd');
             self::addUserField(self::getUserTypeEntity(),
                 GetMessage("UF_$id"),
                 GetMessage($type),
