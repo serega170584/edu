@@ -15,6 +15,13 @@
  * @method static UF_RANK_type_string()
  * @method static UF_ASSESSMENT_type_string()
  * @method static addUG_FOUNDERS()
+ * @method static addUG_BRANCHES()
+ * @method static addUG_MAIN()
+ * @method static addUG_DEPARTMENT()
+ * @method static addUG_ACADEMIC_COUNCIL()
+ * @method static addUG_LEADERSHIP()
+ * @method static addUG_STAFF()
+ * @method static addUG_GRADUATE()
  */
 class Edu extends CModule
 {
@@ -124,8 +131,6 @@ class Edu extends CModule
          * \CDatabase $DB
          */
         global $DOCUMENT_ROOT, $APPLICATION, $DB, $moduleId;
-        Edu::addUG_FOUNDERS();
-        die('asd');
         try {
             $DB->StartTransaction();
             RegisterModule(self::ID);
@@ -471,8 +476,6 @@ class Edu extends CModule
         } elseif (strpos($name, self::ADD_UG) !== FALSE) {
             $parts = explode(self::ADD_UG, $name);
             $groupName = $parts[1];
-            var_dump($groupName);
-            die('asd');
             Edu::addUserGroup(self::getUserGroup(), GetMessage("RU_$groupName"), GetMessage($groupName));
         }
     }

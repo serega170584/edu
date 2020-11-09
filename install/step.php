@@ -55,14 +55,13 @@ $adminMessage->ShowNote(GetMessage("module_add_group_title"));
 
 $group = new \CGroup;
 Edu::addUG_FOUNDERS();
-$id = Edu::addUserGroup($group, GetMessage('RU_FOUNDERS'), GetMessage('FOUNDERS'));
-$id = Edu::addUserGroup($group, GetMessage('RU_BRANCHES'), GetMessage('BRANCHES'));
-$id = Edu::addUserGroup($group, GetMessage('RU_MAIN'), GetMessage('MAIN'));
-$id = Edu::addUserGroup($group, GetMessage('RU_DEPARTMENT'), GetMessage('DEPARTMENT'));
-$id = Edu::addUserGroup($group, GetMessage('RU_ACADEMIC_COUNCIL'), GetMessage('ACADEMIC_COUNCIL'));
-$id = Edu::addUserGroup($group, GetMessage('RU_LEADERSHIP'), GetMessage('LEADERSHIP'));
-$id = Edu::addUserGroup($group, GetMessage('RU_STAFF'), GetMessage('STAFF'));
-$id = Edu::addUserGroup($group, GetMessage('RU_GRADUATE'), GetMessage('GRADUATE'));
+Edu::addUG_BRANCHES();
+Edu::addUG_MAIN();
+Edu::addUG_DEPARTMENT();
+Edu::addUG_ACADEMIC_COUNCIL();
+Edu::addUG_LEADERSHIP();
+Edu::addUG_STAFF();
+Edu::addUG_GRADUATE();
 $adminMessage->ShowNote(GetMessage("module_added_group_title"));
 
 $adminMessage->ShowNote(GetMessage('module_add_infoblock_title'));
