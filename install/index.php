@@ -22,6 +22,7 @@
  * @method static addUG_LEADERSHIP()
  * @method static addUG_STAFF()
  * @method static addUG_GRADUATE()
+ * @method static addIB_DOCUMENTS()
  */
 class Edu extends CModule
 {
@@ -86,8 +87,10 @@ class Edu extends CModule
     const UF = 'UF_';
     const TYPE = '_type_';
     const ADD_UG = 'addUG_';
+    const ADD_IB = 'addIB_';
     private static CUserTypeEntity $userTypeEntity;
     private static CGroup $userGroup;
+    private static CIBlock $ib;
 
     var $MODULE_ID = "edu";
     var $MODULE_VERSION;
@@ -113,6 +116,32 @@ class Edu extends CModule
         $this->MODULE_DESCRIPTION = GetMessage('module_description');
 
         \CModule::IncludeModule('iblock');
+    }
+
+    /**
+     * @param $name
+     * @return int|mixed
+     * @throws \Bitrix\Main\DB\Exception
+     */
+    private static function addIBMethod($name)
+    {
+        global $moduleId;
+        $id = 0;
+        if (strpos($name, self::ADD_IB) !== FALSE) {
+            $parts = explode(self::ADD_IB, $name);
+            $ibName = $parts[1];
+            $id = self::addInfoblock(self::getIB(), GetMessage("{$ibName}_TITLE"), $ibName, $moduleId);
+        }
+        return $id;
+    }
+
+    /**
+     * @return CIBlock
+     */
+    public static function getIB()
+    {
+        self::$ib = self::$ib ?? (new \CIBlock);
+        return self::$ib;
     }
 
     /**
@@ -495,8 +524,12 @@ class Edu extends CModule
 
     public function __callStatic($name, $args)
     {
+        $values = [];
         self::addUFMethod($name);
         self::addUGMethod($name);
+        $values[] = self::addIBMethod($name);
+        $values = array_filter($values);
+        return array_shift($values);
     }
 
     /**
