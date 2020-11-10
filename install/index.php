@@ -184,10 +184,13 @@ class Edu extends CModule
             $parts = explode(self::TYPE, $parts[1]);
             $id = $parts[0];
             $type = $parts[1];
+            var_dump($id);
+            var_dump($type);
+            var_dump($params);
             self::addUserField(self::getUserTypeEntity(),
-                GetMessage("UF_$id"),
-                GetMessage($type),
-                GetMessage($id),
+                "UF_$id",
+                $type,
+                $id,
                 GetMessage("{$id}_RU_TITLE"),
                 GetMessage("{$id}_EN_TITLE"),
                 $params);
