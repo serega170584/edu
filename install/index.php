@@ -186,6 +186,7 @@ class Edu extends CModule
             $type = $parts[1];
             var_dump($id);
             var_dump($type);
+            var_dump($params);
             self::addUserField(self::getUserTypeEntity(),
                 "UF_$id",
                 $type,
