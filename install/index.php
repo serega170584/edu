@@ -23,6 +23,19 @@
  * @method static addUG_STAFF()
  * @method static addUG_GRADUATE()
  * @method static addIB_DOCUMENTS()
+ * @method static addIB_PROFESSIONS()
+ * @method static addIB_FACULTIES()
+ * @method static addIB_SUBJECTS()
+ * @method static addIB_DEPARTMENTS()
+ * @method static addIB_LIBRARY()
+ * @method static addIB_NEWS()
+ * @method static addIB_ADVERTISE()
+ * @method static addIB_DORMS()
+ * @method static addIB_CREATIVES()
+ * @method static addIB_CONFERENCES()
+ * @method static addIB_TRAINING_MATERIALS()
+ * @method static addIB_REVIEWS()
+ * @method static addIB_TRAININGS()
  */
 class Edu extends CModule
 {
@@ -37,10 +50,10 @@ class Edu extends CModule
     const DEPARTMENTS_INFOBLOCK_CODE = 'DEPARTMENTS';
     const LIBRARY_INFOBLOCK_CODE = 'LIBRARY';
     const NEWS_INFOBLOCK_CODE = 'NEWS';
-    const ADVERTISEMENT_INFOBLOCK_CODE = 'ADVERTISEMENT';
-    const DORM_INFOBLOCK_CODE = 'DORM';
-    const CREATIVE_INFOBLOCK_CODE = 'CREATIVE';
-    const CONFERENCE_INFOBLOCK_CODE = 'CONFERENCE';
+    const ADVERTISEMENT_INFOBLOCK_CODE = 'ADVERTISE';
+    const DORM_INFOBLOCK_CODE = 'DORMS';
+    const CREATIVE_INFOBLOCK_CODE = 'CREATIVES';
+    const CONFERENCE_INFOBLOCK_CODE = 'CONFERENCES';
     const TRAINING_MATERIALS_INFOBLOCK_CODE = 'TRAINING_MATERIALS';
     const REVIEWS_INFOBLOCK_CODE = 'REVIEWS';
     const TRAININGS_INFOBLOCK_CODE = 'TRAININGS';
