@@ -381,7 +381,6 @@ class Edu extends CModule
         if ($settings) {
             $aUserFields['SETTINGS'] = $settings;
         }
-        var_dump($aUserFields);
         $res = $oUserTypeEntity->Add($aUserFields);
         if (!$res) {
             $DB->Rollback();
