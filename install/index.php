@@ -147,11 +147,11 @@ class Edu extends CModule
 
     /**
      * @param $name
-     * @param $id
+     * @param $iblockId
      * @return int|mixed
      * @throws \Bitrix\Main\DB\Exception
      */
-    private static function addIBPropertyMethod($name, $id)
+    private static function addIBPropertyMethod($name, $iblockId)
     {
         $id = 0;
         if (strpos($name, self::ADD_PROPERTY_IB) !== FALSE) {
@@ -161,11 +161,12 @@ class Edu extends CModule
             $type = $parts[1];
             var_dump($id);
             var_dump($type);
+            var_dump($iblockId);
             $id = Edu::addInfoblockProperty(self::getIBlockProperty(),
                 GetMessage("{$id}_TITLE"),
                 $id,
                 $type,
-                $id
+                $iblockId
             );
         }
         return $id;
