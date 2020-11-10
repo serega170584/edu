@@ -43,8 +43,8 @@ Edu::deleteUserField($oUserTypeEntity, 'UF_DEGREE');
 Edu::deleteUserField($oUserTypeEntity, 'UF_RANK');
 Edu::deleteUserField($oUserTypeEntity, 'UF_RANK');
 Edu::deleteUserField($oUserTypeEntity, 'UF_ASSESSMENT');
-//Edu::deleteUserField($oUserTypeEntity, 'UF_PROFESSION');
-//Edu::deleteUserField($oUserTypeEntity, 'UF_DEPARTMENT');
+Edu::deleteUserField($oUserTypeEntity, 'UF_PROFESSION');
+Edu::deleteUserField($oUserTypeEntity, 'UF_DEPARTMENT');
 $adminMessage->ShowNote(GetMessage('module_deleted_user_field_title'));
 
 $adminMessage->ShowNote(GetMessage('module_delete_group_title'));

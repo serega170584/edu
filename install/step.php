@@ -81,6 +81,17 @@ $trainingInfoblockId = Edu::addIB_TRAININGS();
 $adminMessage->ShowNote(GetMessage('module_added_infoblock_title'));
 
 $adminMessage->ShowNote(GetMessage('module_add_infoblock_attached_property_title'));
+//Edu::addUserField($oUserTypeEntity,
+//    'UF_PROFESSION',
+//    'iblock_element',
+//    'PROFESSION',
+//    GetMessage('RU_UF_PROFESSION_TITLE'),
+//    GetMessage('EN_UF_PROFESSION_TITLE'),
+//    [
+//        'IBLOCK_TYPE_ID' => $moduleId,
+//        'IBLOCK_ID' => $professionsIblockId
+//    ]
+//);
 Edu::UF_PROFESSION_type_iblock_element([
     'IBLOCK_TYPE_ID' => $moduleId,
     'IBLOCK_ID' => $professionsIblockId
