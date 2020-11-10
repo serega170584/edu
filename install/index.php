@@ -122,7 +122,6 @@ class Edu extends CModule
     private static function addUGMethod($name)
     {
         if (strpos($name, self::ADD_UG) !== FALSE) {
-            die('456');
             $parts = explode(self::ADD_UG, $name);
             $groupName = $parts[1];
             Edu::addUserGroup(self::getUserGroup(), GetMessage("RU_$groupName"), GetMessage($groupName));
@@ -140,9 +139,6 @@ class Edu extends CModule
             $parts = explode(self::TYPE, $parts[1]);
             $id = $parts[0];
             $type = $parts[1];
-            var_dump($id);
-            var_dump($type);
-            die('123');
             self::addUserField(self::getUserTypeEntity(),
                 GetMessage("UF_$id"),
                 GetMessage($type),
@@ -168,8 +164,6 @@ class Edu extends CModule
          * \CDatabase $DB
          */
         global $DOCUMENT_ROOT, $APPLICATION, $DB, $moduleId;
-        self::UF_BEGIN_TIME_type_datetime();
-        die('asd');
         try {
             $DB->StartTransaction();
             RegisterModule(self::ID);
