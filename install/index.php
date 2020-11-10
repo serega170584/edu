@@ -115,6 +115,43 @@ class Edu extends CModule
         \CModule::IncludeModule('iblock');
     }
 
+    /**
+     * @param $name
+     * @throws \Bitrix\Main\DB\Exception
+     */
+    private static function addUGMethod($name)
+    {
+        if (strpos($name, self::ADD_UG) !== FALSE) {
+            die('456');
+            $parts = explode(self::ADD_UG, $name);
+            $groupName = $parts[1];
+            Edu::addUserGroup(self::getUserGroup(), GetMessage("RU_$groupName"), GetMessage($groupName));
+        }
+    }
+
+    /**
+     * @param $name
+     * @throws \Bitrix\Main\DB\Exception
+     */
+    private static function addUFMethod($name)
+    {
+        if (strpos($name, self::UF) !== FALSE) {
+            $parts = explode(self::UF, $name);
+            $parts = explode(self::TYPE, $parts[1]);
+            $id = $parts[0];
+            $type = $parts[1];
+            var_dump($id);
+            var_dump($type);
+            die('123');
+            self::addUserField(self::getUserTypeEntity(),
+                GetMessage("UF_$id"),
+                GetMessage($type),
+                GetMessage($id),
+                GetMessage("{$id}_RU_TITLE"),
+                GetMessage("{$id}_EN_TITLE"));
+        }
+    }
+
     function InstallFiles()
     {
         return true;
@@ -131,6 +168,8 @@ class Edu extends CModule
          * \CDatabase $DB
          */
         global $DOCUMENT_ROOT, $APPLICATION, $DB, $moduleId;
+        self::UF_BEGIN_TIME_type_datetime();
+        die('asd');
         try {
             $DB->StartTransaction();
             RegisterModule(self::ID);
@@ -462,24 +501,9 @@ class Edu extends CModule
 
     public function __callStatic($name, $args)
     {
-        if (strpos($name, self::UF) !== FALSE) {
-            $parts = explode(self::UF, $name);
-            $parts = explode(self::TYPE, $parts[1]);
-            $id = $parts[0];
-            $type = $parts[1];
-            self::addUserField(self::getUserTypeEntity(),
-                GetMessage("UF_$id"),
-                GetMessage($type),
-                GetMessage($id),
-                GetMessage("{$id}_RU_TITLE"),
-                GetMessage("{$id}_EN_TITLE"));
-        } elseif (strpos($name, self::ADD_UG) !== FALSE) {
-            $parts = explode(self::ADD_UG, $name);
-            $groupName = $parts[1];
-            Edu::addUserGroup(self::getUserGroup(), GetMessage("RU_$groupName"), GetMessage($groupName));
-        }
+        self::addUFMethod($name);
+        self::addUGMethod($name);
     }
-
 
     /**
      * @return CGroup

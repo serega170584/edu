@@ -53,7 +53,6 @@ $adminMessage->ShowNote(GetMessage('module_added_user_field_title'));
 
 $adminMessage->ShowNote(GetMessage("module_add_group_title"));
 
-$group = new \CGroup;
 Edu::addUG_FOUNDERS();
 Edu::addUG_BRANCHES();
 Edu::addUG_MAIN();
