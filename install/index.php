@@ -38,6 +38,7 @@
  * @method static addIB_TRAININGS()
  * @method static UF_PROFESSION_type_iblock_element(array $array)
  * @method static UF_DEPARTMENT_type_iblock_element(array $array)
+ * @method static addPropertyIB_FILE_type_F($documentsIblockId)
  */
 class Edu extends CModule
 {
@@ -103,9 +104,11 @@ class Edu extends CModule
     const TYPE = '_type_';
     const ADD_UG = 'addUG_';
     const ADD_IB = 'addIB_';
+    const ADD_PROPERTY_IB = 'addPropertyIB_';
     private static CUserTypeEntity $userTypeEntity;
     private static CGroup $userGroup;
     private static CIBlock $ib;
+    private static CIBlockProperty $iBlockProperty;
 
     var $MODULE_ID = "edu";
     var $MODULE_VERSION;
@@ -131,6 +134,41 @@ class Edu extends CModule
         $this->MODULE_DESCRIPTION = GetMessage('module_description');
 
         \CModule::IncludeModule('iblock');
+    }
+
+    /**
+     * @return CIBlockProperty
+     */
+    private static function getIBlockProperty()
+    {
+        self::$iBlockProperty = self::$iBlockProperty ?? (new \CIBlockProperty());
+        return self::$iBlockProperty;
+    }
+
+    /**
+     * @param $name
+     * @param $id
+     * @return int|mixed
+     * @throws \Bitrix\Main\DB\Exception
+     */
+    private static function addIBPropertyMethod($name, $id)
+    {
+        $id = 0;
+        if (strpos($name, self::ADD_PROPERTY_IB) !== FALSE) {
+            $parts = explode(self::ADD_PROPERTY_IB, $name);
+            $parts = explode(self::TYPE, $parts[1]);
+            $id = $parts[0];
+            $type = $parts[1];
+            var_dump($id);
+            var_dump($type);
+            $id = Edu::addInfoblockProperty(self::getIBlockProperty(),
+                GetMessage("{$id}_TITLE"),
+                $id,
+                $type,
+                $id
+            );
+        }
+        return $id;
     }
 
     /**
@@ -545,6 +583,7 @@ class Edu extends CModule
         self::addUFMethod($name, $args[0] ?? []);
         self::addUGMethod($name);
         $values[] = self::addIBMethod($name);
+        $values[] = self::addIBPropertyMethod($name, $args[0] ?? 0);
         $values = array_filter($values);
         return array_shift($values);
     }

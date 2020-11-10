@@ -36,7 +36,6 @@ if (!$res) {
 $adminMessage->ShowNote(GetMessage('module_added_edu_infoblock_type_title'));
 
 $adminMessage->ShowNote(GetMessage('module_add_user_field_title'));
-$oUserTypeEntity = new CUserTypeEntity();
 Edu::UF_BEGIN_TIME_type_datetime();
 Edu::UF_END_TIME_type_datetime();
 Edu::UF_SITE_type_string();
@@ -52,7 +51,6 @@ Edu::UF_ASSESSMENT_type_string();
 $adminMessage->ShowNote(GetMessage('module_added_user_field_title'));
 
 $adminMessage->ShowNote(GetMessage("module_add_group_title"));
-
 Edu::addUG_FOUNDERS();
 Edu::addUG_BRANCHES();
 Edu::addUG_MAIN();
@@ -92,7 +90,8 @@ Edu::UF_DEPARTMENT_type_iblock_element([
 $adminMessage->ShowNote(GetMessage('module_added_infoblock_attached_property_title'));
 
 $adminMessage->ShowNote(GetMessage('module_add_infoblock_property_title'));
-//$property = new \CIBlockProperty();
+$property = new \CIBlockProperty();
+$id = Edu::addPropertyIB_FILE_type_F($documentsIblockId);
 //$id = Edu::addInfoblockProperty($property,
 //    GetMessage('FILE_TITLE'),
 //    Edu::DOCUMENT_INFOBLOCK_FILE_PROPERTY_CODE,
