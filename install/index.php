@@ -184,10 +184,6 @@ class Edu extends CModule
             $parts = explode(self::TYPE, $parts[1]);
             $id = $parts[0];
             $type = $parts[1];
-            var_dump($id);
-            var_dump($type);
-            var_dump($params);
-            die('asd');
             self::addUserField(self::getUserTypeEntity(),
                 GetMessage("UF_$id"),
                 GetMessage($type),
@@ -214,11 +210,6 @@ class Edu extends CModule
          * \CDatabase $DB
          */
         global $DOCUMENT_ROOT, $APPLICATION, $DB, $moduleId;
-        Edu::UF_PROFESSION_type_iblock_element([
-            'IBLOCK_TYPE_ID' => $moduleId,
-            'IBLOCK_ID' => 123
-        ]);
-        die('asd');
         try {
             $DB->StartTransaction();
             RegisterModule(self::ID);
