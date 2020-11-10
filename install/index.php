@@ -36,6 +36,8 @@
  * @method static addIB_TRAINING_MATERIALS()
  * @method static addIB_REVIEWS()
  * @method static addIB_TRAININGS()
+ * @method static UF_PROFESSION_type_iblock_element(array $array)
+ * @method static UF_DEPARTMENT_type_iblock_element(array $array)
  */
 class Edu extends CModule
 {
@@ -172,21 +174,27 @@ class Edu extends CModule
 
     /**
      * @param $name
+     * @param array $params
      * @throws \Bitrix\Main\DB\Exception
      */
-    private static function addUFMethod($name)
+    private static function addUFMethod($name, $params = [])
     {
         if (strpos($name, self::UF) !== FALSE) {
             $parts = explode(self::UF, $name);
             $parts = explode(self::TYPE, $parts[1]);
             $id = $parts[0];
             $type = $parts[1];
+            var_dump($id);
+            var_dump($type);
+            var_dump($params);
+            die('asd');
             self::addUserField(self::getUserTypeEntity(),
                 GetMessage("UF_$id"),
                 GetMessage($type),
                 GetMessage($id),
                 GetMessage("{$id}_RU_TITLE"),
-                GetMessage("{$id}_EN_TITLE"));
+                GetMessage("{$id}_EN_TITLE"),
+                $params);
         }
     }
 
@@ -206,6 +214,11 @@ class Edu extends CModule
          * \CDatabase $DB
          */
         global $DOCUMENT_ROOT, $APPLICATION, $DB, $moduleId;
+        Edu::UF_PROFESSION_type_iblock_element([
+            'IBLOCK_TYPE_ID' => $moduleId,
+            'IBLOCK_ID' => 123
+        ]);
+        die('asd');
         try {
             $DB->StartTransaction();
             RegisterModule(self::ID);
@@ -538,7 +551,7 @@ class Edu extends CModule
     public function __callStatic($name, $args)
     {
         $values = [];
-        self::addUFMethod($name);
+        self::addUFMethod($name, $args[0] ?? []);
         self::addUGMethod($name);
         $values[] = self::addIBMethod($name);
         $values = array_filter($values);
