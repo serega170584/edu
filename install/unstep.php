@@ -59,7 +59,7 @@ Edu::deleteUserGroup('GRADUATE');
 $adminMessage->ShowNote(GetMessage('module_deleted_group_title'));
 
 $adminMessage->ShowNote(GetMessage('module_delete_infoblock_property_title'));
-//Edu::deleteInfoblockProperty(EDU::DOCUMENT_INFOBLOCK_FILE_PROPERTY_CODE, $documentsIblockId);
+Edu::deleteInfoblockProperty(EDU::DOCUMENT_INFOBLOCK_FILE_PROPERTY_CODE, $documentsIblockId);
 //Edu::deleteInfoblockProperty(EDU::PROFESSIONS_INFOBLOCK_FORM_OF_EDUCATION_PROPERTY_CODE, $professionsIblockId);
 //Edu::deleteInfoblockProperty(EDU::PROFESSIONS_INFOBLOCK_PERIOD_PROPERTY_CODE, $professionsIblockId);
 //Edu::deleteInfoblockProperty(EDU::PROFESSIONS_INFOBLOCK_ACCREDITATION_PERIOD_PROPERTY_CODE, $professionsIblockId);
