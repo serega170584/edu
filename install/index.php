@@ -347,7 +347,6 @@ class Edu extends CModule
         global $DOCUMENT_ROOT, $APPLICATION, $DB, $moduleId;
         try {
             $DB->StartTransaction();
-            UnRegisterModule(self::ID);
             RegisterModule(self::ID);
             $moduleId = self::ID;
             $APPLICATION->IncludeAdminFile(sprintf(GetMessage('module_setup_step_title'), self::ID), $DOCUMENT_ROOT . "/" . self::DIRECTORY . "/step.php");
