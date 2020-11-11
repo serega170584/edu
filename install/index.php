@@ -193,15 +193,15 @@ class Edu extends CModule
 
     /**
      * @param $name
-     * @param int $id
+     * @param $propertyId
      * @throws \Bitrix\Main\DB\Exception
      */
-    private static function addEnumPVMethod($name, int $id)
+    private static function addEnumPVMethod($name, $propertyId)
     {
         if (strpos($name, self::ADD_ENUM_PV) !== FALSE) {
             $parts = explode(self::ADD_ENUM_PV, $name);
             $id = $parts[1];
-            self::addEnumPropertyValue(self::getIBlockPropertyEnum(), $id, GetMessage("{$id}_TITLE"));
+            self::addEnumPropertyValue(self::getIBlockPropertyEnum(), $propertyId, GetMessage("{$id}_TITLE"));
         }
     }
 
