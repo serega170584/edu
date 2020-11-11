@@ -102,85 +102,17 @@ $id = Edu::addPropertyIB_PLAN_type_F($professionsIblockId);
 $id = Edu::addPropertyIB_ANNOTATIONS_type_F($professionsIblockId);
 $id = Edu::addPropertyIB_SCHEDULE_type_F($professionsIblockId);
 $id = Edu::addPropertyIB_METHODOLOGICAL_DOCUMENTS_type_F($professionsIblockId, null, true);
-//$id = Edu::addInfoblockProperty($property,
-//    GetMessage('METHODOLOGICAL_TITLE'),
-//    Edu::PROFESSIONS_INFOBLOCK_METHODOLOGICAL_DOCUMENTS_PROPERTY_CODE,
-//    Edu::FILE_INFOBLOCK_PROPERTY_TYPE,
-//    $professionsIblockId,
-//    null,
-//    true
-//);
-//$id = Edu::addInfoblockProperty($property,
-//    GetMessage('PRACTICES_TITLE'),
-//    Edu::PROFESSIONS_INFOBLOCK_PRACTICES_PROPERTY_CODE,
-//    Edu::FILE_INFOBLOCK_PROPERTY_TYPE,
-//    $professionsIblockId
-//);
-//$id = Edu::addInfoblockProperty($property,
-//    GetMessage('BUDGET_COUNT_TITLE'),
-//    Edu::PROFESSIONS_INFOBLOCK_BUDGET_COUNT_PROPERTY_CODE,
-//    Edu::STRING_INFOBLOCK_PROPERTY_TYPE,
-//    $professionsIblockId
-//);
-//$id = Edu::addInfoblockProperty($property,
-//    GetMessage('PAYED_COUNT_TITLE'),
-//    Edu::PROFESSIONS_INFOBLOCK_PAYED_COUNT_PROPERTY_CODE,
-//    Edu::STRING_INFOBLOCK_PROPERTY_TYPE,
-//    $professionsIblockId
-//);
-//$id = Edu::addInfoblockProperty($property,
-//    GetMessage('PRICE_TITLE'),
-//    Edu::PROFESSIONS_INFOBLOCK_PRICE_PROPERTY_CODE,
-//    Edu::STRING_INFOBLOCK_PROPERTY_TYPE,
-//    $professionsIblockId
-//);
-//$id = Edu::addInfoblockProperty($property,
-//    GetMessage('PREPARATORY_PROFILE_TITLE'),
-//    Edu::PROFESSIONS_INFOBLOCK_PREPARATORY_PROFILE_PROPERTY_CODE,
-//    Edu::STRING_INFOBLOCK_PROPERTY_TYPE,
-//    $professionsIblockId
-//);
-//$id = Edu::addInfoblockProperty($property,
-//    GetMessage('PRINCIPAL_SUBJECTS_TITLE'),
-//    Edu::PROFESSIONS_INFOBLOCK_PRINCIPAL_SUBJECTS_PROPERTY_CODE,
-//    Edu::STRING_INFOBLOCK_PROPERTY_TYPE,
-//    $professionsIblockId
-//);
-//$languagesId = Edu::addInfoblockProperty($property,
-//    GetMessage('LANGUAGES_TITLE'),
-//    Edu::PROFESSIONS_INFOBLOCK_LANGUAGES_PROPERTY_CODE,
-//    Edu::LIST_INFOBLOCK_PROPERTY_TYPE,
-//    $professionsIblockId,
-//    null,
-//    true
-//);
-//$id = Edu::addInfoblockProperty($property,
-//    GetMessage('RESEARCHES_TITLE'),
-//    Edu::PROFESSIONS_INFOBLOCK_RESEARCHES_PROPERTY_CODE,
-//    Edu::FILE_INFOBLOCK_PROPERTY_TYPE,
-//    $professionsIblockId
-//);
-//$id = Edu::addInfoblockProperty($property,
-//    GetMessage('RESULTS_TITLE'),
-//    Edu::PROFESSIONS_INFOBLOCK_RESULTS_PROPERTY_CODE,
-//    Edu::FILE_INFOBLOCK_PROPERTY_TYPE,
-//    $professionsIblockId
-//);
-//$id = Edu::addInfoblockProperty($property,
-//    GetMessage('REPLACED_RESULTS_TITLE'),
-//    Edu::PROFESSIONS_INFOBLOCK_REPLACED_RESULTS_PROPERTY_CODE,
-//    Edu::FILE_INFOBLOCK_PROPERTY_TYPE,
-//    $professionsIblockId
-//);
-//$facultyId = Edu::addInfoblockProperty($property,
-//    GetMessage('FACULTY_TITLE'),
-//    Edu::INFOBLOCK_FACULTY_PROPERTY_CODE,
-//    Edu::ELEMENT_INFOBLOCK_PROPERTY_TYPE,
-//    $professionsIblockId,
-//    null,
-//    false,
-//    $facultiesIblockId
-//);
+$id = Edu::addPropertyIB_PRACTICES_type_F($professionsIblockId);
+$id = Edu::addPropertyIB_BUDGET_COUNT_type_S($professionsIblockId);
+$id = Edu::addPropertyIB_PAYED_COUNT_type_S($professionsIblockId);
+$id = Edu::addPropertyIB_PRICE_type_S($professionsIblockId);
+$id = Edu::addPropertyIB_PREPARATORY_PROFILE_type_S($professionsIblockId);
+$id = Edu::addPropertyIB_PRINCIPAL_SUBJECTS_type_S($professionsIblockId);
+$languagesId = Edu::addPropertyIB_LANGUAGES_type_L($professionsIblockId, null, true);
+$id = Edu::addPropertyIB_RESEARCHES_type_F($professionsIblockId);
+$id = Edu::addPropertyIB_RESULTS_type_F($professionsIblockId);
+$id = Edu::addPropertyIB_REPLACED_RESULTS_type_F($professionsIblockId);
+$facultyId = Edu::addPropertyIB_FACULTY_type_E($professionsIblockId, null, false, $facultiesIblockId);
 //$preliminaryTestId = Edu::addInfoblockProperty($property,
 //    GetMessage('PRELIMINARY_TESTS_TITLE'),
 //    Edu::PROFESSIONS_INFOBLOCK_PRELIMINARY_TESTS_PROPERTY_CODE,

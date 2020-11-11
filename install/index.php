@@ -50,6 +50,18 @@
  * @method static addPropertyIB_SCHEDULE_type_F($professionsIblockId)
  * @method static addPropertyIB_ACCREDITATION_PERIOD_type_S($professionsIblockId)
  * @method static addPropertyIB_METHODOLOGICAL_DOCUMENTS_type_F($professionsIblockId, $null, bool $true)
+ * @method static addPropertyIB_PRACTICES_type_F($professionsIblockId, $null, bool $true)
+ * @method static addPropertyIB_BUDGET_COUNT_type_S($professionsIblockId)
+ * @method static addPropertyIB_PAYED_COUNT_type_S($professionsIblockId)
+ * @method static addPropertyIB_PRICE_type_S($professionsIblockId)
+ * @method static addPropertyIB_PREPARATORY_PROFILE_type_S($professionsIblockId)
+ * @method static addPropertyIB_PRINCIPAL_SUBJECTS_type_S($professionsIblockId)
+ * @method static addPropertyIB_LANGUAGES_type_L($professionsIblockId)
+ * @method static addPropertyIB_RESEARCHES_type_F($professionsIblockId)
+ * @method static addPropertyIB_RESULTS_type_F($professionsIblockId)
+ * @method static addPropertyIB_REPLACED_RESULTS_type_F($professionsIblockId)
+ * @method static addPropertyIB_FACULTY_type_F($professionsIblockId)
+ * @method static addPropertyIB_FACULTY_type_E($professionsIblockId, $null, false $false, $facultiesIblockId)
  */
 class Edu extends CModule
 {
