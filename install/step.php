@@ -90,9 +90,8 @@ Edu::UF_DEPARTMENT_type_iblock_element([
 $adminMessage->ShowNote(GetMessage('module_added_infoblock_attached_property_title'));
 
 $adminMessage->ShowNote(GetMessage('module_add_infoblock_property_title'));
-$property = new \CIBlockProperty();
 $id = Edu::addPropertyIB_FILE_type_F($documentsIblockId);
-$id = Edu::addPropertyIB_FORM_OF_EDUCATION_type_L($documentsIblockId);
+$formOfEducationid = Edu::addPropertyIB_FORM_OF_EDUCATION_type_L($documentsIblockId);
 $id = Edu::addPropertyIB_PERIOD_type_S($professionsIblockId);
 $id = Edu::addPropertyIB_ACCREDITATION_PERIOD_type_S($professionsIblockId);
 $levelId = Edu::addPropertyIB_LEVEL_type_L($professionsIblockId);
@@ -129,18 +128,18 @@ $id = Edu::addPropertyIB_USER_type_S($reviewsInfoblockId);
 $adminMessage->ShowNote(GetMessage('module_added_infoblock_property_title'));
 
 $adminMessage->ShowNote(GetMessage('module_add_infoblock_property_values_title'));
-//$iBPEnum = new CIBlockPropertyEnum;
-//Edu::addEnumPropertyValue($iBPEnum, $formOfEducationid, GetMessage('EXTRAMURAL_TITLE'));
-//Edu::addEnumPropertyValue($iBPEnum, $formOfEducationid, GetMessage('INTERNAL_TITLE'));
-//Edu::addEnumPropertyValue($iBPEnum, $levelId, GetMessage('BACHELOR_TITLE'));
-//Edu::addEnumPropertyValue($iBPEnum, $levelId, GetMessage('MAGISTRACY_TITLE'));
-//Edu::addEnumPropertyValue($iBPEnum, $levelId, GetMessage('SPECIALIST_TITLE'));
-//Edu::addEnumPropertyValue($iBPEnum, $levelId, GetMessage('GRADUATE_SCHOOL_TITLE'));
-//Edu::addEnumPropertyValue($iBPEnum, $languagesId, GetMessage('RUSSIAN_TITLE'));
-//Edu::addEnumPropertyValue($iBPEnum, $languagesId, GetMessage('ITALIAN_TITLE'));
-//Edu::addEnumPropertyValue($iBPEnum, $languagesId, GetMessage('ENGLISH_TITLE'));
-//Edu::addEnumPropertyValue($iBPEnum, $entityId, GetMessage('STUDENT_TITLE'));
-//Edu::addEnumPropertyValue($iBPEnum, $entityId, GetMessage('UNIVERSITY_TITLE'));
+$iBPEnum = new CIBlockPropertyEnum;
+Edu::addEnumPV_EXTRAMURAL($formOfEducationid);
+Edu::addEnumPV_INTERNAL($formOfEducationid);
+Edu::addEnumPV_BACHELOR($levelId);
+Edu::addEnumPV_MAGISTRACY($levelId);
+Edu::addEnumPV_SPECIALIST($levelId);
+Edu::addEnumPV_GRADUATE_SCHOOL($levelId);
+Edu::addEnumPV_RUSSIAN($languagesId);
+Edu::addEnumPV_ITALIAN($languagesId);
+Edu::addEnumPV_ENGLISH($languagesId);
+Edu::addEnumPV_STUDENT($entityId);
+Edu::addEnumPV_UNIVERSITY($entityId);
 $adminMessage->ShowNote(GetMessage('module_added_infoblock_property_values_title'));
 $DB->Commit();
 ?>
