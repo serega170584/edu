@@ -323,7 +323,7 @@ class Edu extends CModule
     private static function deleteUserFieldMethod($name)
     {
         if (strpos($name, self::DELETE_UF) !== FALSE) {
-            $name = explode(self::DELETE_UF, $name)[1];
+            $name = 'UF_' . explode(self::DELETE_UF, $name)[1];
             var_dump($name);
             Edu::deleteUserField(self::getUserTypeEntity(), $name);
         }
