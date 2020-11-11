@@ -346,6 +346,7 @@ class Edu extends CModule
          */
         global $DOCUMENT_ROOT, $APPLICATION, $DB, $moduleId;
         try {
+            \CIBlockType::Delete(self::ID);
             $DB->StartTransaction();
             RegisterModule(self::ID);
             $moduleId = self::ID;
