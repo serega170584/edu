@@ -30,20 +30,20 @@ $adminMessage->ShowNote(GetMessage('module_deleted_infoblock_property_values_tit
 
 $oUserTypeEntity = new CUserTypeEntity();
 $adminMessage->ShowNote(GetMessage('module_delete_user_field_title'));
-Edu::deleteUserF_UF_BEGIN_TIME();
-Edu::deleteUserF_UF_END_TIME();
-Edu::deleteUserF_UF_SITE();
-Edu::deleteUserF_UF_DOCUMENT();
-Edu::deleteUserF_UF_TIME_ADDITION();
-Edu::deleteUserF_UF_GENERAL_EXPERIENCE();
-Edu::deleteUserF_UF_PROFESSION_EXPERIENCE();
-Edu::deleteUserF_UF_POSITION();
-Edu::deleteUserF_UF_SUBJECT();
-Edu::deleteUserF_UF_DEGREE();
-Edu::deleteUserF_UF_RANK();
-Edu::deleteUserF_UF_ASSESSMENT();
-Edu::deleteUserF_UF_PROFESSION();
-Edu::deleteUserF_UF_DEPARTMENT();
+Edu::deleteUserF_BEGIN_TIME();
+Edu::deleteUserF_END_TIME();
+Edu::deleteUserF_SITE();
+Edu::deleteUserF_DOCUMENT();
+Edu::deleteUserF_TIME_ADDITION();
+Edu::deleteUserF_GENERAL_EXPERIENCE();
+Edu::deleteUserF_PROFESSION_EXPERIENCE();
+Edu::deleteUserF_POSITION();
+Edu::deleteUserF_SUBJECT();
+Edu::deleteUserF_DEGREE();
+Edu::deleteUserF_RANK();
+Edu::deleteUserF_ASSESSMENT();
+Edu::deleteUserF_PROFESSION();
+Edu::deleteUserF_DEPARTMENT();
 $adminMessage->ShowNote(GetMessage('module_deleted_user_field_title'));
 
 $adminMessage->ShowNote(GetMessage('module_delete_group_title'));
