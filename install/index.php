@@ -97,6 +97,14 @@
  * @method static deleteUserF_ASSESSMENT()
  * @method static deleteUserF_PROFESSION()
  * @method static deleteUserF_DEPARTMENT()
+ * @method static deleteUG_FOUNDERS()
+ * @method static deleteUG_BRANCHES()
+ * @method static deleteUG_MAIN()
+ * @method static deleteUG_DEPARTMENT()
+ * @method static deleteUG_ACADEMIC_COUNCIL()
+ * @method static deleteUG_LEADERSHIP()
+ * @method static deleteUG_STAFF()
+ * @method static deleteUG_GRADUATE()
  */
 class Edu extends CModule
 {
@@ -165,6 +173,7 @@ class Edu extends CModule
     const ADD_PROPERTY_IB = 'addPropertyIB_';
     const ADD_ENUM_PV = 'addEnumPV_';
     const DELETE_UF = 'deleteUserF_';
+    const DELETE_UG = 'deleteUG_';
     private static CUserTypeEntity $userTypeEntity;
     private static CGroup $userGroup;
     private static CIBlock $ib;
@@ -325,6 +334,18 @@ class Edu extends CModule
         if (strpos($name, self::DELETE_UF) !== FALSE) {
             $name = 'UF_' . explode(self::DELETE_UF, $name)[1];
             Edu::deleteUserField(self::getUserTypeEntity(), $name);
+        }
+    }
+
+    /**
+     * @param $name
+     * @throws \Bitrix\Main\DB\Exception
+     */
+    private static function deleteUserGroupMethod($name)
+    {
+        if (strpos($name, self::DELETE_UG) !== FALSE) {
+            $name = explode(self::DELETE_UG, $name)[1];
+            Edu::deleteUserGroup($name);
         }
     }
 
@@ -688,6 +709,7 @@ class Edu extends CModule
         $values[] = self::addIBPropertyMethod($name, $args[0] ?? 0, $args[1] ?? null, $args[2] ?? false, $args[3] ?? null);
         self::addEnumPVMethod($name, $args[0] ?? 0);
         self::deleteUserFieldMethod($name);
+        self::deleteUserGroupMethod($name);
         $values = array_filter($values);
         return array_shift($values);
     }

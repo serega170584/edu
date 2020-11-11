@@ -28,7 +28,6 @@ Edu::deleteInfoblockPropertyEnumValues($professionsIblockId);
 Edu::deleteInfoblockPropertyEnumValues($newsInfoblockId);
 $adminMessage->ShowNote(GetMessage('module_deleted_infoblock_property_values_title'));
 
-$oUserTypeEntity = new CUserTypeEntity();
 $adminMessage->ShowNote(GetMessage('module_delete_user_field_title'));
 Edu::deleteUserF_BEGIN_TIME();
 Edu::deleteUserF_END_TIME();
@@ -47,14 +46,14 @@ Edu::deleteUserF_DEPARTMENT();
 $adminMessage->ShowNote(GetMessage('module_deleted_user_field_title'));
 
 $adminMessage->ShowNote(GetMessage('module_delete_group_title'));
-Edu::deleteUserGroup('FOUNDERS');
-Edu::deleteUserGroup('BRANCHES');
-Edu::deleteUserGroup('MAIN');
-Edu::deleteUserGroup('DEPARTMENT');
-Edu::deleteUserGroup('ACADEMIC_COUNCIL');
-Edu::deleteUserGroup('LEADERSHIP');
-Edu::deleteUserGroup('STAFF');
-Edu::deleteUserGroup('GRADUATE');
+Edu::deleteUG_FOUNDERS();
+Edu::deleteUG_BRANCHES();
+Edu::deleteUG_MAIN();
+Edu::deleteUG_DEPARTMENT();
+Edu::deleteUG_ACADEMIC_COUNCIL();
+Edu::deleteUG_LEADERSHIP();
+Edu::deleteUG_STAFF();
+Edu::deleteUG_GRADUATE();
 $adminMessage->ShowNote(GetMessage('module_deleted_group_title'));
 
 $adminMessage->ShowNote(GetMessage('module_delete_infoblock_property_title'));
