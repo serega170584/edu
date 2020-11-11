@@ -347,10 +347,10 @@ class Edu extends CModule
         global $DOCUMENT_ROOT, $APPLICATION, $DB, $moduleId;
         try {
             \CIBlockType::Delete(self::ID);
-            $DB->StartTransaction();
-            RegisterModule(self::ID);
-            $moduleId = self::ID;
-            $APPLICATION->IncludeAdminFile(sprintf(GetMessage('module_setup_step_title'), self::ID), $DOCUMENT_ROOT . "/" . self::DIRECTORY . "/step.php");
+//            $DB->StartTransaction();
+//            RegisterModule(self::ID);
+//            $moduleId = self::ID;
+//            $APPLICATION->IncludeAdminFile(sprintf(GetMessage('module_setup_step_title'), self::ID), $DOCUMENT_ROOT . "/" . self::DIRECTORY . "/step.php");
         } catch (\Exception $e) {
             $APPLICATION->IncludeAdminFile($e->getMessage(), $DOCUMENT_ROOT . "/" . self::DIRECTORY . "/error_step.php");
         }
