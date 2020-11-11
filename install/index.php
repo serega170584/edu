@@ -548,9 +548,6 @@ class Edu extends CModule
         }
         $id = $property->Add($arFields);
         if (!($id > 0)) {
-            var_dump($property->LAST_ERROR);
-            var_dump($DB->GetErrorSQL());
-            var_dump($DB->GetErrorMessage());
             $DB->Rollback();
             throw new \Bitrix\Main\DB\Exception(GetMessage('db_add_infoblock_property_error'));
         }
