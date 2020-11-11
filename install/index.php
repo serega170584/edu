@@ -105,6 +105,38 @@
  * @method static deleteUG_LEADERSHIP()
  * @method static deleteUG_STAFF()
  * @method static deleteUG_GRADUATE()
+ * @method static deletePropertyIB_FILE($documentsIblockId)
+ * @method static deletePropertyIB_FORM_OF_EDUCATION($documentsIblockId)
+ * @method static deletePropertyIB_PERIOD($professionsIblockId)
+ * @method static deletePropertyIB_ACCREDITATION_PERIOD($professionsIblockId)
+ * @method static deletePropertyIB_LEVEL($professionsIblockId)
+ * @method static deletePropertyIB_DESCRIPTION($professionsIblockId)
+ * @method static deletePropertyIB_PLAN($professionsIblockId)
+ * @method static deletePropertyIB_ANNOTATIONS($professionsIblockId)
+ * @method static deletePropertyIB_SCHEDULE($professionsIblockId)
+ * @method static deletePropertyIB_METHODOLOGICAL_DOCUMENTS($professionsIblockId)
+ * @method static deletePropertyIB_PRACTICES($professionsIblockId)
+ * @method static deletePropertyIB_BUDGET_COUNT($professionsIblockId)
+ * @method static deletePropertyIB_PAYED_COUNT($professionsIblockId)
+ * @method static deletePropertyIB_PRICE($professionsIblockId)
+ * @method static deletePropertyIB_PREPARATORY_PROFILE($professionsIblockId)
+ * @method static deletePropertyIB_PRINCIPAL_SUBJECTS($professionsIblockId)
+ * @method static deletePropertyIB_LANGUAGES($professionsIblockId)
+ * @method static deletePropertyIB_RESEARCHES($professionsIblockId)
+ * @method static deletePropertyIB_RESULTS($professionsIblockId)
+ * @method static deletePropertyIB_REPLACED_RESULTS($professionsIblockId)
+ * @method static deletePropertyIB_FACULTY($professionsIblockId)
+ * @method static deletePropertyIB_PRELIMINARY_TESTS($professionsIblockId)
+ * @method static deletePropertyIB_ADDRESS($dormInfoblockId)
+ * @method static deletePropertyIB_ENTITY($newsIblockId)
+ * @method static deletePropertyIB_CREATIVE_LEADERSHIP($creativeInfoblockId)
+ * @method static deletePropertyIB_TIMETABLE($creativeInfoblockId)
+ * @method static deletePropertyIB_TIME($creativeInfoblockId)
+ * @method static deletePropertyIB_PLACE($creativeInfoblockId)
+ * @method static deletePropertyIB_PASS_PERIOD($creativeInfoblockId)
+ * @method static deletePropertyIB_ORGANIZATOR_PERIOD($conferenceInfoblockId)
+ * @method static deletePropertyIB_USER($reviewsInfoblockId)
+ * @method static deletePropertyIB_CODE($professionsIblockId)
  */
 class Edu extends CModule
 {
@@ -174,6 +206,7 @@ class Edu extends CModule
     const ADD_ENUM_PV = 'addEnumPV_';
     const DELETE_UF = 'deleteUserF_';
     const DELETE_UG = 'deleteUG_';
+    const DELETE_PROPERTY_IB = 'deletePropertyIB_';
     private static CUserTypeEntity $userTypeEntity;
     private static CGroup $userGroup;
     private static CIBlock $ib;
@@ -266,6 +299,22 @@ class Edu extends CModule
             );
         }
         return $id;
+    }
+
+    /**
+     * @param $name
+     * @param $iblockId
+     * @throws \Bitrix\Main\DB\Exception
+     */
+    private static function deleteIBPropertyMethod($name, $iblockId)
+    {
+        if (strpos($name, self::DELETE_PROPERTY_IB) !== FALSE) {
+            $parts = explode(self::DELETE_PROPERTY_IB, $name);
+            $name = $parts[1];
+            var_dump($name);
+            var_dump($iblockId);
+            self::deleteInfoblockProperty($name, $iblockId);
+        }
     }
 
     /**
@@ -710,6 +759,7 @@ class Edu extends CModule
         self::addEnumPVMethod($name, $args[0] ?? 0);
         self::deleteUserFieldMethod($name);
         self::deleteUserGroupMethod($name);
+        self::deleteIBPropertyMethod($name, $args[0] ?? []);
         $values = array_filter($values);
         return array_shift($values);
     }
