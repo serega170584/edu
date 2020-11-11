@@ -95,13 +95,13 @@ $id = Edu::addPropertyIB_FILE_type_F($documentsIblockId);
 $id = Edu::addPropertyIB_FORM_OF_EDUCATION_type_L($documentsIblockId);
 $id = Edu::addPropertyIB_PERIOD_type_S($professionsIblockId);
 $id = Edu::addPropertyIB_ACCREDITATION_PERIOD_type_S($professionsIblockId);
-$levelId = Edu::addPropertyIB_LEVEL_type_L($professionsIblockId);
-$id = Edu::addPropertyIB_CODE_type_S($professionsIblockId);
-$id = Edu::addPropertyIB_DESCRIPTION_type_S($professionsIblockId);
-$id = Edu::addPropertyIB_PLAN_type_F($professionsIblockId);
-$id = Edu::addPropertyIB_ANNOTATIONS_type_F($professionsIblockId);
-$id = Edu::addPropertyIB_SCHEDULE_type_F($professionsIblockId);
-$id = Edu::addPropertyIB_METHODOLOGICAL_DOCUMENTS_type_F($professionsIblockId, null, true);
+//$levelId = Edu::addPropertyIB_LEVEL_type_L($professionsIblockId);
+//$id = Edu::addPropertyIB_CODE_type_S($professionsIblockId);
+//$id = Edu::addPropertyIB_DESCRIPTION_type_S($professionsIblockId);
+//$id = Edu::addPropertyIB_PLAN_type_F($professionsIblockId);
+//$id = Edu::addPropertyIB_ANNOTATIONS_type_F($professionsIblockId);
+//$id = Edu::addPropertyIB_SCHEDULE_type_F($professionsIblockId);
+//$id = Edu::addPropertyIB_METHODOLOGICAL_DOCUMENTS_type_F($professionsIblockId, null, true);
 //$id = Edu::addInfoblockProperty($property,
 //    GetMessage('METHODOLOGICAL_TITLE'),
 //    Edu::PROFESSIONS_INFOBLOCK_METHODOLOGICAL_DOCUMENTS_PROPERTY_CODE,
