@@ -198,6 +198,7 @@ class Edu extends CModule
         global $moduleId;
         $id = 0;
         if (strpos($name, self::ADD_IB) !== FALSE) {
+            echo '789';
             $parts = explode(self::ADD_IB, $name);
             $ibName = $parts[1];
             $id = self::addInfoblock(self::getIB(), GetMessage("{$ibName}_TITLE"), $ibName, $moduleId);
@@ -221,6 +222,7 @@ class Edu extends CModule
     private static function addUGMethod($name)
     {
         if (strpos($name, self::ADD_UG) !== FALSE) {
+            echo '456';
             $parts = explode(self::ADD_UG, $name);
             $groupName = $parts[1];
             Edu::addUserGroup(self::getUserGroup(), GetMessage("RU_$groupName"), GetMessage($groupName));
@@ -235,6 +237,7 @@ class Edu extends CModule
     private static function addUFMethod($name, $params = [])
     {
         if (strpos($name, self::UF) !== FALSE) {
+            echo '123';
             $parts = explode(self::UF, $name);
             $parts = explode(self::TYPE, $parts[1]);
             $id = $parts[0];
