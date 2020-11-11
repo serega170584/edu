@@ -164,7 +164,7 @@ class Edu extends CModule
     const ADD_IB = 'addIB_';
     const ADD_PROPERTY_IB = 'addPropertyIB_';
     const ADD_ENUM_PV = 'addEnumPV_';
-    const DELETE_UF = 'deleteUF_';
+    const DELETE_UF = 'deleteUserF_';
     private static CUserTypeEntity $userTypeEntity;
     private static CGroup $userGroup;
     private static CIBlock $ib;
