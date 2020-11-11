@@ -62,6 +62,7 @@
  * @method static addPropertyIB_REPLACED_RESULTS_type_F($professionsIblockId)
  * @method static addPropertyIB_FACULTY_type_F($professionsIblockId)
  * @method static addPropertyIB_FACULTY_type_E($professionsIblockId, $null, false $false, $facultiesIblockId)
+ * @method static addPropertyIB_PRELIMINARY_TESTS_type_E($professionsIblockId, $null, bool $true, $subjectsIblockId)
  */
 class Edu extends CModule
 {

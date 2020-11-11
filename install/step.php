@@ -113,24 +113,8 @@ $id = Edu::addPropertyIB_RESEARCHES_type_F($professionsIblockId);
 $id = Edu::addPropertyIB_RESULTS_type_F($professionsIblockId);
 $id = Edu::addPropertyIB_REPLACED_RESULTS_type_F($professionsIblockId);
 $facultyId = Edu::addPropertyIB_FACULTY_type_E($professionsIblockId, null, false, $facultiesIblockId);
-//$preliminaryTestId = Edu::addInfoblockProperty($property,
-//    GetMessage('PRELIMINARY_TESTS_TITLE'),
-//    Edu::PROFESSIONS_INFOBLOCK_PRELIMINARY_TESTS_PROPERTY_CODE,
-//    Edu::ELEMENT_INFOBLOCK_PROPERTY_TYPE,
-//    $professionsIblockId,
-//    null,
-//    true,
-//    $subjectsIblockId
-//);
-//$id = Edu::addInfoblockProperty($property,
-//    GetMessage('FACULTY_TITLE'),
-//    Edu::INFOBLOCK_FACULTY_PROPERTY_CODE,
-//    Edu::ELEMENT_INFOBLOCK_PROPERTY_TYPE,
-//    $departmentIblockId,
-//    null,
-//    false,
-//    $facultiesIblockId
-//);
+$preliminaryTestId = Edu::addPropertyIB_PRELIMINARY_TESTS_type_E($professionsIblockId, null, true, $subjectsIblockId);
+$id = Edu::addPropertyIB_FACULTY_type_E($departmentIblockId, null, false, $facultiesIblockId);
 //$id = Edu::addInfoblockProperty($property,
 //    GetMessage('ADDRESS_TITLE'),
 //    Edu::INFOBLOCK_ADDRESS_PROPERTY_CODE,
