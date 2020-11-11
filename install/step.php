@@ -92,67 +92,16 @@ $adminMessage->ShowNote(GetMessage('module_added_infoblock_attached_property_tit
 $adminMessage->ShowNote(GetMessage('module_add_infoblock_property_title'));
 $property = new \CIBlockProperty();
 $id = Edu::addPropertyIB_FILE_type_F($documentsIblockId);
-//$id = Edu::addInfoblockProperty($property,
-//    GetMessage('FILE_TITLE'),
-//    Edu::DOCUMENT_INFOBLOCK_FILE_PROPERTY_CODE,
-//    Edu::FILE_INFOBLOCK_PROPERTY_TYPE,
-//    $documentsIblockId
-//);
-//$formOfEducationid = Edu::addInfoblockProperty($property,
-//    GetMessage('FORM_OF_EDUCATION_TITLE'),
-//    Edu::PROFESSIONS_INFOBLOCK_FORM_OF_EDUCATION_PROPERTY_CODE,
-//    Edu::LIST_INFOBLOCK_PROPERTY_TYPE,
-//    $professionsIblockId
-//);
-//$id = Edu::addInfoblockProperty($property,
-//    GetMessage('PERIOD_TITLE'),
-//    Edu::PROFESSIONS_INFOBLOCK_PERIOD_PROPERTY_CODE,
-//    Edu::STRING_INFOBLOCK_PROPERTY_TYPE,
-//    $professionsIblockId
-//);
-//$id = Edu::addInfoblockProperty($property,
-//    GetMessage('ACCREDITATION_TITLE'),
-//    Edu::PROFESSIONS_INFOBLOCK_ACCREDITATION_PERIOD_PROPERTY_CODE,
-//    Edu::STRING_INFOBLOCK_PROPERTY_TYPE,
-//    $professionsIblockId,
-//    Edu::DATE_TIME_INFOBLOCK_PROPERTY_USER_TYPE
-//);
-//$levelId = Edu::addInfoblockProperty($property,
-//    GetMessage('LEVEL_TITLE'),
-//    Edu::PROFESSIONS_INFOBLOCK_LEVEL_PROPERTY_CODE,
-//    Edu::LIST_INFOBLOCK_PROPERTY_TYPE,
-//    $professionsIblockId
-//);
-//$id = Edu::addInfoblockProperty($property,
-//    GetMessage('CODE_TITLE'),
-//    Edu::PROFESSIONS_INFOBLOCK_CODE_PROPERTY_CODE,
-//    Edu::STRING_INFOBLOCK_PROPERTY_TYPE,
-//    $professionsIblockId
-//);
-//$id = Edu::addInfoblockProperty($property,
-//    GetMessage('DESCRIPTION_TITLE'),
-//    Edu::PROFESSIONS_INFOBLOCK_DESCRIPTION_PROPERTY_CODE,
-//    Edu::STRING_INFOBLOCK_PROPERTY_TYPE,
-//    $professionsIblockId
-//);
-//$id = Edu::addInfoblockProperty($property,
-//    GetMessage('PLAN_TITLE'),
-//    Edu::PROFESSIONS_INFOBLOCK_PLAN_PROPERTY_CODE,
-//    Edu::FILE_INFOBLOCK_PROPERTY_TYPE,
-//    $professionsIblockId
-//);
-//$id = Edu::addInfoblockProperty($property,
-//    GetMessage('ANNOTATIONS_TITLE'),
-//    Edu::PROFESSIONS_INFOBLOCK_ANNOTATIONS_PROPERTY_CODE,
-//    Edu::FILE_INFOBLOCK_PROPERTY_TYPE,
-//    $professionsIblockId
-//);
-//$id = Edu::addInfoblockProperty($property,
-//    GetMessage('SCHEDULE_TITLE'),
-//    Edu::PROFESSIONS_INFOBLOCK_SCHEDULE_PROPERTY_CODE,
-//    Edu::FILE_INFOBLOCK_PROPERTY_TYPE,
-//    $professionsIblockId
-//);
+$id = Edu::addPropertyIB_FORM_OF_EDUCATION_type_L($documentsIblockId);
+$id = Edu::addPropertyIB_PERIOD_type_S($professionsIblockId);
+$id = Edu::addPropertyIB_ACCREDITATION_PERIOD_type_S($professionsIblockId);
+$levelId = Edu::addPropertyIB_LEVEL_type_L($professionsIblockId);
+$id = Edu::addPropertyIB_CODE_type_S($professionsIblockId);
+$id = Edu::addPropertyIB_DESCRIPTION_type_S($professionsIblockId);
+$id = Edu::addPropertyIB_PLAN_type_F($professionsIblockId);
+$id = Edu::addPropertyIB_ANNOTATIONS_type_F($professionsIblockId);
+$id = Edu::addPropertyIB_SCHEDULE_type_F($professionsIblockId);
+$id = Edu::addPropertyIB_METHODOLOGICAL_DOCUMENTS_type_F($professionsIblockId, null, true);
 //$id = Edu::addInfoblockProperty($property,
 //    GetMessage('METHODOLOGICAL_TITLE'),
 //    Edu::PROFESSIONS_INFOBLOCK_METHODOLOGICAL_DOCUMENTS_PROPERTY_CODE,

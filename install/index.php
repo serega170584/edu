@@ -39,6 +39,17 @@
  * @method static UF_PROFESSION_type_iblock_element(array $array)
  * @method static UF_DEPARTMENT_type_iblock_element(array $array)
  * @method static addPropertyIB_FILE_type_F($documentsIblockId)
+ * @method static addPropertyIB_FORM_OF_EDUCATION_type_L($documentsIblockId)
+ * @method static addPropertyIB_PERIOD_type_L($professionsIblockId)
+ * @method static addPropertyIB_PERIOD_type_S($professionsIblockId)
+ * @method static addPropertyIB_LEVEL_type_L($professionsIblockId)
+ * @method static addPropertyIB_CODE_type_S($professionsIblockId)
+ * @method static addPropertyIB_DESCRIPTION_type_S($professionsIblockId)
+ * @method static addPropertyIB_PLAN_type_F($professionsIblockId)
+ * @method static addPropertyIB_ANNOTATIONS_type_F($professionsIblockId)
+ * @method static addPropertyIB_SCHEDULE_type_F($professionsIblockId)
+ * @method static addPropertyIB_ACCREDITATION_PERIOD_type_S($professionsIblockId)
+ * @method static addPropertyIB_METHODOLOGICAL_DOCUMENTS_type_F($professionsIblockId, $null, bool $true)
  */
 class Edu extends CModule
 {
@@ -148,10 +159,13 @@ class Edu extends CModule
     /**
      * @param $name
      * @param $iblockId
+     * @param null $userType
+     * @param bool $isMultiple
+     * @param null $linkIblockId
      * @return int|mixed
      * @throws \Bitrix\Main\DB\Exception
      */
-    private static function addIBPropertyMethod($name, $iblockId)
+    private static function addIBPropertyMethod($name, $iblockId, $userType = null, $isMultiple = false, $linkIblockId = null)
     {
         $id = 0;
         if (strpos($name, self::ADD_PROPERTY_IB) !== FALSE) {
@@ -159,14 +173,14 @@ class Edu extends CModule
             $parts = explode(self::TYPE, $parts[1]);
             $id = $parts[0];
             $type = $parts[1];
-            var_dump($id);
-            var_dump($type);
-            var_dump($iblockId);
             $id = Edu::addInfoblockProperty(self::getIBlockProperty(),
                 GetMessage("{$id}_TITLE"),
                 $id,
                 $type,
-                $iblockId
+                $iblockId,
+                $userType,
+                $isMultiple,
+                $linkIblockId
             );
         }
         return $id;
@@ -584,7 +598,7 @@ class Edu extends CModule
         self::addUFMethod($name, $args[0] ?? []);
         self::addUGMethod($name);
         $values[] = self::addIBMethod($name);
-        $values[] = self::addIBPropertyMethod($name, $args[0] ?? 0);
+        $values[] = self::addIBPropertyMethod($name, $args[0] ?? 0, $args[1] ?? null, $args[2] ?? false, $args[3] ?? null);
         $values = array_filter($values);
         return array_shift($values);
     }
