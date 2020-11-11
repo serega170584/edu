@@ -83,6 +83,20 @@
  * @method static addEnumPV_ENGLISH($languagesId)
  * @method static addEnumPV_STUDENT($entityId)
  * @method static addEnumPV_UNIVERSITY($entityId)
+ * @method static deleteUF_UF_BEGIN_TIME()
+ * @method static deleteUF_UF_END_TIME()
+ * @method static deleteUF_UF_SITE()
+ * @method static deleteUF_UF_DOCUMENT()
+ * @method static deleteUF_UF_TIME_ADDITION()
+ * @method static deleteUF_UF_GENERAL_EXPERIENCE()
+ * @method static deleteUF_UF_PROFESSION_EXPERIENCE()
+ * @method static deleteUF_UF_POSITION()
+ * @method static deleteUF_UF_SUBJECT()
+ * @method static deleteUF_UF_DEGREE()
+ * @method static deleteUF_UF_RANK()
+ * @method static deleteUF_UF_ASSESSMENT()
+ * @method static deleteUF_UF_PROFESSION()
+ * @method static deleteUF_UF_DEPARTMENT()
  */
 class Edu extends CModule
 {
@@ -150,6 +164,7 @@ class Edu extends CModule
     const ADD_IB = 'addIB_';
     const ADD_PROPERTY_IB = 'addPropertyIB_';
     const ADD_ENUM_PV = 'addEnumPV_';
+    const DELETE_UF = 'deleteUF_';
     private static CUserTypeEntity $userTypeEntity;
     private static CGroup $userGroup;
     private static CIBlock $ib;
@@ -302,6 +317,15 @@ class Edu extends CModule
                 GetMessage("{$id}_RU_TITLE"),
                 GetMessage("{$id}_EN_TITLE"),
                 $params);
+        }
+    }
+
+    private static function deleteUserFieldMethod($name)
+    {
+        if (strpos($name, self::DELETE_UF) !== FALSE) {
+            $name = explode(self::DELETE_UF, $name)[1];
+            var_dump($name);
+            Edu::deleteUserField(self::getUserTypeEntity(), $name);
         }
     }
 
@@ -664,6 +688,7 @@ class Edu extends CModule
         $values[] = self::addIBMethod($name);
         $values[] = self::addIBPropertyMethod($name, $args[0] ?? 0, $args[1] ?? null, $args[2] ?? false, $args[3] ?? null);
         self::addEnumPVMethod($name, $args[0] ?? 0);
+        self::deleteUserFieldMethod($name);
         $values = array_filter($values);
         return array_shift($values);
     }
