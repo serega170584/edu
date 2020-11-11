@@ -128,7 +128,6 @@ $id = Edu::addPropertyIB_USER_type_S($reviewsInfoblockId);
 $adminMessage->ShowNote(GetMessage('module_added_infoblock_property_title'));
 
 $adminMessage->ShowNote(GetMessage('module_add_infoblock_property_values_title'));
-$iBPEnum = new CIBlockPropertyEnum;
 Edu::addEnumPV_EXTRAMURAL($formOfEducationid);
 Edu::addEnumPV_INTERNAL($formOfEducationid);
 Edu::addEnumPV_BACHELOR($levelId);
