@@ -63,6 +63,15 @@
  * @method static addPropertyIB_FACULTY_type_F($professionsIblockId)
  * @method static addPropertyIB_FACULTY_type_E($professionsIblockId, $null, false $false, $facultiesIblockId)
  * @method static addPropertyIB_PRELIMINARY_TESTS_type_E($professionsIblockId, $null, bool $true, $subjectsIblockId)
+ * @method static addPropertyIB_ADDRESS_type_S($dormInfoblockId)
+ * @method static addPropertyIB_ENTITY_type_L($newsIblockId)
+ * @method static addPropertyIB_CREATIVE_LEADERSHIP_type_S($creativeInfoblockId)
+ * @method static addPropertyIB_TIMETABLE_type_S($creativeInfoblockId)
+ * @method static addPropertyIB_TIME_type_S($creativeInfoblockId)
+ * @method static addPropertyIB_PLACE_type_S($creativeInfoblockId)
+ * @method static addPropertyIB_PASS_PERIOD_type_S($creativeInfoblockId)
+ * @method static addPropertyIB_ORGANIZATOR_PERIOD_type_S($conferenceInfoblockId)
+ * @method static addPropertyIB_USER_type_S($reviewsInfoblockId)
  */
 class Edu extends CModule
 {
@@ -108,11 +117,11 @@ class Edu extends CModule
     const INFOBLOCK_ADDRESS_PROPERTY_CODE = 'ADDRESS';
     const INFOBLOCK_ENTITY_PROPERTY_CODE = 'ENTITY';
     const INFOBLOCK_CREATIVE_LEADERSHIP_PROPERTY_CODE = 'CREATIVE_LEADERSHIP';
-    const INFOBLOCK_SCHEDULE_PROPERTY_CODE = 'SCHEDULE';
+    const INFOBLOCK_TIMETABLE_PROPERTY_CODE = 'TIMETABLE';
     const INFOBLOCK_TIME_PROPERTY_CODE = 'TIME';
     const INFOBLOCK_PLACE_PROPERTY_CODE = 'PLACE';
-    const INFOBLOCK_PERIOD_PROPERTY_CODE = 'PERIOD';
-    const INFOBLOCK_ORGANIZATOR_PROPERTY_CODE = 'ORGANIZATOR';
+    const INFOBLOCK_PASS_PERIOD_PROPERTY_CODE = 'PASS_PERIOD';
+    const INFOBLOCK_ORGANIZATOR_PERIOD_PROPERTY_CODE = 'ORGANIZATOR_PERIOD';
     const PROFESSIONS_INFOBLOCK_PRELIMINARY_TESTS_PROPERTY_CODE = 'PRELIMINARY_TESTS';
     const PROFESSIONS_INFOBLOCK_RESEARCHES_PROPERTY_CODE = 'RESEARCHES';
     const PROFESSIONS_INFOBLOCK_RESULTS_PROPERTY_CODE = 'RESULTS';

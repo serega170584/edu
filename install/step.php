@@ -115,76 +115,17 @@ $id = Edu::addPropertyIB_REPLACED_RESULTS_type_F($professionsIblockId);
 $facultyId = Edu::addPropertyIB_FACULTY_type_E($professionsIblockId, null, false, $facultiesIblockId);
 $preliminaryTestId = Edu::addPropertyIB_PRELIMINARY_TESTS_type_E($professionsIblockId, null, true, $subjectsIblockId);
 $id = Edu::addPropertyIB_FACULTY_type_E($departmentIblockId, null, false, $facultiesIblockId);
-//$id = Edu::addInfoblockProperty($property,
-//    GetMessage('ADDRESS_TITLE'),
-//    Edu::INFOBLOCK_ADDRESS_PROPERTY_CODE,
-//    Edu::STRING_INFOBLOCK_PROPERTY_TYPE,
-//    $dormInfoblockId
-//);
-//$entityId = Edu::addInfoblockProperty($property,
-//    GetMessage('ENTITY_TITLE'),
-//    Edu::INFOBLOCK_ENTITY_PROPERTY_CODE,
-//    Edu::LIST_INFOBLOCK_PROPERTY_TYPE,
-//    $newsIblockId
-//);
-//$id = Edu::addInfoblockProperty($property,
-//    GetMessage('CREATIVE_LEADERSHIP_TITLE'),
-//    Edu::INFOBLOCK_CREATIVE_LEADERSHIP_PROPERTY_CODE,
-//    Edu::STRING_INFOBLOCK_PROPERTY_TYPE,
-//    $creativeInfoblockId
-//);
-//$id = Edu::addInfoblockProperty($property,
-//    GetMessage('TIMETABLE_TITLE'),
-//    Edu::INFOBLOCK_SCHEDULE_PROPERTY_CODE,
-//    Edu::STRING_INFOBLOCK_PROPERTY_TYPE,
-//    $creativeInfoblockId
-//);
-//$id = Edu::addInfoblockProperty($property,
-//    GetMessage('TIME_TITLE'),
-//    Edu::INFOBLOCK_TIME_PROPERTY_CODE,
-//    Edu::STRING_INFOBLOCK_PROPERTY_TYPE,
-//    $creativeInfoblockId
-//);
-//$id = Edu::addInfoblockProperty($property,
-//    GetMessage('PLACE_TITLE'),
-//    Edu::INFOBLOCK_PLACE_PROPERTY_CODE,
-//    Edu::STRING_INFOBLOCK_PROPERTY_TYPE,
-//    $creativeInfoblockId
-//);
-//$id = Edu::addInfoblockProperty($property,
-//    GetMessage('PASS_PERIOD_TITLE'),
-//    Edu::INFOBLOCK_PERIOD_PROPERTY_CODE,
-//    Edu::STRING_INFOBLOCK_PROPERTY_TYPE,
-//    $conferenceInfoblockId
-//);
-//$id = Edu::addInfoblockProperty($property,
-//    GetMessage('ORGANIZATOR_PERIOD_TITLE'),
-//    Edu::INFOBLOCK_ORGANIZATOR_PROPERTY_CODE,
-//    Edu::STRING_INFOBLOCK_PROPERTY_TYPE,
-//    $conferenceInfoblockId
-//);
-//$id = Edu::addInfoblockProperty($property,
-//    GetMessage('FACULTY_TITLE'),
-//    Edu::INFOBLOCK_FACULTY_PROPERTY_CODE,
-//    Edu::ELEMENT_INFOBLOCK_PROPERTY_TYPE,
-//    $trainingMaterialsId,
-//    null,
-//    false,
-//    $facultiesIblockId
-//);
-//$id = Edu::addInfoblockProperty($property,
-//    GetMessage('FILE_TITLE'),
-//    Edu::INFOBLOCK_FILE_PROPERTY_CODE,
-//    Edu::FILE_INFOBLOCK_PROPERTY_TYPE,
-//    $trainingMaterialsId,
-//);
-//$id = Edu::addInfoblockProperty($property,
-//    GetMessage('USER_TITLE'),
-//    Edu::INFOBLOCK_USER_PROPERTY_CODE,
-//    Edu::STRING_INFOBLOCK_PROPERTY_TYPE,
-//    $reviewsInfoblockId,
-//    Edu::USER_INFOBLOCK_PROPERTY_USER_TYPE
-//);
+$id = Edu::addPropertyIB_ADDRESS_type_S($dormInfoblockId);
+$entityId = Edu::addPropertyIB_ENTITY_type_L($newsIblockId);
+$id = Edu::addPropertyIB_CREATIVE_LEADERSHIP_type_S($creativeInfoblockId);
+$id = Edu::addPropertyIB_TIMETABLE_type_S($creativeInfoblockId);
+$id = Edu::addPropertyIB_TIME_type_S($creativeInfoblockId);
+$id = Edu::addPropertyIB_PLACE_type_S($creativeInfoblockId);
+$id = Edu::addPropertyIB_PASS_PERIOD_type_S($creativeInfoblockId);
+$id = Edu::addPropertyIB_ORGANIZATOR_PERIOD_type_S($conferenceInfoblockId);
+$id = Edu::addPropertyIB_FACULTY_type_E($trainingMaterialsId, null, false, $facultiesIblockId);
+$id = Edu::addPropertyIB_FILE_type_F($trainingMaterialsId);
+$id = Edu::addPropertyIB_USER_type_S($reviewsInfoblockId);
 $adminMessage->ShowNote(GetMessage('module_added_infoblock_property_title'));
 
 $adminMessage->ShowNote(GetMessage('module_add_infoblock_property_values_title'));

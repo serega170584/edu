@@ -83,17 +83,17 @@ Edu::deleteInfoblockProperty(EDU::PROFESSIONS_INFOBLOCK_REPLACED_RESULTS_PROPERT
 Edu::deleteInfoblockProperty(EDU::INFOBLOCK_FACULTY_PROPERTY_CODE, $professionsIblockId);
 Edu::deleteInfoblockProperty(EDU::PROFESSIONS_INFOBLOCK_PRELIMINARY_TESTS_PROPERTY_CODE, $professionsIblockId);
 Edu::deleteInfoblockProperty(EDU::INFOBLOCK_FACULTY_PROPERTY_CODE, $departmentsInfoblockId);
-//Edu::deleteInfoblockProperty(EDU::INFOBLOCK_ADDRESS_PROPERTY_CODE, $dormInfoblockId);
-//Edu::deleteInfoblockProperty(EDU::INFOBLOCK_ENTITY_PROPERTY_CODE, $newsInfoblockId);
-//Edu::deleteInfoblockProperty(EDU::INFOBLOCK_CREATIVE_LEADERSHIP_PROPERTY_CODE, $creativeInfoblockId);
-//Edu::deleteInfoblockProperty(EDU::INFOBLOCK_SCHEDULE_PROPERTY_CODE, $creativeInfoblockId);
-//Edu::deleteInfoblockProperty(EDU::INFOBLOCK_TIME_PROPERTY_CODE, $creativeInfoblockId);
-//Edu::deleteInfoblockProperty(EDU::INFOBLOCK_PLACE_PROPERTY_CODE, $creativeInfoblockId);
-//Edu::deleteInfoblockProperty(EDU::INFOBLOCK_PERIOD_PROPERTY_CODE, $conferenceInfoblockId);
-//Edu::deleteInfoblockProperty(EDU::INFOBLOCK_ORGANIZATOR_PROPERTY_CODE, $conferenceInfoblockId);
-//Edu::deleteInfoblockProperty(EDU::INFOBLOCK_FILE_PROPERTY_CODE, $trainingMaterialInfoblockId);
-//Edu::deleteInfoblockProperty(EDU::INFOBLOCK_FACULTY_PROPERTY_CODE, $trainingMaterialInfoblockId);
-//Edu::deleteInfoblockProperty(EDU::INFOBLOCK_USER_PROPERTY_CODE, $reviewsInfoblockId);
+Edu::deleteInfoblockProperty(EDU::INFOBLOCK_ADDRESS_PROPERTY_CODE, $dormInfoblockId);
+Edu::deleteInfoblockProperty(EDU::INFOBLOCK_ENTITY_PROPERTY_CODE, $newsInfoblockId);
+Edu::deleteInfoblockProperty(EDU::INFOBLOCK_CREATIVE_LEADERSHIP_PROPERTY_CODE, $creativeInfoblockId);
+Edu::deleteInfoblockProperty(EDU::INFOBLOCK_TIMETABLE_PROPERTY_CODE, $creativeInfoblockId);
+Edu::deleteInfoblockProperty(EDU::INFOBLOCK_TIME_PROPERTY_CODE, $creativeInfoblockId);
+Edu::deleteInfoblockProperty(EDU::INFOBLOCK_PLACE_PROPERTY_CODE, $creativeInfoblockId);
+Edu::deleteInfoblockProperty(EDU::INFOBLOCK_PASS_PERIOD_PROPERTY_CODE, $conferenceInfoblockId);
+Edu::deleteInfoblockProperty(EDU::INFOBLOCK_ORGANIZATOR_PERIOD_PROPERTY_CODE, $conferenceInfoblockId);
+Edu::deleteInfoblockProperty(EDU::INFOBLOCK_FILE_PROPERTY_CODE, $trainingMaterialInfoblockId);
+Edu::deleteInfoblockProperty(EDU::INFOBLOCK_FACULTY_PROPERTY_CODE, $trainingMaterialInfoblockId);
+Edu::deleteInfoblockProperty(EDU::INFOBLOCK_USER_PROPERTY_CODE, $reviewsInfoblockId);
 $adminMessage->ShowNote(GetMessage('module_deleted_infoblock_property_title'));
 
 $adminMessage->ShowNote(GetMessage('module_delete_infoblock_title'));
