@@ -347,6 +347,27 @@ class Edu extends CModule
         global $DOCUMENT_ROOT, $APPLICATION, $DB, $moduleId;
         try {
             \CIBlockType::Delete(self::ID);
+            $arFields = [
+                'ID' => self::ID,
+                'SECTIONS' => 'Y',
+                'IN_RSS' => 'N',
+                'SORT' => 100,
+                'LANG' => [
+                    'en' => [
+                        'NAME' => GetMessage('en_edu_infoblock_type_name'),
+                        'SECTION_NAME' => GetMessage('en_edu_infoblock_type_sections'),
+                        'ELEMENT_NAME' => GetMessage('en_edu_infoblock_type_elements')
+                    ],
+                    'ru' => [
+                        'NAME' => GetMessage('ru_edu_infoblock_type_name'),
+                        'SECTION_NAME' => GetMessage('ru_edu_infoblock_type_sections'),
+                        'ELEMENT_NAME' => GetMessage('ru_edu_infoblock_type_elements')
+                    ]
+                ]
+            ];
+            $obBlocktype = new \CIBlockType;
+            $res = $obBlocktype->Add($arFields);
+
 //            $DB->StartTransaction();
 //            RegisterModule(self::ID);
 //            $moduleId = self::ID;
