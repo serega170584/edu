@@ -272,8 +272,6 @@ class Edu extends CModule
         if (strpos($name, self::DELETE_PROPERTY_IB) !== FALSE) {
             $parts = explode(self::DELETE_PROPERTY_IB, $name);
             $name = $parts[1];
-            var_dump($name);
-            var_dump($iblockId);
             self::deleteInfoblockProperty($name, $iblockId);
         }
     }
