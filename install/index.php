@@ -583,7 +583,7 @@ class Edu extends CModule
     }
 
     /**
-     * @param $ib
+     * @param \CIBlockElement $ib
      * @param $name
      * @param $code
      * @param $type
@@ -609,7 +609,7 @@ class Edu extends CModule
         $id = $ib->Add($arFields);
         if (!($id > 0)) {
             $DB->Rollback();
-            throw new \Bitrix\Main\DB\Exception(GetMessage('db_add_infoblock_error'));
+            throw new \Bitrix\Main\DB\Exception($ib->LAST_ERROR);
         }
         return $id;
     }
