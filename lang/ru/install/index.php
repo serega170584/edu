@@ -111,6 +111,7 @@ $MESS["CONFERENCES_TITLE"] = "Конференции";
 $MESS["TRAINING_MATERIALS_TITLE"] = "Учебные материалы";
 $MESS["REVIEWS_TITLE"] = "Отзывы";
 $MESS["TRAININGS_TITLE"] = "Тренинги и семинары";
+$MESS["SLIDER_TITLE"] = "Слайдер";
 $MESS["module_add_infoblock_attached_property_title"] = "Добавление пользовательских свойств-привязок к элементам инфомационных блоков";
 $MESS["module_added_infoblock_attached_property_title"] = "Пользовательские свойства-привязки к элементам информационных блоков добавлены";
 $MESS["PROFESSION_RU_TITLE"] = "Наименование направления подготовки и (или) специальности";
