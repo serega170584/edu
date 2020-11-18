@@ -76,6 +76,7 @@ $conferenceInfoblockId = Edu::addIB_CONFERENCES();
 $trainingMaterialsId = Edu::addIB_TRAINING_MATERIALS();
 $reviewsInfoblockId = Edu::addIB_REVIEWS();
 $trainingInfoblockId = Edu::addIB_TRAININGS();
+$sliderInfoblockId = Edu::addIB_SLIDER();
 $adminMessage->ShowNote(GetMessage('module_added_infoblock_title'));
 
 $adminMessage->ShowNote(GetMessage('module_add_infoblock_attached_property_title'));

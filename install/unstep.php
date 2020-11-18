@@ -23,6 +23,7 @@ $conferenceInfoblockId = Edu::getIblockId($moduleId, Edu::CONFERENCE_INFOBLOCK_C
 $trainingMaterialInfoblockId = Edu::getIblockId($moduleId, Edu::TRAINING_MATERIALS_INFOBLOCK_CODE);
 $reviewsInfoblockId = Edu::getIblockId($moduleId, Edu::REVIEWS_INFOBLOCK_CODE);
 $trainingInfoblockId = Edu::getIblockId($moduleId, Edu::TRAININGS_INFOBLOCK_CODE);
+$sliderInfoblockId = Edu::getIblockId($moduleId, Edu::SLIDER_INFOBLOCK_CODE);
 $adminMessage->ShowNote(GetMessage('module_delete_infoblock_property_values_title'));
 Edu::deleteInfoblockPropertyEnumValues($professionsIblockId);
 Edu::deleteInfoblockPropertyEnumValues($newsInfoblockId);
@@ -109,6 +110,7 @@ Edu::deleteInfoblock($conferenceInfoblockId);
 Edu::deleteInfoblock($trainingMaterialInfoblockId);
 Edu::deleteInfoblock($reviewsInfoblockId);
 Edu::deleteInfoblock($trainingInfoblockId);
+Edu::deleteInfoblock($sliderInfoblockId);
 $adminMessage->ShowNote(GetMessage('module_deleted_infoblock_title'));
 
 $adminMessage->ShowNote(GetMessage('module_delete_edu_infoblock_type_title'));

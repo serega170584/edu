@@ -137,6 +137,7 @@
  * @method static deletePropertyIB_ORGANIZATOR_PERIOD($conferenceInfoblockId)
  * @method static deletePropertyIB_USER($reviewsInfoblockId)
  * @method static deletePropertyIB_CODE($professionsIblockId)
+ * @method static addIB_SLIDER()
  */
 class Edu extends CModule
 {
@@ -158,6 +159,7 @@ class Edu extends CModule
     const TRAINING_MATERIALS_INFOBLOCK_CODE = 'TRAINING_MATERIALS';
     const REVIEWS_INFOBLOCK_CODE = 'REVIEWS';
     const TRAININGS_INFOBLOCK_CODE = 'TRAININGS';
+    const SLIDER_INFOBLOCK_CODE = 'SLIDER';
     const SITE_ID = 's1';
     const UF = 'UF_';
     const TYPE = '_type_';
