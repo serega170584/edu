@@ -110,7 +110,7 @@ Edu::deleteInfoblock($conferenceInfoblockId);
 Edu::deleteInfoblock($trainingMaterialInfoblockId);
 Edu::deleteInfoblock($reviewsInfoblockId);
 Edu::deleteInfoblock($trainingInfoblockId);
-//Edu::deleteInfoblock($sliderInfoblockId);
+Edu::deleteInfoblock($sliderInfoblockId);
 $adminMessage->ShowNote(GetMessage('module_deleted_infoblock_title'));
 
 $adminMessage->ShowNote(GetMessage('module_delete_edu_infoblock_type_title'));
