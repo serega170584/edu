@@ -59,7 +59,7 @@ $adminMessage->ShowNote(GetMessage('module_deleted_group_title'));
 
 $adminMessage->ShowNote(GetMessage('module_delete_infoblock_property_title'));
 Edu::deletePropertyIB_FILE($documentsIblockId);
-Edu::deletePropertyIB_FORM_OF_EDUCATION($documentsIblockId);
+Edu::deletePropertyIB_FORM_OF_EDUCATION($professionsIblockId);
 Edu::deletePropertyIB_PERIOD($professionsIblockId);
 Edu::deletePropertyIB_ACCREDITATION_PERIOD($professionsIblockId);
 Edu::deletePropertyIB_LEVEL($professionsIblockId);

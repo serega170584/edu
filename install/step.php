@@ -92,7 +92,7 @@ $adminMessage->ShowNote(GetMessage('module_added_infoblock_attached_property_tit
 
 $adminMessage->ShowNote(GetMessage('module_add_infoblock_property_title'));
 $id = Edu::addPropertyIB_FILE_type_F($documentsIblockId);
-$formOfEducationid = Edu::addPropertyIB_FORM_OF_EDUCATION_type_L($documentsIblockId);
+$formOfEducationid = Edu::addPropertyIB_FORM_OF_EDUCATION_type_L($professionsIblockId);
 $id = Edu::addPropertyIB_PERIOD_type_S($professionsIblockId);
 $id = Edu::addPropertyIB_ACCREDITATION_PERIOD_type_S($professionsIblockId);
 $levelId = Edu::addPropertyIB_LEVEL_type_L($professionsIblockId);
